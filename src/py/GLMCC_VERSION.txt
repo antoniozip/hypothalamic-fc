@@ -1,0 +1,3 @@
+Kobayashi et al. 2019 GLMCC implementation
+See: github.com/naokishibuya/GLMCC
+Commit hash: (to be filled when repo is cloned)

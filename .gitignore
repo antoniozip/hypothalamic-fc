@@ -1,0 +1,40 @@
+# macOS
+**/.DS_Store
+
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv/
+
+# R
+.Rhistory
+.RData
+.Ruserdata
+renv/library/
+renv/staging/
+
+# Generated outputs
+graphify-out/
+
+# Large data files (use Git LFS or external storage)
+*.mat
+*.mp4
+*.tiff
+*.tif
+*.mpg
+*.avi
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db

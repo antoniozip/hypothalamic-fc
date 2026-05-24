@@ -1,0 +1,13 @@
+"animal","condition","source","target","density"
+"180110","lightON","VM-thalamus","PVH",0.821428571428571
+"180110","lightON","VM-thalamus","AH",1
+"180110","lightON","VM-thalamus","DMH",0.904761904761905
+"180110","lightON","PVH","VM-thalamus",0.521428571428571
+"180110","lightON","PVH","AH",1
+"180110","lightON","PVH","DMH",0.891666666666667
+"180110","lightON","AH","VM-thalamus",0.714285714285714
+"180110","lightON","AH","PVH",0.8
+"180110","lightON","AH","DMH",1
+"180110","lightON","DMH","VM-thalamus",0.642857142857143
+"180110","lightON","DMH","PVH",0.783333333333333
+"180110","lightON","DMH","AH",1

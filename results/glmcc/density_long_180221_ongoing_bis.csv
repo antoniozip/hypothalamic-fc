@@ -1,0 +1,13 @@
+"animal","condition","source","target","density"
+"180221","ongoing_bis","VM-thalamus","DMH",0.196078431372549
+"180221","ongoing_bis","VM-thalamus","PVH",0.153439153439153
+"180221","ongoing_bis","VM-thalamus","VMH",0.296296296296296
+"180221","ongoing_bis","DMH","VM-thalamus",0.359477124183007
+"180221","ongoing_bis","DMH","PVH",0
+"180221","ongoing_bis","DMH","VMH",0.215686274509804
+"180221","ongoing_bis","PVH","VM-thalamus",0.306878306878307
+"180221","ongoing_bis","PVH","DMH",0.0840336134453782
+"180221","ongoing_bis","PVH","VMH",0.0952380952380952
+"180221","ongoing_bis","VMH","VM-thalamus",0.419753086419753
+"180221","ongoing_bis","VMH","DMH",0.431372549019608
+"180221","ongoing_bis","VMH","PVH",0.0476190476190476

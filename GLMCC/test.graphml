@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?><graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+    <key attr.name="label" attr.type="string" for="node" id="label"/>
+    <key attr.name="Edge Label" attr.type="string" for="edge" id="edgelabel"/>
+    <key attr.name="weight" attr.type="double" for="edge" id="weight"/>
+    <key attr.name="r" attr.type="int" for="node" id="r"/>
+    <key attr.name="g" attr.type="int" for="node" id="g"/>
+    <key attr.name="b" attr.type="int" for="node" id="b"/>
+    <key attr.name="x" attr.type="float" for="node" id="x"/>
+    <key attr.name="y" attr.type="float" for="node" id="y"/>
+    <key attr.name="size" attr.type="float" for="node" id="size"/>
+    <graph edgedefault="directed">
+        <node id="anterior hypothalamus">
+            <data key="label">anterior hypothalamus</data>
+            <data key="size">10.0</data>
+            <data key="r">0</data>
+            <data key="g">0</data>
+            <data key="b">0</data>
+            <data key="x">-608.3723</data>
+            <data key="y">343.1002</data>
+        </node>
+        <node id="dorsomedial hypothalamus">
+            <data key="label">dorsomedial hypothalamus</data>
+            <data key="size">10.0</data>
+            <data key="r">0</data>
+            <data key="g">0</data>
+            <data key="b">0</data>
+            <data key="x">40.47654</data>
+            <data key="y">289.94943</data>
+        </node>
+        <node id="paraventricular hypothalamus">
+            <data key="label">paraventricular hypothalamus</data>
+            <data key="size">10.0</data>
+            <data key="r">0</data>
+            <data key="g">0</data>
+            <data key="b">0</data>
+            <data key="x">-319.96338</data>
+            <data key="y">648.35364</data>
+        </node>
+        <node id="ventromedial hypothalamus">
+            <data key="label">ventromedial hypothalamus</data>
+            <data key="size">10.0</data>
+            <data key="r">0</data>
+            <data key="g">0</data>
+            <data key="b">0</data>
+            <data key="x">250.16266</data>
+            <data key="y">-339.49118</data>
+        </node>
+        <node id="ventromedial thalamus">
+            <data key="label">ventromedial thalamus</data>
+            <data key="size">10.0</data>
+            <data key="r">0</data>
+            <data key="g">0</data>
+            <data key="b">0</data>
+            <data key="x">465.61417</data>
+            <data key="y">391.1432</data>
+        </node>
+        <node id="arcuate hypothalamus">
+            <data key="label">arcuate hypothalamus</data>
+            <data key="size">10.0</data>
+            <data key="r">0</data>
+            <data key="g">0</data>
+            <data key="b">0</data>
+            <data key="x">528.4069</data>
+            <data key="y">-102.17334</data>
+        </node>
+        <node id="mammillary complex">
+            <data key="label">mammillary complex</data>
+            <data key="size">10.0</data>
+            <data key="r">0</data>
+            <data key="g">0</data>
+            <data key="b">0</data>
+            <data key="x">-538.6316</data>
+            <data key="y">-74.23698</data>
+        </node>
+        <node id="posterior hypothalamus">
+            <data key="label">posterior hypothalamus</data>
+            <data key="size">10.0</data>
+            <data key="r">0</data>
+            <data key="g">0</data>
+            <data key="b">0</data>
+            <data key="x">-190.92505</data>
+            <data key="y">-389.48727</data>
+        </node>
+        <node id="zona incerta">
+            <data key="label">zona incerta</data>
+            <data key="size">10.0</data>
+            <data key="r">0</data>
+            <data key="g">0</data>
+            <data key="b">0</data>
+            <data key="x">392.11142</data>
+            <data key="y">601.92456</data>
+        </node>
+        <edge id="0" source="anterior hypothalamus" target="dorsomedial hypothalamus">
+            <data key="weight">51.523216247558594</data>
+        </edge>
+        <edge id="1" source="anterior hypothalamus" target="paraventricular hypothalamus">
+            <data key="weight">47.48917770385742</data>
+        </edge>
+        <edge id="2" source="anterior hypothalamus" target="ventromedial hypothalamus">
+            <data key="weight">46.857261657714844</data>
+        </edge>
+        <edge id="3" source="anterior hypothalamus" target="ventromedial thalamus">
+            <data key="weight">116.77872467041016</data>
+        </edge>
+        <edge id="4" source="arcuate hypothalamus" target="dorsomedial hypothalamus">
+            <data key="weight">302.56549072265625</data>
+        </edge>
+        <edge id="5" source="arcuate hypothalamus" target="mammillary complex">
+            <data key="weight">48.26774215698242</data>
+        </edge>
+        <edge id="6" source="arcuate hypothalamus" target="paraventricular hypothalamus">
+            <data key="weight">15.806300163269043</data>
+        </edge>
+        <edge id="7" source="arcuate hypothalamus" target="posterior hypothalamus">
+            <data key="weight">274.9764099121094</data>
+        </edge>
+        <edge id="8" source="arcuate hypothalamus" target="ventromedial hypothalamus">
+            <data key="weight">61.69805145263672</data>
+        </edge>
+        <edge id="9" source="arcuate hypothalamus" target="ventromedial thalamus">
+            <data key="weight">80.91551208496094</data>
+        </edge>
+        <edge id="10" source="arcuate hypothalamus" target="zona incerta">
+            <data key="weight">124.29908752441406</data>
+        </edge>
+        <edge id="11" source="dorsomedial hypothalamus" target="anterior hypothalamus">
+            <data key="weight">94.24764251708984</data>
+        </edge>
+        <edge id="12" source="dorsomedial hypothalamus" target="arcuate hypothalamus">
+            <data key="weight">296.02459716796875</data>
+        </edge>
+        <edge id="13" source="dorsomedial hypothalamus" target="mammillary complex">
+            <data key="weight">412.3923034667969</data>
+        </edge>
+        <edge id="14" source="dorsomedial hypothalamus" target="paraventricular hypothalamus">
+            <data key="weight">680.32958984375</data>
+        </edge>
+        <edge id="15" source="dorsomedial hypothalamus" target="posterior hypothalamus">
+            <data key="weight">1814.08837890625</data>
+        </edge>
+        <edge id="16" source="dorsomedial hypothalamus" target="ventromedial hypothalamus">
+            <data key="weight">679.224609375</data>
+        </edge>
+        <edge id="17" source="dorsomedial hypothalamus" target="ventromedial thalamus">
+            <data key="weight">1403.85302734375</data>
+        </edge>
+        <edge id="18" source="dorsomedial hypothalamus" target="zona incerta">
+            <data key="weight">290.9633483886719</data>
+        </edge>
+        <edge id="19" source="mammillary complex" target="arcuate hypothalamus">
+            <data key="weight">45.64592361450195</data>
+        </edge>
+        <edge id="20" source="mammillary complex" target="dorsomedial hypothalamus">
+            <data key="weight">417.5525817871094</data>
+        </edge>
+        <edge id="21" source="mammillary complex" target="paraventricular hypothalamus">
+            <data key="weight">993.885009765625</data>
+        </edge>
+        <edge id="22" source="mammillary complex" target="posterior hypothalamus">
+            <data key="weight">1544.1650390625</data>
+        </edge>
+        <edge id="23" source="mammillary complex" target="ventromedial hypothalamus">
+            <data key="weight">74.85252380371094</data>
+        </edge>
+        <edge id="24" source="paraventricular hypothalamus" target="anterior hypothalamus">
+            <data key="weight">97.1277084350586</data>
+        </edge>
+        <edge id="25" source="paraventricular hypothalamus" target="arcuate hypothalamus">
+            <data key="weight">25.054819107055664</data>
+        </edge>
+        <edge id="26" source="paraventricular hypothalamus" target="dorsomedial hypothalamus">
+            <data key="weight">645.5159912109375</data>
+        </edge>
+        <edge id="27" source="paraventricular hypothalamus" target="mammillary complex">
+            <data key="weight">929.6947021484375</data>
+        </edge>
+        <edge id="28" source="paraventricular hypothalamus" target="posterior hypothalamus">
+            <data key="weight">891.83154296875</data>
+        </edge>
+        <edge id="29" source="paraventricular hypothalamus" target="ventromedial hypothalamus">
+            <data key="weight">105.79500579833984</data>
+        </edge>
+        <edge id="30" source="paraventricular hypothalamus" target="ventromedial thalamus">
+            <data key="weight">1839.2889404296875</data>
+        </edge>
+        <edge id="31" source="posterior hypothalamus" target="arcuate hypothalamus">
+            <data key="weight">278.1524658203125</data>
+        </edge>
+        <edge id="32" source="posterior hypothalamus" target="dorsomedial hypothalamus">
+            <data key="weight">1878.1990966796875</data>
+        </edge>
+        <edge id="33" source="posterior hypothalamus" target="mammillary complex">
+            <data key="weight">1560.5341796875</data>
+        </edge>
+        <edge id="34" source="posterior hypothalamus" target="paraventricular hypothalamus">
+            <data key="weight">942.1331176757812</data>
+        </edge>
+        <edge id="35" source="posterior hypothalamus" target="ventromedial hypothalamus">
+            <data key="weight">275.5733337402344</data>
+        </edge>
+        <edge id="36" source="posterior hypothalamus" target="ventromedial thalamus">
+            <data key="weight">352.1087951660156</data>
+        </edge>
+        <edge id="37" source="posterior hypothalamus" target="zona incerta">
+            <data key="weight">186.9320526123047</data>
+        </edge>
+        <edge id="38" source="ventromedial hypothalamus" target="anterior hypothalamus">
+            <data key="weight">59.4039192199707</data>
+        </edge>
+        <edge id="39" source="ventromedial hypothalamus" target="arcuate hypothalamus">
+            <data key="weight">59.60487747192383</data>
+        </edge>
+        <edge id="40" source="ventromedial hypothalamus" target="dorsomedial hypothalamus">
+            <data key="weight">614.51708984375</data>
+        </edge>
+        <edge id="41" source="ventromedial hypothalamus" target="mammillary complex">
+            <data key="weight">82.84123229980469</data>
+        </edge>
+        <edge id="42" source="ventromedial hypothalamus" target="paraventricular hypothalamus">
+            <data key="weight">76.83028411865234</data>
+        </edge>
+        <edge id="43" source="ventromedial hypothalamus" target="posterior hypothalamus">
+            <data key="weight">255.6610107421875</data>
+        </edge>
+        <edge id="44" source="ventromedial hypothalamus" target="ventromedial thalamus">
+            <data key="weight">402.0702209472656</data>
+        </edge>
+        <edge id="45" source="ventromedial hypothalamus" target="zona incerta">
+            <data key="weight">56.25990295410156</data>
+        </edge>
+        <edge id="46" source="ventromedial thalamus" target="anterior hypothalamus">
+            <data key="weight">134.1158447265625</data>
+        </edge>
+        <edge id="47" source="ventromedial thalamus" target="arcuate hypothalamus">
+            <data key="weight">75.08047485351562</data>
+        </edge>
+        <edge id="48" source="ventromedial thalamus" target="dorsomedial hypothalamus">
+            <data key="weight">1351.6014404296875</data>
+        </edge>
+        <edge id="49" source="ventromedial thalamus" target="paraventricular hypothalamus">
+            <data key="weight">1797.7479248046875</data>
+        </edge>
+        <edge id="50" source="ventromedial thalamus" target="posterior hypothalamus">
+            <data key="weight">313.7126159667969</data>
+        </edge>
+        <edge id="51" source="ventromedial thalamus" target="ventromedial hypothalamus">
+            <data key="weight">381.9666748046875</data>
+        </edge>
+        <edge id="52" source="ventromedial thalamus" target="zona incerta">
+            <data key="weight">63.660865783691406</data>
+        </edge>
+        <edge id="53" source="zona incerta" target="arcuate hypothalamus">
+            <data key="weight">122.45162200927734</data>
+        </edge>
+        <edge id="54" source="zona incerta" target="dorsomedial hypothalamus">
+            <data key="weight">301.7066955566406</data>
+        </edge>
+        <edge id="55" source="zona incerta" target="posterior hypothalamus">
+            <data key="weight">187.3735809326172</data>
+        </edge>
+        <edge id="56" source="zona incerta" target="ventromedial hypothalamus">
+            <data key="weight">62.87532043457031</data>
+        </edge>
+        <edge id="57" source="zona incerta" target="ventromedial thalamus">
+            <data key="weight">73.41812133789062</data>
+        </edge>
+    </graph>
+</graphml>
