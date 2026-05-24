@@ -1,10 +1,14 @@
 #!/usr/bin/env Rscript
 # First-level statistics: neuron-as-observation mixed-effects models.
 #
-# lmer(metric ~ condition * region + (1 | animal/neuron), data = df)
+# Model: lmer(metric ~ condition * region + (1 | animal/neuron), data = df)
 #
 # Reads all metrics CSV files and fits separate models per metric x estimator.
-# Output: results/stats_first_level.csv
+# Includes convergence handling (bobyqa optimizer) with progressive fallbacks:
+#   1. Full interaction: condition * region + (1 | animal/neuron)
+#   2. Main effects only: condition + region + (1 | animal/neuron)
+#   3. Random-intercept only: condition + (1 | animal)
+# Output: results/stats_first_level_<estimator>.csv
 
 library(here)
 library(lmerTest)
@@ -23,13 +27,7 @@ animals <- c(
 conditions <- c("ongoing", "lightON")
 cond_aliases <- list(ongoing = c("ongoing", "ongoing_bis"), lightON = c("lightON"))
 
-daynight <- c(
-  "171019" = "D", "171207" = "N", "171208" = "N", "171213" = "N",
-  "180110" = "N", "180111" = "N", "180131" = "D", "180221" = "N",
-  "180228" = "N", "180302" = "D", "180419" = "D", "180420" = "D",
-  "180423" = "D"
-)
-
+# --- Load metrics ---
 metrics_dir <- here("results", estimator)
 all_data <- data.frame()
 
@@ -43,7 +41,6 @@ for (animal in animals) {
     df <- read.csv(fpath, stringsAsFactors = FALSE)
     df$animal <- as.character(animal)
     df$condition <- condition
-    df$day_night <- daynight[animal]
     all_data <- rbind(all_data, df)
   }
 }
@@ -62,46 +59,88 @@ all_data$neuron <- with(all_data, interaction(animal, neuron_id, drop = TRUE))
 metrics <- c("node_strength", "clustering_coefficient", "local_efficiency", "hub_score")
 results_table <- data.frame()
 
+# --- Model fitting with progressive fallbacks ---
+fit_model <- function(metric_name, df, estimator_name) {
+  forms <- list(
+    interaction = as.formula(paste(metric_name, "~ condition * region + (1 | animal/neuron)")),
+    main_effects = as.formula(paste(metric_name, "~ condition + region + (1 | animal/neuron)")),
+    intercept_only = as.formula(paste(metric_name, "~ condition + (1 | animal)"))
+  )
+  ctrl <- lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 200000))
+
+  for (level in names(forms)) {
+    model <- tryCatch(
+      lmer(forms[[level]], data = df, REML = TRUE, control = ctrl),
+      error = function(e) NULL,
+      warning = function(w) {
+        # bobyqa can produce convergence warnings even when fit is fine;
+        # try Nelder-Mead as fallback before giving up
+        tryCatch(
+          lmer(forms[[level]], data = df, REML = TRUE,
+               control = lmerControl(optimizer = "Nelder_Mead",
+                                     optCtrl = list(maxfun = 200000))),
+          error = function(e2) NULL
+        )
+      }
+    )
+    if (!is.null(model)) {
+      cat(sprintf("  %-20s | %-14s | %s (level=%s)\n",
+                  metric_name, estimator_name, "converged", level))
+      return(list(model = model, level = level))
+    }
+  }
+  cat(sprintf("  %-20s | %-14s | FAILED all levels\n", metric_name, estimator_name))
+  return(NULL)
+}
+
+cat("\n=== Fitting first-level models (estimator:", estimator, ") ===\n")
+cat(sprintf("  %-20s | %-14s | %s\n", "metric", "estimator", "status"))
+cat(strrep("-", 60), "\n")
+
 for (metric in metrics) {
   if (!metric %in% colnames(all_data)) next
-  model1 <- tryCatch(
-    lmer(as.formula(paste(metric, "~ condition + (1 | animal/neuron)")),
-         data = all_data, REML = TRUE),
-    error = function(e) {
-      tryCatch(
-        lmer(as.formula(paste(metric, "~ condition + (1 | animal)")),
-             data = all_data, REML = TRUE),
-        error = function(e2) NULL
-      )
-    }
-  )
-  if (is.null(model1)) {
-    cat("Model failed for", metric, ":", "not enough factor levels\n")
+
+  result <- fit_model(metric, all_data, estimator)
+  if (is.null(result)) {
+    cat(sprintf("  Model failed for %s: not enough factor levels or data\n", metric))
     next
   }
 
-  cat("\n=== ", metric, " (", estimator, ") ===\n")
-  print(summary(model1))
-  anova_res <- anova(model1, type = "III", ddf = "Kenward-Roger")
+  model <- result$model
+  model_level <- result$level
+
+  cat(sprintf("\n--- %s (%s) [level=%s] ---\n", metric, estimator, model_level))
+  print(summary(model))
+  anova_res <- tryCatch(
+    anova(model, type = "III", ddf = "Kenward-Roger"),
+    error = function(e) {
+      cat("  ANOVA failed, using type II:\n")
+      anova(model, type = "II")
+    }
+  )
   print(anova_res)
 
-  fixed <- summary(model1)$coefficients
+  # Fixed effects
+  fixed <- summary(model)$coefficients
   fixed_df <- data.frame(
     metric = metric,
     estimator = estimator,
+    model_level = model_level,
     term = rownames(fixed),
     estimate = fixed[, "Estimate"],
     std_error = fixed[, "Std. Error"],
-    df = fixed[, "df"],
-    t_value = fixed[, "t value"],
+    df = if ("df" %in% colnames(fixed)) fixed[, "df"] else NA,
+    t_value = if ("t value" %in% colnames(fixed)) fixed[, "t value"] else NA,
     p_value = fixed[, "Pr(>|t|)"],
     row.names = NULL
   )
   results_table <- rbind(results_table, fixed_df)
 
+  # ANOVA table
   anova_df <- data.frame(
     metric = metric,
     estimator = estimator,
+    model_level = model_level,
     term = rownames(anova_res),
     num_df = anova_res[["NumDF"]],
     den_df = anova_res[["DenDF"]],
@@ -110,7 +149,7 @@ for (metric in metrics) {
     row.names = NULL
   )
   results_table <- rbind(results_table, data.frame(
-    metric = metric, estimator = estimator,
+    metric = metric, estimator = estimator, model_level = model_level,
     term = paste0("ANOVA_", anova_df$term),
     estimate = anova_df$f_value,
     std_error = NA, df = anova_df$num_df, t_value = NA, p_value = anova_df$p_value
@@ -121,3 +160,20 @@ out_path <- here("results", paste0("stats_first_level_", estimator, ".csv"))
 dir.create(dirname(out_path), showWarnings = FALSE, recursive = TRUE)
 write.csv(results_table, out_path, row.names = FALSE)
 cat("\nResults written to", out_path, "\n")
+
+# --- Model diagnostics summary ---
+cat("\n=== Model diagnostics ===\n")
+for (metric in intersect(metrics, colnames(all_data))) {
+  result <- fit_model(metric, all_data, estimator)
+  if (!is.null(result)) {
+    model <- result$model
+    res <- residuals(model)
+    shp <- tryCatch(shapiro.test(sample(res, min(5000, length(res)))), error = function(e) NULL)
+    cat(sprintf("  %-20s | level=%-14s | AIC=%.1f | BIC=%.1f | n_obs=%d | Shapiro_W=%.3f (p=%.3f)\n",
+                metric, result$level,
+                AIC(model), BIC(model), nobs(model),
+                if (!is.null(shp)) shp$statistic else NA,
+                if (!is.null(shp)) shp$p.value else NA))
+  }
+}
+cat("\n")
