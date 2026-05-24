@@ -36,12 +36,21 @@
 - Pure numpy TE implementation (`src/py/transfer_entropy_np.py`) replaces pyinform
 - All 26 existing TE results linked to `results/te/`
 - Note: numpy TE gives 0 for very sparse 5ms-binned data; existing pyinform results used
+- INVESTIGATION NEEDED: TE returning 0 may indicate a fundamental issue with
+  5ms binning at hypothalamic firing rates (0.15 Hz mean). Test with:
+  * Broader bins (10, 20, 50 ms) to find threshold where signal emerges
+  * Synthetic Poisson spike trains at matched rates as positive control
+  * Alternative TE estimators (JIDT via subprocess, pyinform 0.5.x)
+- See IMPLEMENTATION_PLAN.md Phase 2.3 for detailed investigation steps
+- NOTE: validate_edges.py heuristic p-values have been REMOVED (see review-improvements branch).
+  All edge validation now uses empirical CCG+shuffle-ISI surrogates.
 
 ## Key Results Location
 
 | Output | Path |
 |--------|------|
-| Edge-validated adjacencies (lightON: CCG, ongoing: heuristic) | `results/glmcc/validated_adj_*.csv` |
+| Edge-validated adjacencies (CCG + shuffle-ISI) | `results/glmcc/validated_adj_*.csv` |
+| P-values alongside validated edges | `results/glmcc/p_values_*.csv` |
 | Graph metrics | `results/glmcc/metrics_*.csv` |
 | Region-pair densities | `results/glmcc/density_*.csv` |
 | First-level stats | `results/stats_first_level_glmcc.csv` |
