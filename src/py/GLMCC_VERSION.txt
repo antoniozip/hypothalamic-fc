@@ -1,3 +1,12 @@
 Kobayashi et al. 2019 GLMCC implementation
-See: github.com/naokishibuya/GLMCC
-Commit hash: (to be filled when repo is cloned)
+Repo: https://github.com/naokishibuya/GLMCC
+
+Containerized (recommended):
+  docker build -t glmcc:latest .
+  export GLMCC_HOME=/opt/GLMCC  # path inside container
+
+Local installation:
+  git clone https://github.com/naokishibuya/GLMCC.git
+  export GLMCC_HOME=$PWD/GLMCC
+
+Commit hash: (pin with: git rev-parse HEAD inside GLMCC repo)

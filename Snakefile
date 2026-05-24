@@ -95,7 +95,11 @@ rule generate_surrogates:
 # ---------------------------------------------------------------------------
 
 rule run_glmcc_adjacency:
-    """Run GLMCC to compute raw adjacency matrix."""
+    """Run GLMCC to compute raw adjacency matrix.
+    
+    Set GLMCC_USE_DOCKER=1 to use containerized GLMCC.
+    Otherwise uses local GLMCC_HOME installation.
+    """
     input:
         "data/processed/spiketrains_DATA{animal}_{condition}.txt",
     output:
