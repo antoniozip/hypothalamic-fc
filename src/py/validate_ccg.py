@@ -5,6 +5,12 @@ Generates shuffle_isis surrogates on-the-fly (preserves ISI distribution,
 breaks cross-neuron correlations). Compares real vs surrogate CCG peaks
 for empirical p-values + BH-FDR.
 
+This is the PREFERRED validation method for lightON conditions.
+For ongoing conditions or when pre-computed GLMCC surrogates exist,
+use validate_edges.py --method glmcc.
+
+Functions are importable — validate_edges.py calls into this module.
+
 Usage:
     python validate_ccg.py --animal 171019 --condition lightON
     python validate_ccg.py --all
@@ -36,7 +42,12 @@ CONDITIONS = ["lightON"]  # ongoing: use heuristic validation (too dense for CCG
 TS_KEY_MAP = {"lightON": "evoked_ts", "ongoing": "ongoing_ts", "evoked": "evoked_ts"}
 
 
+# ---------------------------------------------------------------------------
+# Public API — importable by validate_edges.py and other modules
+# ---------------------------------------------------------------------------
+
 def load_real_spike_times(animal: str, condition: str) -> list[np.ndarray]:
+    """Load spike times (in ms) from .mat file for a given animal+condition."""
     mat_path = PROJECT_ROOT / f"DATA{animal}_{condition}.mat"
     if not mat_path.exists():
         if condition == "ongoing":
@@ -86,6 +97,7 @@ def _ccg_peak_fast(a_ms: np.ndarray, b_ms: np.ndarray) -> float:
 
 
 def ccg_peak_one_pair(a_ms: np.ndarray, b_ms: np.ndarray) -> float:
+    """CCG peak for a single neuron pair. Uses fast method for large trains."""
     if len(a_ms) < 2 or len(b_ms) < 2:
         return 0.0
     if len(a_ms) > 100000 or len(b_ms) > 100000:
@@ -105,7 +117,7 @@ def ccg_peak_one_pair(a_ms: np.ndarray, b_ms: np.ndarray) -> float:
 
 
 def ccg_peak_matrix(times_ms: list[np.ndarray]) -> np.ndarray:
-    """Full N×N CCG peak matrix. Inputs are spike times in ms."""
+    """Full NxN CCG peak matrix. Inputs are spike times in ms."""
     n = len(times_ms)
     adj = np.zeros((n, n))
     pairs = [(i, j) for i in range(n) for j in range(i + 1, n)]
@@ -120,11 +132,84 @@ def ccg_peak_matrix(times_ms: list[np.ndarray]) -> np.ndarray:
     return adj
 
 
-def validate_ccg(animal: str, condition: str, fdr_q: float = 0.05) -> dict:
+def compute_empirical_p_values(
+    real_times: list[np.ndarray],
+    real_peaks: np.ndarray,
+    n_surrogates: int = 100,
+) -> tuple[np.ndarray, int]:
+    """Compute empirical p-values via shuffle-ISI surrogates.
+
+    Returns (p_values, n_units) where p_values[i,i] = 1.0 (diagonal ignored).
+    """
+    n_units = len(real_times)
+    count_exceed = np.zeros((n_units, n_units), dtype=int)
+    total_surr = 0
+
+    # Build Neo SpikeTrain objects once
+    spike_trains = []
+    for t in real_times:
+        st = SpikeTrain(t * s, t_stop=t[-1] + 1.0)
+        spike_trains.append(st)
+
+    for sid in range(n_surrogates):
+        surr_ms_list = []
+        for i in range(n_units):
+            try:
+                surr = surrogates(
+                    spike_trains[i], n_surrogates=1, method="shuffle_isis"
+                )[0]
+                surr_ms_list.append(surr.magnitude.flatten() * 1000.0)
+            except Exception:
+                surr_ms_list.append(real_times[i].copy())
+
+        surr_peaks = ccg_peak_matrix(surr_ms_list)
+        count_exceed += (surr_peaks >= real_peaks).astype(int)
+        total_surr += 1
+
+    p_values = np.ones((n_units, n_units))
+    for i in range(n_units):
+        for j in range(n_units):
+            if i != j:
+                p_values[i, j] = max(count_exceed[i, j], 1) / max(total_surr, 1)
+
+    return p_values, n_units
+
+
+def apply_bh_fdr(p_values: np.ndarray, fdr_q: float = 0.05) -> np.ndarray:
+    """Apply Benjamini-Hochberg FDR correction. Returns boolean mask.
+
+    Only off-diagonal pairs are tested (n_units * (n_units - 1) tests).
+    """
+    n_units = p_values.shape[0]
+    n_pairs = n_units * (n_units - 1)
+
+    mask = ~np.eye(n_units, dtype=bool)
+    p_flat = p_values[mask]  # off-diagonal only
+    n_tests = len(p_flat)
+
+    sorted_idx = np.argsort(p_flat)
+    reject_flat = np.zeros(n_tests, dtype=bool)
+    for k, idx in enumerate(sorted_idx):
+        threshold = fdr_q * (k + 1) / n_tests
+        if p_flat[idx] <= threshold:
+            reject_flat[idx] = True
+
+    reject = np.zeros((n_units, n_units), dtype=bool)
+    reject[mask] = reject_flat
+    return reject
+
+
+def validate_ccg(
+    animal: str,
+    condition: str,
+    fdr_q: float = 0.05,
+    n_surrogates: int = 100,
+) -> dict:
+    """Run full CCG-based validation pipeline. Returns stats dict."""
     print(f"Loading real spike trains for {animal}_{condition}...", flush=True)
     real_times = load_real_spike_times(animal, condition)
     n_units = len(real_times)
-    n_pairs = n_units * (n_units - 1) // 2
+    n_pairs = n_units * (n_units - 1)
     print(f"  {n_units} neurons, {n_pairs} pairs", flush=True)
 
     print("Computing real CCG peaks...", flush=True)
@@ -133,51 +218,12 @@ def validate_ccg(animal: str, condition: str, fdr_q: float = 0.05) -> dict:
     n_real_pos = int((real_peaks > 0).sum())
     print(f"  Real: {n_real_pos} edges with peak >= 1", flush=True)
 
-    spike_trains = []
-    t_stops = []
-    for t in real_times:
-        st = SpikeTrain(t * s, t_stop=t[-1] + 1.0)
-        spike_trains.append(st)
-        t_stops.append(t[-1] + 1.0)
+    print(f"Generating {n_surrogates} shuffle_isis surrogates...", flush=True)
+    p_values, _ = compute_empirical_p_values(
+        real_times, real_peaks, n_surrogates
+    )
 
-    count_exceed = np.zeros((n_units, n_units), dtype=int)
-    total_surr = 0
-
-    print(f"Generating {N_SURROGATES} shuffle_isis surrogates...", flush=True)
-    for sid in range(N_SURROGATES):
-        surr_ms_list = []
-        for i in range(n_units):
-            try:
-                surr = surrogates(
-                    spike_trains[i], n_surrogates=1,
-                    method="shuffle_isis"
-                )[0]
-                surr_ms_list.append(surr.magnitude.flatten() * 1000.0)
-            except Exception:
-                surr_ms_list.append(real_ms[i].copy())
-
-        surr_peaks = ccg_peak_matrix(surr_ms_list)
-        exceed = surr_peaks >= real_peaks
-        count_exceed += exceed.astype(int)
-        total_surr += 1
-
-        if (sid + 1) % 10 == 0:
-            print(f"  {sid + 1}/{N_SURROGATES}", flush=True)
-
-    p_values = np.ones((n_units, n_units))
-    for i in range(n_units):
-        for j in range(n_units):
-            if i != j:
-                p_values[i, j] = max(count_exceed[i, j], 1) / max(total_surr, 1)
-
-    p_flat = p_values.flatten()
-    n_tests = len(p_flat)
-    sorted_idx = np.argsort(p_flat)
-    reject = np.zeros(n_tests, dtype=bool)
-    for k, idx in enumerate(sorted_idx):
-        if p_flat[idx] <= fdr_q * (k + 1) / n_tests:
-            reject[idx] = True
-    reject = reject.reshape((n_units, n_units))
+    reject = apply_bh_fdr(p_values, fdr_q)
 
     out_dir = PROJECT_ROOT / "results" / "glmcc"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -186,15 +232,30 @@ def validate_ccg(animal: str, condition: str, fdr_q: float = 0.05) -> dict:
     validated[~reject] = 0.0
     np.savetxt(str(out_path), validated, delimiter=",", fmt="%d")
 
+    # Also write p-values for transparency
+    p_path = out_dir / f"p_values_ccg_{animal}_{condition}.csv"
+    np.savetxt(str(p_path), p_values, delimiter=",", fmt="%.6f")
+
     n_sig = int(reject.sum())
     survival = n_sig / n_pairs if n_pairs > 0 else 0
     stats = {
-        "animal": animal, "condition": condition,
-        "n_units": n_units, "n_surrogates": total_surr,
-        "n_significant": n_sig, "edge_survival_rate": round(survival, 4),
+        "animal": animal,
+        "condition": condition,
+        "method": "ccg_shuffle_isis",
+        "n_units": n_units,
+        "n_surrogates": n_surrogates,
+        "n_possible_edges": n_pairs,
+        "n_significant": n_sig,
+        "edge_survival_rate": round(survival, 4),
+        "fdr_q": fdr_q,
+        "output_path": str(out_path),
     }
     return stats
 
+
+# ---------------------------------------------------------------------------
+# CLI
+# ---------------------------------------------------------------------------
 
 def main():
     parser = argparse.ArgumentParser()
@@ -221,7 +282,7 @@ def main():
         if out_path.exists():
             print(f"SKIP {a}_{c} — already exists", flush=True)
             continue
-        stats = validate_ccg(a, c, args.fdr_q)
+        stats = validate_ccg(a, c, args.fdr_q, args.n_surrogates)
         n_possible = stats['n_units'] * (stats['n_units'] - 1)
         print(f"  {a}_{c}: {stats['n_significant']}/{n_possible} edges significant, "
               f"survival={stats['edge_survival_rate']}", flush=True)
