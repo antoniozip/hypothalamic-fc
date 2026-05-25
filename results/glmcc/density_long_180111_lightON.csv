@@ -1,7 +1,0 @@
-"animal","condition","source","target","density"
-"180111","lightON","VM-thalamus","PVH",0
-"180111","lightON","VM-thalamus","VMH",0.933333333333333
-"180111","lightON","PVH","VM-thalamus",0.8
-"180111","lightON","PVH","VMH",1
-"180111","lightON","VMH","VM-thalamus",0.783333333333333
-"180111","lightON","VMH","PVH",0

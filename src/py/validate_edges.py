@@ -10,8 +10,8 @@ Two methods:
 Benjamini-Hochberg FDR correction (q = 0.05) applied to OFF-DIAGONAL pairs only.
 
 Usage:
-    python validate_edges.py --animal 171019 --condition lightON --method ccg
-    python validate_edges.py --animal 171019 --condition lightON --method glmcc --surrogates
+    python validate_edges.py --animal day1 --condition lightON --method ccg
+    python validate_edges.py --animal day1 --condition lightON --method glmcc --surrogates
 """
 
 import argparse
@@ -207,9 +207,9 @@ def main():
         epilog=(
             "Examples:\n"
             "  # CCG method (recommended for lightON):\n"
-            "  python validate_edges.py --animal 171019 --condition lightON --method ccg\n"
+            "  python validate_edges.py --animal day1 --condition lightON --method ccg\n"
             "  # GLMCC method (requires pre-computed surrogates):\n"
-            "  python validate_edges.py --animal 171208 --condition lightON --method glmcc --surrogates\n"
+            "  python validate_edges.py --animal night2 --condition lightON --method glmcc --surrogates\n"
         ),
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )

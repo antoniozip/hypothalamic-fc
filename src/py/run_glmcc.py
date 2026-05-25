@@ -9,7 +9,7 @@ Environment:
     GLMCC_CMD  — override the GLMCC command (default: python Est_Data.py)
 
 Usage:
-    python run_glmcc.py --animal 171019 --condition lightON
+    python run_glmcc.py --animal day1 --condition lightON
 """
 
 import argparse

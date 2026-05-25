@@ -5,8 +5,8 @@ Spike times in .mat files are in milliseconds; converted to seconds for Neo/elep
 Uses cell-specific t_stop from Units['ts'] to match original pipeline.
 
 Usage:
-    python generate_surrogates.py --animal 171019 --condition lightON
-    python generate_surrogates.py --animal 180131 --condition ongoing --n-surrogates 100 --dt-ms 0.1
+    python generate_surrogates.py --animal day1 --condition lightON
+    python generate_surrogates.py --animal day2 --condition ongoing --n-surrogates 100 --dt-ms 0.1
 """
 
 import argparse
@@ -92,7 +92,7 @@ def generate_surrogates(
 
 def main():
     parser = argparse.ArgumentParser(description="Generate dither spike-train surrogates")
-    parser.add_argument("--animal", required=True, help="Animal ID (e.g. 171019)")
+    parser.add_argument("--animal", required=True, help="Animal ID (e.g. day1)")
     parser.add_argument(
         "--condition", required=True,
         choices=["ongoing", "lightON", "evoked", "ongoing_bis"],

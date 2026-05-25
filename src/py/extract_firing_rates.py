@@ -17,14 +17,14 @@ FIGURES_DIR = PROJECT_ROOT / "figures" / "main"
 FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 ANIMALS = [
-    "171019", "171207", "171208", "171213", "180110", "180111",
-    "180131", "180221", "180228", "180302", "180419", "180420", "180423",
+    "day1", "night1", "night2", "night3", "night4", "night5",
+    "day2", "night6", "night7", "day3", "day4", "day5", "day6",
 ]
 DAYNIGHT = {
-    "171019": "D", "171207": "N", "171208": "N", "171213": "N",
-    "180110": "N", "180111": "N", "180131": "D", "180221": "N",
-    "180228": "N", "180302": "D", "180419": "D", "180420": "D",
-    "180423": "D",
+    "day1": "D", "night1": "N", "night2": "N", "night3": "N",
+    "night4": "N", "night5": "N", "day2": "D", "night6": "N",
+    "night7": "N", "day3": "D", "day4": "D", "day5": "D",
+    "day6": "D",
 }
 
 TS_KEY_MAP = {

@@ -5,8 +5,8 @@ Bins spike trains from data/processed/ into a discrete time series,
 then computes pairwise transfer entropy using a pure numpy implementation.
 
 Usage:
-    python run_transfer_entropy.py --animal 171019 --condition ongoing
-    python run_transfer_entropy.py --animal 180131 --condition lightON --k 10 --binsize-ms 5
+    python run_transfer_entropy.py --animal day1 --condition ongoing
+    python run_transfer_entropy.py --animal day2 --condition lightON --k 10 --binsize-ms 5
 """
 
 import argparse

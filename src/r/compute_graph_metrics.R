@@ -2,7 +2,7 @@
 # Compute per-animal graph metrics from validated adjacency matrices.
 # Output: results/<estimator>/metrics_<animal>_<condition>.csv
 #
-# Usage: Rscript compute_graph_metrics.R --animal 171019 --condition lightON --estimator glmcc
+# Usage: Rscript compute_graph_metrics.R --animal day1 --condition lightON --estimator glmcc
 
 library(igraph)
 library(here)

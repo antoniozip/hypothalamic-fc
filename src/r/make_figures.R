@@ -29,15 +29,15 @@ yield <- neurons %>%
 
 # Day/night assignment
 daynight <- c(
-  "171019" = "Day", "171207" = "Night", "171208" = "Night", "171213" = "Night",
-  "180110" = "Night", "180111" = "Night", "180131" = "Day", "180221" = "Night",
-  "180228" = "Night", "180302" = "Day", "180419" = "Day", "180420" = "Day",
-  "180423" = "Day"
+  "day1" = "Day", "night1" = "Night", "night2" = "Night", "night3" = "Night",
+  "night4" = "Night", "night5" = "Night", "day2" = "Day", "night6" = "Night",
+  "night7" = "Night", "day3" = "Day", "day4" = "Day", "day5" = "Day",
+  "day6" = "Day"
 )
 yield$day_night <- daynight[as.character(yield$animal)]
 yield$animal <- factor(yield$animal, levels = c(
-  "171019","171207","171208","171213","180110","180111",
-  "180131","180221","180228","180302","180419","180420","180423"
+  "day1","night1","night2","night3","night4","night5",
+  "day2","night6","night7","day3","day4","day5","day6"
 ))
 
 p1 <- ggplot(yield, aes(x = region6, y = animal, fill = n)) +
@@ -151,12 +151,12 @@ if (file.exists(stats_file)) {
 cat("Generating Fig 3: region connectivity\n")
 
 # Aggregate density across animals for each condition
-animals <- c("171019","171207","171208","171213","180110","180111",
-             "180131","180221","180228","180302","180419","180420","180423")
+animals <- c("day1","night1","night2","night3","night4","night5",
+             "day2","night6","night7","day3","day4","day5","day6")
 daynight <- c(
-  "171019"="D","171207"="N","171208"="N","171213"="N",
-  "180110"="N","180111"="N","180131"="D","180221"="N",
-  "180228"="N","180302"="D","180419"="D","180420"="D","180423"="D"
+  "day1"="D","night1"="N","night2"="N","night3"="N",
+  "night4"="N","night5"="N","day2"="D","night6"="N",
+  "night7"="N","day3"="D","day4"="D","day5"="D","day6"="D"
 )
 
 all_dens <- data.frame()

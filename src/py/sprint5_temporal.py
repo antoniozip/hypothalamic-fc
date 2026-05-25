@@ -19,8 +19,8 @@ from validate_ccg import ccg_peak_matrix
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 OUT_DIR = PROJECT_ROOT / "results" / "sprint5"
 
-ANIMALS = ["171019","171207","171208","171213","180110","180111","180131","180221",
-           "180228","180302","180419","180420","180423"]
+ANIMALS = ["day1","night1","night2","night3","night4","night5","day2","night6",
+           "night7","day3","day4","day5","day6"]
 
 TS_KEY_MAP = {"lightON": "evoked_ts", "ongoing": "ongoing_ts"}
 

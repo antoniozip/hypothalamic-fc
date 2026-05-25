@@ -16,8 +16,8 @@ conditions <- list(
 
 estimator <- "glmcc"
 animals <- c(
-  "171019", "171207", "171208", "171213", "180110", "180111",
-  "180131", "180221", "180228", "180302", "180419", "180420", "180423"
+  "day1", "night1", "night2", "night3", "night4", "night5",
+  "day2", "night6", "night7", "day3", "day4", "day5", "day6"
 )
 
 results <- data.frame()

@@ -10,7 +10,7 @@ For each animal x condition x surr_id:
   6. Saves to results/{estimator}/surrogate_adj/{animal}_{condition}/{surr_id}.csv
 
 Usage:
-    python src/py/batch_surrogate_glmcc.py --animal 171019 --condition lightON
+    python src/py/batch_surrogate_glmcc.py --animal day1 --condition lightON
     python src/py/batch_surrogate_glmcc.py --all
 """
 
@@ -30,8 +30,8 @@ GLMCC_DIR = Path(os.path.expanduser("~/Documents/documents_old/HypoNetworkAntoni
 EST_DATA = GLMCC_DIR / "Est_Data.py"
 N_WORKERS = 6
 
-ANIMALS = ["171019","171207","171208","171213","180110","180111","180131","180221",
-           "180228","180302","180419","180420","180423"]
+ANIMALS = ["day1","night1","night2","night3","night4","night5","day2","night6",
+           "night7","day3","day4","day5","day6"]
 CONDITIONS = ["lightON", "ongoing"]
 
 
