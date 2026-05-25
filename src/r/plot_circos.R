@@ -59,7 +59,7 @@ build_matrix <- function(df, region_order = NULL) {
   mat
 }
 
-# ─── Helper: draw single circos ──────────────────────────────────
+# ─── Helper: draw single circos with legends ────────────────────
 draw_circos <- function(mat, title_text, out_path, color_map = NULL) {
   regions <- rownames(mat)
   if (is.null(color_map)) {
@@ -69,16 +69,28 @@ draw_circos <- function(mat, title_text, out_path, color_map = NULL) {
     )
   }
 
-  png(out_path, width = 1200, height = 1200, res = 150)
-  par(mar = c(1, 1, 1, 1))
-
-  circos.clear()
-  circos.par(gap.after = c(rep(2, length(regions) - 1), 10),
-             cell.padding = c(0.02, 0, 0.02, 0))
-
-  # Make symmetric by averaging
+  # Symmetrize the matrix
   mat_sym <- (mat + t(mat)) / 2
   diag(mat_sym) <- 0
+
+  # Density range for colorbar
+  density_vals <- mat_sym[upper.tri(mat_sym)]
+  density_vals <- density_vals[density_vals > 0]
+  max_dens <- if (length(density_vals) > 0) max(density_vals) else 0.1
+
+  # Open PNG with extra width for legend
+  png(out_path, width = 1600, height = 1200, res = 150)
+  
+  # Layout: left 70% for circos, right 30% for legend
+  layout(matrix(c(1, 2), nrow = 1), widths = c(3, 1))
+  
+  # --- Panel 1: Circos ---
+  par(mar = c(1, 1, 3, 1))
+  circos.clear()
+  circos.par(
+    gap.after = c(rep(2, length(regions) - 1), 10),
+    cell.padding = c(0.02, 0, 0.02, 0)
+  )
 
   chordDiagram(mat_sym,
                grid.col = color_map,
@@ -87,12 +99,74 @@ draw_circos <- function(mat, title_text, out_path, color_map = NULL) {
                link.arr.type = "big.arrow",
                annotationTrack = c("name", "grid"),
                annotationTrackHeight = c(0.05, 0.05),
-               preAllocateTracks = list(
-                 track.height = 0.1
-               ))
-
-  title(title_text, cex = 0.9)
+               preAllocateTracks = list(track.height = 0.1))
+  title(title_text, cex = 0.8, line = 1)
   circos.clear()
+
+  # --- Panel 2: Legends ---
+  par(mar = c(14, 2, 4, 2))
+  plot.new()
+  plot.window(xlim = c(0, 1), ylim = c(0, 1))
+
+  # -- Region color legend --
+  y_top <- 0.95
+  y_step <- 0.06
+  n_regions <- length(regions)
+  
+  text(0.1, y_top + 0.03, "Brain Regions", pos = 4, font = 2, cex = 1.0, col = "#333333")
+  
+  for (i in seq_along(regions)) {
+    y_pos <- y_top - (i - 1) * y_step
+    region_name <- regions[i]
+    region_color <- color_map[region_name]
+    
+    # Color swatch
+    rect(0.05, y_pos - 0.02, 0.25, y_pos + 0.02,
+         col = region_color, border = "grey40", lwd = 0.8)
+    # Region name
+    text(0.30, y_pos, region_name, pos = 4, cex = 0.8, col = "#222222")
+  }
+
+  # -- Density colorbar --
+  y_bar_bottom <- y_top - n_regions * y_step - 0.10
+  y_bar_height <- 0.03
+  
+  text(0.1, y_bar_bottom + 0.07, "Connection Density",
+       pos = 4, font = 2, cex = 0.9, col = "#333333")
+
+  # Gradient bar
+  n_steps <- 100
+  bar_left <- 0.08
+  bar_width <- 0.65
+  bar_y <- y_bar_bottom
+  
+  density_colors <- colorRampPalette(c("#f7fbff", "#6baed6", "#08519c"))(n_steps)
+  step_width <- bar_width / n_steps
+  for (j in seq_len(n_steps)) {
+    rect(bar_left + (j - 1) * step_width, bar_y - y_bar_height/2,
+         bar_left + j * step_width, bar_y + y_bar_height/2,
+         col = density_colors[j], border = NA)
+  }
+  rect(bar_left, bar_y - y_bar_height/2,
+       bar_left + bar_width, bar_y + y_bar_height/2,
+       col = NA, border = "grey40", lwd = 0.8)
+
+  # Density labels
+  text(bar_left, bar_y - 0.05, "0", cex = 0.6, col = "#555555")
+  text(bar_left + bar_width, bar_y - 0.05,
+       sprintf("%.2f", round(max_dens, 2)), cex = 0.6, col = "#555555")
+  text(bar_left + bar_width/2, bar_y - 0.05,
+       "density", cex = 0.7, col = "#555555")
+
+  # -- Arrow direction legend --
+  y_arrow <- y_bar_bottom - 0.15
+  text(0.1, y_arrow + 0.03, "Arrow Direction",
+       pos = 4, font = 2, cex = 0.8, col = "#333333")
+  text(0.35, y_arrow, "→ outgoing from source region",
+       cex = 0.65, col = "#666666")
+  text(0.35, y_arrow - 0.05, "Link width ∝ connection density",
+       cex = 0.65, col = "#666666")
+
   dev.off()
   cat("  ", basename(out_path), "\n")
 }
