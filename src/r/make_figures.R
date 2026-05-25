@@ -54,35 +54,95 @@ p1 <- ggplot(yield, aes(x = region6, y = animal, fill = n)) +
 ggsave(here("figures", "main", "fig1_yield.png"), p1, width = 8, height = 7, dpi = 150)
 cat("  fig1_yield.png\n")
 
-# ─── Fig 2: Mixed-effects estimates ─────────────────────────────────
-cat("Generating Fig 2: LME model estimates\n")
+# ─── Fig 2: Mixed-effects interaction estimates ──────────────────────
+cat("Generating Fig 2: LME interaction estimates\n")
 
 stats_file <- here("results", "stats_first_level_glmcc.csv")
 if (file.exists(stats_file)) {
   stats_df <- read.csv(stats_file, stringsAsFactors = FALSE)
-  
-  # Filter to fixed effects (exclude ANOVA rows)
-  fixed <- stats_df[!grepl("^ANOVA_", stats_df$term), ]
-  fixed <- fixed[!is.na(fixed$std_error) & fixed$std_error > 0, ]
-  
-  p2 <- ggplot(fixed, aes(x = metric, y = estimate, color = term)) +
-    geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.5) +
-    geom_point(position = position_dodge(width = 0.5), size = 3) +
-    geom_errorbar(
-      aes(ymin = estimate - 1.96 * std_error,
-          ymax = estimate + 1.96 * std_error),
-      width = 0.2,
-      position = position_dodge(width = 0.5)
-    ) +
-    scale_color_brewer(palette = "Set1") +
-    labs(x = "Graph Metric", y = "Fixed Effect Estimate ± 95% CI",
-         title = "Fig 2: Mixed-effects model estimates (GLMCC)",
-         subtitle = "lmer(metric ~ condition + (1 | animal/neuron))") +
-    coord_flip() +
-    theme_minimal(base_size = 13)
 
-  ggsave(here("figures", "main", "fig2_lme.png"), p2, width = 10, height = 5, dpi = 150)
-  cat("  fig2_lme.png\n")
+  # Extract interaction terms only: conditionlightON:regionXX
+  interactions <- stats_df[
+    grepl("^conditionlightON:region", stats_df$term) &
+    !grepl("^ANOVA_", stats_df$term) &
+    !is.na(stats_df$std_error) & stats_df$std_error > 0,
+  ]
+
+  if (nrow(interactions) > 0) {
+    # Parse region name from term
+    interactions$region <- gsub("conditionlightON:region", "", interactions$term)
+    interactions$region <- factor(interactions$region,
+      levels = rev(unique(interactions$region)))  # reverse for forest plot order
+
+    # Add significance stars
+    interactions$sig <- ""
+    interactions$sig[interactions$p_value < 0.05]  <- "*"
+    interactions$sig[interactions$p_value < 0.01]  <- "**"
+    interactions$sig[interactions$p_value < 0.001] <- "***"
+
+    # Add metric label with ANOVA p-value if available
+    anova_rows <- stats_df[grepl("ANOVA_condition:region", stats_df$term), ]
+    metric_labels <- c(
+      node_strength = "Node Strength",
+      clustering_coefficient = "Clustering Coeff",
+      local_efficiency = "Local Efficiency",
+      hub_score = "Hub Score"
+    )
+    interactions$metric_label <- metric_labels[interactions$metric]
+
+    # Add ANOVA p-value annotation per metric
+    for (m in unique(interactions$metric)) {
+      arow <- anova_rows[anova_rows$metric == m, ]
+      if (nrow(arow) > 0) {
+        pval <- arow$p_value[1]
+        pstr <- if (pval < 0.001) sprintf("p=%.2e", pval)
+                else sprintf("p=%.4f", pval)
+        interactions$metric_label[interactions$metric == m] <-
+          paste0(interactions$metric_label[interactions$metric == m],
+                 "  (interaction ", pstr, ")")
+      }
+    }
+
+    # Color by direction: blue = lightON increases, red = lightON decreases
+    interactions$direction <- ifelse(interactions$estimate > 0, "increase", "decrease")
+
+    p2 <- ggplot(interactions,
+           aes(x = estimate, y = region, color = direction)) +
+      geom_vline(xintercept = 0, linetype = "dashed", color = "grey50", linewidth = 0.4) +
+      geom_point(size = 3) +
+      geom_errorbar(aes(xmin = estimate - 1.96 * std_error,
+                         xmax = estimate + 1.96 * std_error),
+                     height = 0.2, linewidth = 1) +
+      geom_text(aes(label = sig, x = estimate + sign(estimate) *
+                      (1.96 * std_error + max(abs(estimate)) * 0.08)),
+                size = 4, show.legend = FALSE) +
+      scale_color_manual(
+        values = c(increase = "#2166ac", decrease = "#b2182b"),
+        labels = c(increase = "LightON > Ongoing", decrease = "LightON < Ongoing"),
+        name = "LightON effect"
+      ) +
+      facet_wrap(~ metric_label, scales = "free_x", ncol = 2) +
+      labs(
+        x = "Interaction estimate (LightON:Region) ± 95% CI",
+        y = "Hypothalamic Region",
+        title = "Fig 2: Light-ON effect on functional connectivity varies by region",
+        subtitle = "lmer(metric ~ condition * region + (1 | animal/neuron)) — GLMCC, CCG-validated edges",
+        caption = "Estimates show how LightON effect differs from baseline (VM-thalamus + Ongoing).\n* p<0.05  ** p<0.01  *** p<0.001"
+      ) +
+      theme_minimal(base_size = 12) +
+      theme(
+        strip.text = element_text(face = "bold", size = 11),
+        panel.spacing = unit(1.5, "lines"),
+        legend.position = "bottom",
+        plot.caption = element_text(hjust = 0, size = 9, color = "grey40")
+      )
+
+    ggsave(here("figures", "main", "fig2_lme.png"), p2,
+           width = 12, height = 8, dpi = 150)
+    cat("  fig2_lme.png\n")
+  } else {
+    cat("  (skipped — no interaction terms in stats file)\n")
+  }
 } else {
   cat("  (skipped — no stats file)\n")
 }
