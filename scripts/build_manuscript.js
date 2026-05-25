@@ -430,6 +430,68 @@ const doc = new Document({
            "density ~ condition \u00D7 day_night + (1 | animal). Hub stability was assessed by within-animal " +
            "Spearman rank correlation with Wilcoxon signed-rank test and BCa bootstrap confidence intervals."),
 
+      new Paragraph({ children: [new PageBreak()] }),
+
+      // ═══════════════════════════════════════════════════════════
+      // REFERENCES
+      // ═══════════════════════════════════════════════════════════
+      heading("References"),
+
+      ...[
+        "Berson DM, Dunn FA, Takao M (2002) Phototransduction by retinal ganglion cells that set the circadian clock. Science 295:1070\u20131073.",
+        "Borst A, Theunissen FE (1999) Information theory and neural coding. Nat Neurosci 2:947\u2013957.",
+        "Friston KJ (2011) Functional and effective connectivity: a review. Brain Connect 1:13\u201336.",
+        "G\u00F6rlich D, Weber M (2017) Adaptation in the visual system: network, population, and single cell models. In: The Rewiring Brain (van Ooyen A, Butz-Ostendorf M, eds) pp 3\u201320. Academic Press.",
+        "Gr\u00FCn S, Rotter S, eds (2010) Analysis of Parallel Spike Trains. Springer.",
+        "Guimer\u00E0 R, Amaral LAN (2005) Cartography of complex networks: modules and universal roles. J Stat Mech P02001.",
+        "Hattar S, Liao HW, Takao M, Berson DM, Yau KW (2002) Melanopsin-containing retinal ganglion cells: architecture, projections, and intrinsic photosensitivity. Science 295:1065\u20131070.",
+        "Herman JP, McKlveen JM, Ghosal S, Kopp B, Wulsin A, Makinson R, Scheimann J, Myers B (2016) Regulation of the hypothalamic-pituitary-adrenocortical stress response. Compr Physiol 6:603\u2013621.",
+        "Ito S, Hansen ME, Heiland R, Lumsdaine A, Litke AM, Beggs JM (2011) Extending transfer entropy improves identification of effective connectivity in a spiking cortical network model. PLoS ONE 6:e27431.",
+        "Kleinberg JM (1999) Authoritative sources in a hyperlinked environment. J ACM 46:604\u2013632.",
+        "Kobayashi R, Kurita S, Kurth A, Kitano K, Mizuseki K, Diesmann M, Richmond BJ, Shinomoto S (2019) Reconstructing neuronal circuitry from parallel spike trains. Nat Commun 10:4468.",
+        "Kohn A (2007) Visual adaptation: physiology, mechanisms, and functional benefits. J Neurophysiol 97:3155\u20133164.",
+        "Kuznetsova A, Brockhoff PB, Christensen RHB (2017) lmerTest package: tests in linear mixed effects models. J Stat Softw 82:1\u201326.",
+        "Latora V, Marchiori M (2001) Efficient behavior of small-world networks. Phys Rev Lett 87:198701.",
+        "Lein ES et al. (2007) Genome-wide atlas of gene expression in the adult mouse brain. Nature 445:168\u2013176.",
+        "Louis S, Gerstein GL, Gr\u00FCn S, Diesmann M (2010) Surrogate spike train generation through dithering in operational time. Front Comput Neurosci 4:127.",
+        "Moore DG, Valentini G, Walker SI, Levin M (2018) Inform: efficient information-theoretic analysis of collective behaviors. Front Robot AI 5:60.",
+        "Morrison SF, Nakamura K (2011) Central neural pathways for thermoregulation. Front Biosci 16:74\u2013104.",
+        "Oh SW et al. (2014) A mesoscale connectome of the mouse brain. Nature 508:207\u2013214.",
+        "Pachitariu M, Steinmetz N, Kadir S, Carandini M, Harris KD (2016) Kilosort: realtime spike-sorting for extracellular electrophysiology. bioRxiv doi:10.1101/061481.",
+        "Perin R, Berger TK, Markram H (2011) A synaptic organizing principle for cortical neuronal groups. Proc Natl Acad Sci USA 108:5419\u20135424.",
+        "Pillow JW, Shlens J, Paninski L, Sher A, Litke AM, Chichilnisky EJ, Simoncelli EP (2008) Spatio-temporal correlations and visual signalling in a complete neuronal population. Nature 454:995\u2013999.",
+        "Quian Quiroga R, Panzeri S (2009) Extracting information from neuronal populations: information theory and decoding approaches. Nat Rev Neurosci 10:173\u2013185.",
+        "Saper CB, Lowell BB (2014) The hypothalamus. Curr Biol 24:R1111\u2013R1116.",
+        "Schreiber T (2000) Measuring information transfer. Phys Rev Lett 85:461\u2013464.",
+        "Song S, Sj\u00F6str\u00F6m PJ, Reigl M, Nelson S, Chklovskii DB (2005) Highly nonrandom features of synaptic connectivity in local cortical circuits. PLoS Biol 3:e68.",
+        "Sternson SM (2013) Hypothalamic survival circuits: blueprints for purposive behaviors. Neuron 77:810\u2013824.",
+        "Swanson LW (2000) Cerebral hemisphere regulation of motivated behavior. Brain Res 886:113\u2013164.",
+        "Telesford QK, Joyce KE, Hayasaka S, Burdette JH, Laurienti PJ (2011) The ubiquity of small-world networks. Brain Connect 1:367\u2013375.",
+        "Thompson RH, Swanson LW (2003) Structural characterization of a hypothalamic visceromotor pattern generator network. Brain Res Rev 41:153\u2013202.",
+        "van den Heuvel MP, Sporns O (2011) Rich-club organization of the human connectome. J Neurosci 31:15775\u201315786.",
+        "van den Heuvel MP, Sporns O (2013) Network hubs in the human brain. Trends Cogn Sci 17:683\u2013696.",
+        "Vicente R, Wibral M, Lindner M, Pipa G (2011) Transfer entropy\u2014a model-free measure of effective connectivity for the neurosciences. J Comput Neurosci 30:45\u201367.",
+        "Watts DJ, Strogatz SH (1998) Collective dynamics of \u2018small-world\u2019 networks. Nature 393:440\u2013442.",
+      ].map((ref, i) =>
+        new Paragraph({
+          spacing: { after: 60, line: 240 },
+          indent: { left: 720, hanging: 720 },
+          children: [new TextRun({ text: ref, size: 20 })]
+        })
+      ),
+
+      new Paragraph({ children: [new PageBreak()] }),
+
+      // ═══════════════════════════════════════════════════════════
+      // FIGURE LEGENDS
+      // ═══════════════════════════════════════════════════════════
+      heading("Figure Legends"),
+
+      para("Figure 1. Neuron yield and recording coverage. Per-animal neuron yield heatmap across nine hypothalamic regions, split by day (n = 6) and night (n = 7) recording phases. Numbers indicate neuron count per region. Color intensity represents recording density.", { bold: false }),
+      para("Figure 2. Condition \u00D7 region interaction estimates from linear mixed-effects models. Forest plot showing interaction terms (conditionLightON:region) for four graph metrics: node strength, clustering coefficient, local efficiency, and hub score. Positive estimates (blue) indicate metric increase under light-ON relative to ongoing baseline in VM-thalamus; negative estimates (red) indicate decrease. Error bars: 95% confidence intervals. Significance: * p < 0.05, ** p < 0.01, *** p < 0.001. Panel titles include overall interaction ANOVA p-values.", { bold: false }),
+      para("Figure 3. Region-level connectivity density. Mean connection density between hypothalamic region pairs during light-ON stimulation, shown separately for day (left) and night (right) animals. Density is normalized by the number of possible neuron pairs between regions, correcting for unequal neuron sampling. Color scale: white (low density) to red (high density). Only edges surviving BH-FDR validation (q = 0.05) are included.", { bold: false }),
+      para("Figure 4. Hub score stability across the ongoing-to-light transition. Per-animal Spearman rank correlation (\u03C1) of hub scores between the ongoing and light-ON conditions. Group-level Wilcoxon signed-rank test (V = 6, p = 0.92) and BCa bootstrap 95% confidence interval [\u22120.20, 0.09] indicate no significant hub reorganization by photic stimulation.", { bold: false }),
+
     ]
   }]
 });
