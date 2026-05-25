@@ -31,6 +31,14 @@ DAYNIGHT = {
     "day6": "D",
 }
 
+# Reverse mapping for put_inh file lookup (new → old)
+REVERSE_MAP = {
+    "day1": "171019", "night1": "171207", "night2": "171208",
+    "night3": "171213", "night4": "180110", "night5": "180111",
+    "day2": "180131", "night6": "180221", "night7": "180228",
+    "day3": "180302", "day4": "180419", "day5": "180420", "day6": "180423",
+}
+
 
 def parse_put_inh(animal: str) -> set[int]:
     """Parse put_inh file, return set of 1-indexed inhibitory neuron IDs."""
@@ -56,8 +64,10 @@ def main():
     # ─── Add EI column ───────────────────────────────────────────
     ei_map = {}
     for animal in ANIMALS:
-        inh_ids = parse_put_inh(animal)
-        animal_neurons = df[df["animal"] == int(animal)]
+        # Find old ID for put_inh file lookup
+        old_id = REVERSE_MAP.get(animal, animal)
+        inh_ids = parse_put_inh(old_id)
+        animal_neurons = df[df["animal"] == animal]
         for _, row in animal_neurons.iterrows():
             nid = int(row["neuron_id"])
             key = (animal, nid)
