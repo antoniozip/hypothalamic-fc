@@ -40,8 +40,8 @@ rule all:
         expand("results/stats_first_level_{estimator}.csv", estimator=ESTIMATORS),
         expand("results/stats_second_level_{estimator}.csv", estimator=ESTIMATORS),
         "figures/main/fig1_yield.png",
-        "figures/main/fig2_metrics.png",
-        "figures/main/fig3_circos.png",
+        "figures/main/fig2_lme.png",
+        "figures/main/fig3_region_conn.png",
         "figures/main/fig4_hub_stability.png",
         "figures/main/fig5_convergence.png",
 
@@ -230,8 +230,8 @@ rule figures:
         expand("results/{estimator}/density_{animal}_{condition}.csv",
                estimator=ESTIMATORS, animal=ANIMALS, condition=CONDITIONS),
     output:
-        "figures/main/fig2_metrics.png",
-        "figures/main/fig3_circos.png",
+        "figures/main/fig2_lme.png",
+        "figures/main/fig3_region_conn.png",
         "figures/main/fig5_convergence.png",
     shell:
         "Rscript src/r/make_figures.R"
