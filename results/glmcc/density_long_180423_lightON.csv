@@ -1,6 +1,6 @@
 "animal","condition","source","target","density"
 "180423","lightON","VMH","MC",0.666666666666667
-"180423","lightON","VMH","DMH",0.68421052631579
+"180423","lightON","VMH","DMH",0.684210526315789
 "180423","lightON","VMH","PH",0.930555555555556
 "180423","lightON","MC","VMH",1
 "180423","lightON","MC","DMH",0.592982456140351
