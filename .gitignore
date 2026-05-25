@@ -48,3 +48,5 @@ DATAday*/
 DATAnight*/
 bDATAday*/
 bDATAnight*/
+node_modules/
+package*.json
