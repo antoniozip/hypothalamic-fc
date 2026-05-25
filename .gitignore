@@ -38,3 +38,13 @@ graphify-out/
 
 # OS
 Thumbs.db
+
+# Animal rename symlinks
+DATAday*.mat
+DATAnight*.mat
+*day*_put_inh.txt
+*night*_put_inh.txt
+DATAday*/
+DATAnight*/
+bDATAday*/
+bDATAnight*/
