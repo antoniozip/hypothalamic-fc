@@ -10,6 +10,7 @@
 # 4. Region-pair-specific tests
 
 library(here)
+source(here::here("src", "r", "compat.R"))
 library(lmerTest)
 library(lme4)
 library(emmeans)

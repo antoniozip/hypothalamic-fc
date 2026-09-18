@@ -34,6 +34,10 @@ from validate_ccg import (
 )
 
 
+class RankMismatchError(ValueError):
+    """Raised when an adjacency matrix cannot be aligned to the neuron table."""
+
+
 PROJECT_ROOT = _SCRIPT_DIR.parent.parent
 
 
@@ -62,6 +66,40 @@ def _load_adjacency(animal: str, condition: str, estimator: str) -> tuple[np.nda
     from io import StringIO
     real = np.loadtxt(StringIO(raw), delimiter=",", dtype=float, ndmin=2)
     return real, real_path
+
+
+def _align_to_units(
+    adj: np.ndarray, spike_times: list[np.ndarray], source: Path,
+) -> np.ndarray:
+    """Expand an adjacency matrix so row i corresponds to unit i.
+
+    GLMCC was run on the spike-bearing units only, so a recording containing
+    spike-free units yields a matrix smaller than the unit count. Reinserting a
+    zero row and column at each spike-free index restores the correspondence
+    with neuron_id in data/processed/neurons.csv; a unit with no spikes has no
+    connections, so zero is the correct value rather than a placeholder.
+    """
+    n_units = len(spike_times)
+    if adj.shape[0] == n_units:
+        return adj
+
+    empty_idx = [i for i, t in enumerate(spike_times) if len(t) == 0]
+    if adj.shape[0] + len(empty_idx) != n_units:
+        raise RankMismatchError(
+            f"{source.name}: matrix is {adj.shape[0]}x{adj.shape[0]} but the "
+            f"recording has {n_units} units and {len(empty_idx)} of them are "
+            f"spike-free. The matrix does not describe this unit set."
+        )
+
+    keep = [i for i in range(n_units) if i not in set(empty_idx)]
+    aligned = np.zeros((n_units, n_units), dtype=float)
+    aligned[np.ix_(keep, keep)] = adj
+    print(
+        f"  Aligned {source.name}: {adj.shape[0]} -> {n_units} units "
+        f"(zero rows inserted at unit index {empty_idx})",
+        flush=True,
+    )
+    return aligned
 
 
 def _validate_with_surrogates(
@@ -102,8 +140,8 @@ def _validate_with_surrogates(
 
 
 def _validate_with_ccg(
-    animal: str, condition: str, fdr_q: float = 0.05,
-) -> tuple[np.ndarray, np.ndarray]:
+    animal: str, condition: str, fdr_q: float = 0.05, n_surrogates: int = 100,
+) -> tuple[np.ndarray, int, list[np.ndarray]]:
     """Validate using CCG peaks + shuffle-ISI surrogates (on-the-fly)."""
     print("  Loading spike trains from .mat files...", flush=True)
     real_times = load_real_spike_times(animal, condition)
@@ -111,10 +149,13 @@ def _validate_with_ccg(
     print("  Computing CCG peak matrix...", flush=True)
     real_peaks = ccg_peak_matrix(real_times)
 
-    print("  Generating shuffle-ISI surrogates and computing p-values...", flush=True)
-    p_values, n_units = compute_empirical_p_values(real_times, real_peaks)
+    print(f"  Generating {n_surrogates} shuffle-ISI surrogates and computing p-values...",
+          flush=True)
+    p_values, n_units = compute_empirical_p_values(
+        real_times, real_peaks, n_surrogates=n_surrogates
+    )
 
-    return p_values, n_units
+    return p_values, n_units, real_times
 
 
 def validate_edges(
@@ -124,6 +165,7 @@ def validate_edges(
     method: str = "ccg",
     fdr_q: float = 0.05,
     use_surrogates: bool = False,
+    n_surrogates: int = 100,
 ) -> tuple[Path, dict]:
     """Validate edges and write validated adjacency + stats.
 
@@ -137,7 +179,16 @@ def validate_edges(
     # --- Get p-values ---
     if method == "ccg":
         print(f"Validating {animal}/{condition} with CCG + shuffle-ISI surrogates...", flush=True)
-        p_values, n_units = _validate_with_ccg(animal, condition, fdr_q)
+        p_values, n_units, real_times = _validate_with_ccg(
+            animal, condition, fdr_q, n_surrogates
+        )
+        real, real_path = _load_adjacency(animal, condition, estimator)
+        real = _align_to_units(real, real_times, real_path)
+        if real.shape[0] != n_units:
+            raise RankMismatchError(
+                f"{real_path.name}: {real.shape[0]} units after alignment but "
+                f"the CCG mask covers {n_units}"
+            )
 
     elif method == "glmcc":
         if not use_surrogates:
@@ -164,22 +215,36 @@ def validate_edges(
     # --- Write validated adjacency ---
     n_possible = n_units * (n_units - 1)
 
-    if method == "ccg":
-        # CCG method: write both validated peaks and p-values
-        real_peaks = ccg_peak_matrix(load_real_spike_times(animal, condition))
-        validated = real_peaks.copy()
-        validated[~reject] = 0.0
-    else:
-        validated = real.copy()
-        validated[~reject] = 0.0
+    # Both methods store the same quantity: the estimator's own coupling weights,
+    # masked by whichever significance test was requested. Substituting the CCG
+    # peak count here instead made lightON a spike count while ongoing stayed a
+    # binary mask, so `node_strength ~ condition` compared encodings.
+    validated = real.copy()
+    validated[~reject] = 0.0
 
     out_dir = PROJECT_ROOT / "results" / estimator
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / f"validated_adj_{animal}_{condition}.csv"
-    fmt = "%d" if method == "ccg" else "%.6f"
-    np.savetxt(str(out_path), validated, delimiter=",", fmt=fmt)
+    np.savetxt(str(out_path), validated, delimiter=",", fmt="%.6f")
 
-    # Write p-values for transparency
+    # Provenance travels with the matrix. A run summary is a shared file that a
+    # later run can overwrite; a sidecar cannot be invalidated by an unrelated run.
+    import json
+    from datetime import datetime, timezone
+    meta_path = out_path.with_suffix(".meta.json")
+    meta_path.write_text(json.dumps({
+        "encoding": f"{estimator}_weight_masked",
+        "method": method,
+        "n_units": int(n_units),
+        "n_surrogates": int(n_surrogates),
+        "fdr_q": fdr_q,
+        "fdr_procedure": "benjamini_hochberg_step_up",
+        "written_at": datetime.now(timezone.utc).isoformat(),
+    }, indent=2))
+
+    # Write p-values for transparency. These are the expensive part of the
+    # pipeline; keeping them on disk means the FDR level or the encoding can be
+    # revisited without regenerating surrogates.
     p_path = out_dir / f"p_values_{animal}_{condition}.csv"
     np.savetxt(str(p_path), p_values, delimiter=",", fmt="%.6f")
 
@@ -191,6 +256,8 @@ def validate_edges(
         "condition": condition,
         "estimator": estimator,
         "method": method,
+        "encoding": f"{estimator}_weight_masked",
+        "n_surrogates": n_surrogates,
         "n_units": n_units,
         "n_possible_edges": n_possible,
         "n_significant": n_significant,
@@ -223,12 +290,15 @@ def main():
     parser.add_argument("--surrogates", action="store_true",
                         help="Required when --method glmcc: use pre-computed surrogate files")
     parser.add_argument("--fdr-q", type=float, default=0.05)
+    parser.add_argument("--n-surrogates", type=int, default=100,
+                        help="Shuffle-ISI surrogates per unit (default: 100)")
     args = parser.parse_args()
 
     out_path, stats = validate_edges(
         args.animal, args.condition, args.estimator,
         method=args.method,
         fdr_q=args.fdr_q,
+        n_surrogates=args.n_surrogates,
         use_surrogates=args.surrogates,
     )
     print(f"\nValidated adjacency: {out_path}")

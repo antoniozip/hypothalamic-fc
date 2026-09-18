@@ -6,6 +6,7 @@
 
 library(igraph)
 library(here)
+source(here::here("src", "r", "compat.R"))
 
 args <- commandArgs(trailingOnly = TRUE)
 animal <- NULL
@@ -50,19 +51,38 @@ hub_score <- (hits_scores(g))$hub
 z_score <- (strength - mean(strength)) / sd(strength)
 z_score[is.na(z_score)] <- 0
 
+# Region labels are mapped positionally: matrix row i is neuron_id i. That
+# holds only while the adjacency covers every unit in neurons.csv. Loaders that
+# drop spike-free units silently shift every later index, so a rank mismatch is
+# a hard error rather than something to paper over with "unknown".
 regions_path <- here("data", "processed", "neurons.csv")
 if (file.exists(regions_path)) {
   neurons_df <- read.csv(regions_path, stringsAsFactors = FALSE)
   neurons_df <- neurons_df[neurons_df$animal == animal, ]
+
+  if (nrow(neurons_df) != n_nodes) {
+    stop(sprintf(
+      paste0("Rank mismatch for %s/%s: adjacency has %d nodes but neurons.csv ",
+             "lists %d neurons. Positional region mapping would mislabel every ",
+             "neuron after the first missing unit. Re-run validation so the ",
+             "matrix covers all units (see scripts/revalidate_all.py)."),
+      animal, condition, n_nodes, nrow(neurons_df)
+    ))
+  }
+
+  missing_ids <- setdiff(seq_len(n_nodes), neurons_df$neuron_id)
+  if (length(missing_ids) > 0) {
+    stop(sprintf("Animal %s: neurons.csv has no row for neuron_id %s",
+                 animal, paste(missing_ids, collapse = ", ")))
+  }
+
   region_vec <- rep("unknown", n_nodes)
   for (row_idx in seq_len(nrow(neurons_df))) {
     nid <- neurons_df$neuron_id[row_idx]
-    if (nid >= 1 && nid <= n_nodes) {
-      region_vec[nid] <- neurons_df$region6[row_idx]
-    }
+    region_vec[nid] <- neurons_df$region6[row_idx]
   }
 } else {
-  region_vec <- rep("unknown", n_nodes)
+  stop(sprintf("Missing %s - region labels are required", regions_path))
 }
 
 out_df <- data.frame(

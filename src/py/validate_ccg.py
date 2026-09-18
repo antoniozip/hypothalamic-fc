@@ -67,52 +67,51 @@ def load_real_spike_times(animal: str, condition: str) -> list[np.ndarray]:
     times = []
     for i in range(n):
         t = np.atleast_1d(ts[0, i][0])
-        if len(t) > 0:
-            times.append(t.astype(float))  # .mat values are in ms
+        # Spike-free units are kept as empty arrays. Dropping them shifts every
+        # later matrix index relative to neuron_id in data/processed/neurons.csv,
+        # which src/r/compute_graph_metrics.R maps positionally.
+        times.append(t.astype(float))  # .mat values are in ms
     return times
 
 
-def _ccg_peak_fast(a_ms: np.ndarray, b_ms: np.ndarray) -> float:
-    """Fast CCG peak using binned sliding window. O(N) instead of FFT's O(N log N)."""
-    t_min = min(a_ms[0], b_ms[0])
-    t_max = max(a_ms[-1], b_ms[-1])
-    dur = int(np.ceil(t_max - t_min)) + 1
-    bin_a = np.zeros(dur, dtype=np.float32)
-    bin_b = np.zeros(dur, dtype=np.float32)
-    np.add.at(bin_a, np.floor(a_ms - t_min).astype(int), 1)
-    np.add.at(bin_b, np.floor(b_ms - t_min).astype(int), 1)
-    hw = int(WINDOW_MS / BIN_MS)
-    shifts = np.arange(-hw, hw + 1)
-    best = 0
-    for s in shifts:
-        if s < 0:
-            c = np.dot(bin_a[-s:], bin_b[:s])
-        elif s > 0:
-            c = np.dot(bin_a[:-s], bin_b[s:])
-        else:
-            c = np.dot(bin_a, bin_b)
-        if c > best:
-            best = c
-    return int(best)
-
-
 def ccg_peak_one_pair(a_ms: np.ndarray, b_ms: np.ndarray) -> float:
-    """CCG peak for a single neuron pair. Uses fast method for large trains."""
+    """CCG peak for a single neuron pair: the largest count in any BIN_MS bin
+    of the cross-correlogram over lags in [-WINDOW_MS, +WINDOW_MS].
+
+    Only spike pairs that actually fall inside the window are materialised, via
+    searchsorted, so the cost tracks the number of coincidences rather than
+    len(a) * len(b). Results are identical to the dense-difference form.
+    """
     if len(a_ms) < 2 or len(b_ms) < 2:
         return 0.0
-    if len(a_ms) > 100000 or len(b_ms) > 100000:
-        return _ccg_peak_fast(a_ms, b_ms)
+
     n_bins = int(2 * WINDOW_MS / BIN_MS) + 1
-    hist = np.zeros(n_bins, dtype=int)
-    chunk = max(1, len(b_ms) // 20)
+    hist = np.zeros(n_bins, dtype=np.int64)
+
+    # Chunk over b so the coincidence list stays bounded on dense recordings.
+    chunk = 200_000
     for i0 in range(0, len(b_ms), chunk):
         sub = b_ms[i0:i0 + chunk]
-        diffs = sub[:, None] - a_ms[None, :]
-        mask = np.abs(diffs) <= WINDOW_MS
-        valid = diffs[mask]
-        if len(valid) > 0:
-            idx = ((valid + WINDOW_MS) / BIN_MS).astype(int)
-            np.add.at(hist, idx, 1)
+        lo = np.searchsorted(a_ms, sub - WINDOW_MS, side="left")
+        hi = np.searchsorted(a_ms, sub + WINDOW_MS, side="right")
+        counts = hi - lo
+        total = int(counts.sum())
+        if total == 0:
+            continue
+
+        # Expand (b spike, matching a spikes) into flat index arrays.
+        ends = np.cumsum(counts)
+        starts = ends - counts
+        offsets = np.arange(total) - np.repeat(starts, counts)
+        a_idx = np.repeat(lo, counts) + offsets
+        b_idx = np.repeat(np.arange(len(sub)), counts)
+
+        diffs = sub[b_idx] - a_ms[a_idx]
+        diffs = diffs[np.abs(diffs) <= WINDOW_MS]
+        if diffs.size:
+            idx = ((diffs + WINDOW_MS) / BIN_MS).astype(np.int64)
+            hist += np.bincount(idx, minlength=n_bins)[:n_bins]
+
     return int(hist.max())
 
 
@@ -136,6 +135,7 @@ def compute_empirical_p_values(
     real_times: list[np.ndarray],
     real_peaks: np.ndarray,
     n_surrogates: int = 100,
+    seed: int = 42,
 ) -> tuple[np.ndarray, int]:
     """Compute empirical p-values via shuffle-ISI surrogates.
 
@@ -145,15 +145,25 @@ def compute_empirical_p_values(
     count_exceed = np.zeros((n_units, n_units), dtype=int)
     total_surr = 0
 
-    # Build Neo SpikeTrain objects once
+    rng = np.random.default_rng(seed)
+    np.random.seed(seed)  # elephant's surrogates() draws from the legacy global RNG
+
+    # Build Neo SpikeTrain objects once. A unit with fewer than two spikes has no
+    # ISI distribution to shuffle, so it is carried through unchanged.
+    t_stop_global = max((t[-1] for t in real_times if len(t) > 0), default=1.0) + 1.0
     spike_trains = []
     for t in real_times:
-        st = SpikeTrain(t * s, t_stop=t[-1] + 1.0)
-        spike_trains.append(st)
+        if len(t) == 0:
+            spike_trains.append(None)
+        else:
+            spike_trains.append(SpikeTrain(t * s, t_stop=t_stop_global))
 
     for sid in range(n_surrogates):
         surr_ms_list = []
         for i in range(n_units):
+            if spike_trains[i] is None or len(real_times[i]) < 3:
+                surr_ms_list.append(real_times[i].copy())
+                continue
             try:
                 surr = surrogates(
                     spike_trains[i], n_surrogates=1, method="shuffle_isis"
@@ -181,18 +191,24 @@ def apply_bh_fdr(p_values: np.ndarray, fdr_q: float = 0.05) -> np.ndarray:
     Only off-diagonal pairs are tested (n_units * (n_units - 1) tests).
     """
     n_units = p_values.shape[0]
-    n_pairs = n_units * (n_units - 1)
 
     mask = ~np.eye(n_units, dtype=bool)
     p_flat = p_values[mask]  # off-diagonal only
     n_tests = len(p_flat)
 
-    sorted_idx = np.argsort(p_flat)
+    # Step-up procedure: find the largest rank k with p_(k) <= q*k/m, then reject
+    # every hypothesis up to that rank. Testing each p_(k) against its own
+    # threshold instead is not BH -- with p-values on a 1/n_surrogates grid the
+    # ties are broken by argsort order, so edge selection follows neuron
+    # numbering rather than the data.
+    sorted_idx = np.argsort(p_flat, kind="stable")
+    p_sorted = p_flat[sorted_idx]
+    thresholds = fdr_q * np.arange(1, n_tests + 1) / n_tests
+    passing = np.flatnonzero(p_sorted <= thresholds)
+
     reject_flat = np.zeros(n_tests, dtype=bool)
-    for k, idx in enumerate(sorted_idx):
-        threshold = fdr_q * (k + 1) / n_tests
-        if p_flat[idx] <= threshold:
-            reject_flat[idx] = True
+    if passing.size > 0:
+        reject_flat[sorted_idx[: passing.max() + 1]] = True
 
     reject = np.zeros((n_units, n_units), dtype=bool)
     reject[mask] = reject_flat

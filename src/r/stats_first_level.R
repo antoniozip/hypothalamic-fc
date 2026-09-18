@@ -11,6 +11,7 @@
 # Output: results/stats_first_level_<estimator>.csv
 
 library(here)
+source(here::here("src", "r", "compat.R"))
 library(lmerTest)
 library(lme4)
 
