@@ -68,7 +68,10 @@ def simulate(n_neurons, rate_hz, duration_s, n_exc, n_inh, p_transmit, delay_ms,
 
 def run_glmcc(trains, duration_s, workdir):
     workdir.mkdir(parents=True, exist_ok=True)
-    for i, t in enumerate(trains, start=1):
+    # Cell files are 0-INDEXED: both implementations loop 0..n-1, and the real
+    # DATA*/ directories run cell0.txt..cell{n-1}.txt. Writing 1-indexed files
+    # leaves cell0 missing and shifts every ground-truth index by one.
+    for i, t in enumerate(trains):
         np.savetxt(workdir / f"cell{i}.txt", t * 1000.0, fmt="%.3f")   # 0-based ms
     proc = subprocess.run([str(BIN), ".", str(len(trains)), "exp", "GLM",
                            f"{duration_s * 1.01:.1f}"],
