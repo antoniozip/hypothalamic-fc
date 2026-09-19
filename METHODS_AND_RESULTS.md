@@ -428,6 +428,33 @@ p < 0.001, n = 130), the opposite of that prediction. It is ~2% of the effect si
 reported and runs in the opposite direction, so it is a different phenomenon and needs the
 symmetric-thinning control before interpretation.
 
+### 5.5 Putative E/I class explains nothing
+
+Full analysis in `reports/ei_differential/`; figure `figures/main/figE1_ei_differential.png`.
+
+`{animal}_put_inh.txt` marks narrow-spiking units (half-width < 0.6 ms and trough-to-peak
+< 0.65 ms, `tim_stuff.m:714`), a waveform criterion independent of GLMCC. **Only 7 of 13 animals
+were ever classified** — those label 38.7–51.1% of units inhibitory, the other six label
+0–3.2%, with nothing in between. Analysable set: 399 units, 178 I / 221 E.
+
+| analysis | result |
+|---|---|
+| firing rate by class | I/E = 1.01×, paired p = 0.33 — **no difference** |
+| outgoing coupling sign | E 0.988 vs I 0.984 fraction negative, p = 0.93 — uninformative: 94.9% of units emit only negative couplings |
+| node metrics (4) | all p ≥ 0.37 |
+| edge types E→E / E→I / I→E / I→E | all Holm p = 1.00; direction holds in only 5–6 of 14 |
+
+The pooled edge-type numbers look orderly (E→E 9.38% > I→I 7.29%) but that is Simpson's paradox
+— the per-animal medians reverse the sign, and the paired test is null.
+
+**Two methodological findings outweigh the nulls.** First, `src/py/ei_classification.py` assigns
+`"E"` to every unit not listed as inhibitory, so **279 units (41% of the dataset) in the six
+unclassified animals are silently labelled excitatory**; `data/processed/neurons_ei.csv` carries
+those labels. Use `data/processed/neurons_ei_strict.csv` instead. Second, a narrow-spiking
+population that does not fire faster than the broad-spiking one, and that is 44.6% of all units,
+is not behaving like a fast-spiking interneuron population — the criterion may not be separating
+cell types here at all, which caps what any of these nulls can mean.
+
 ## 6. What changed our belief
 
 | before this round | after |
@@ -469,6 +496,7 @@ Only five figures survive this round; the rest were built on discarded data.
 | `figures/main/figT2_null_models.png` | z-scores for modularity / clustering vs nulls | current; supports §4.6 — 3/13 and 2/13 significant |
 | `figures/main/figJ1_jitter_sensitivity.png` | edge survival vs displacement, with shuffle floor and the spike-count mechanism | current; supports §5.2a — edges are timing-dependent |
 | `figures/main/figR1_rate_matched.png` | the rate confound, F before/after matching, paired matched densities | current; supports §5.4 — the key negative result |
+| `figures/main/figE1_ei_differential.png` | classifiability, absent rate confound, degenerate sign distribution, pooled-vs-paired edge types | current; supports §5.5 |
 
 `figT2_small_world.png` was **not** produced: there is nothing to plot (§4.6).
 
@@ -512,6 +540,7 @@ the purge commit message); superseded reports are in `reports/superseded/`.
 | Rate-matched contrast | `python3 scripts/rate_matched_contrast.py` | ~1 min |
 | Matched metrics + LME | `ESTIMATOR=glmcc_rm bash scripts/rebuild_downstream.sh` | ~3 min |
 | Matched figure | `python3 scripts/plot_rate_matched.py` | ~10 s |
+| E/I differential | `python3 scripts/ei_differential.py && python3 scripts/plot_ei_differential.py` | ~20 s |
 | Jitter sensitivity sweep | `python3 scripts/jitter_sensitivity.py` | ~45 min |
 | Sweep figure | `python3 scripts/plot_jitter_sensitivity.py` | ~30 s |
 | Edge validation | `python3 scripts/revalidate_all.py` | ~35 min |

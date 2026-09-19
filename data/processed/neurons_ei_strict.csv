@@ -1,0 +1,683 @@
+animal,neuron_id,region6,region9,region_raw,allen_region,allen_acronym,AP_mm,ML_mm,DV_mm,ccf_ap_um,ccf_dv_um,ccf_ml_um,paxinos_region,ei,classifiable,pct_inh_animal
+day1,1,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.268451037,3.594568771,6300,4595,5968,IAM thalamic nucleus,unclassified,False,1.6
+day1,2,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.268451037,3.594568771,6300,4595,5968,IAM thalamic nucleus,unclassified,False,1.6
+day1,3,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.272444945,3.571918192,6300,4572,5972,IAM thalamic nucleus,unclassified,False,1.6
+day1,4,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.276438853,3.549267614,6300,4549,5976,IAM thalamic nucleus,unclassified,False,1.6
+day1,5,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanterodorsal nucleus of the thalamus,IAD,-0.9,0.304396209,3.390713566,6300,4391,6004,IAD thalamic nucleus,unclassified,False,1.6
+day1,6,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.276438853,3.549267614,6300,4549,5976,IAM thalamic nucleus,unclassified,False,1.6
+day1,7,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.276438853,3.549267614,6300,4549,5976,IAM thalamic nucleus,unclassified,False,1.6
+day1,8,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.276438853,3.549267614,6300,4549,5976,IAM thalamic nucleus,unclassified,False,1.6
+day1,9,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.276438853,3.549267614,6300,4549,5976,IAM thalamic nucleus,unclassified,False,1.6
+day1,10,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.276438853,3.549267614,6300,4549,5976,IAM thalamic nucleus,unclassified,False,1.6
+day1,11,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.180585059,4.092881494,6300,5093,5881,Nucleus reuniens (Re),unclassified,False,1.6
+day1,12,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanterodorsal nucleus of the thalamus,IAD,-0.9,0.296408393,3.436014723,6300,4436,5996,IAD thalamic nucleus,unclassified,False,1.6
+day1,13,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.180585059,4.092881494,6300,5093,5881,Nucleus reuniens (Re),unclassified,False,1.6
+day1,14,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.180585059,4.092881494,6300,5093,5881,Nucleus reuniens (Re),unclassified,False,1.6
+day1,15,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.180585059,4.092881494,6300,5093,5881,Nucleus reuniens (Re),unclassified,False,1.6
+day1,16,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.288420577,3.481315879,6300,4481,5988,IAM thalamic nucleus,unclassified,False,1.6
+day1,17,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.172597243,4.13818265,6300,5138,5873,Nucleus reuniens (Re),unclassified,False,1.6
+day1,18,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.172597243,4.13818265,6300,5138,5873,Nucleus reuniens (Re),unclassified,False,1.6
+day1,19,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.288420577,3.481315879,6300,4481,5988,IAM thalamic nucleus,unclassified,False,1.6
+day1,20,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.164609426,4.183483807,6300,5183,5865,Nucleus reuniens (Re),unclassified,False,1.6
+day1,21,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.280432761,3.526617036,6300,4527,5980,IAM thalamic nucleus,unclassified,False,1.6
+day1,22,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.164609426,4.183483807,6300,5183,5865,Nucleus reuniens (Re),unclassified,False,1.6
+day1,23,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.280432761,3.526617036,6300,4527,5980,IAM thalamic nucleus,unclassified,False,1.6
+day1,24,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.280432761,3.526617036,6300,4527,5980,IAM thalamic nucleus,unclassified,False,1.6
+day1,25,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.164609426,4.183483807,6300,5183,5865,Nucleus reuniens (Re),unclassified,False,1.6
+day1,26,VM-thalamus,VM-thalamus,ventromedial thalamus,Rhomboid nucleus,RH,-0.9,0.24049368,3.753122819,6300,4753,5940,Rhomboid nucleus,unclassified,False,1.6
+day1,27,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.15662161,4.228784964,6300,5229,5857,Nucleus reuniens (Re),unclassified,False,1.6
+day1,28,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.15662161,4.228784964,6300,5229,5857,Nucleus reuniens (Re),unclassified,False,1.6
+day1,29,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.15662161,4.228784964,6300,5229,5857,Nucleus reuniens (Re),unclassified,False,1.6
+day1,30,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.15662161,4.228784964,6300,5229,5857,Nucleus reuniens (Re),unclassified,False,1.6
+day1,31,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.22052414,3.866375711,6300,4866,5921,Nucleus reuniens (Re),unclassified,False,1.6
+day1,32,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.184578967,4.070230915,6300,5070,5885,Nucleus reuniens (Re),unclassified,False,1.6
+day1,33,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.22052414,3.866375711,6300,4866,5921,Nucleus reuniens (Re),unclassified,False,1.6
+day1,34,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.184578967,4.070230915,6300,5070,5885,Nucleus reuniens (Re),unclassified,False,1.6
+day1,35,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.192566783,4.024929759,6300,5025,5893,Nucleus reuniens (Re),unclassified,False,1.6
+day1,36,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.200554599,3.979628602,6300,4980,5901,Nucleus reuniens (Re),unclassified,False,1.6
+day1,37,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.208542415,3.934327446,6300,4934,5909,Nucleus reuniens (Re),unclassified,False,1.6
+day1,38,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.152627702,4.251435542,6300,5251,5853,Nucleus reuniens (Re),unclassified,False,1.6
+day1,39,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.152627702,4.251435542,6300,5251,5853,Nucleus reuniens (Re),unclassified,False,1.6
+day1,40,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.160615518,4.206134385,6300,5206,5861,Nucleus reuniens (Re),unclassified,False,1.6
+day1,41,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.160615518,4.206134385,6300,5206,5861,Nucleus reuniens (Re),unclassified,False,1.6
+day1,42,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.160615518,4.206134385,6300,5206,5861,Nucleus reuniens (Re),unclassified,False,1.6
+day1,43,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.292414485,3.458665301,6300,4459,5992,IAM thalamic nucleus,unclassified,False,1.6
+day1,44,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.292414485,3.458665301,6300,4459,5992,IAM thalamic nucleus,unclassified,False,1.6
+day1,45,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.168603335,4.160833229,6300,5161,5869,Nucleus reuniens (Re),unclassified,False,1.6
+day1,46,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanteromedial nucleus of the thalamus,IAM,-0.9,0.292414485,3.458665301,6300,4459,5992,IAM thalamic nucleus,unclassified,False,1.6
+day1,47,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.176591151,4.115532072,6300,5116,5877,Nucleus reuniens (Re),unclassified,False,1.6
+day1,48,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanterodorsal nucleus of the thalamus,IAD,-0.9,0.300402301,3.413364144,6300,4413,6000,IAD thalamic nucleus,unclassified,False,1.6
+day1,49,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanterodorsal nucleus of the thalamus,IAD,-0.9,0.300402301,3.413364144,6300,4413,6000,IAD thalamic nucleus,unclassified,False,1.6
+day1,50,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.176591151,4.115532072,6300,5116,5877,Nucleus reuniens (Re),unclassified,False,1.6
+day1,51,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanterodorsal nucleus of the thalamus,IAD,-0.9,0.300402301,3.413364144,6300,4413,6000,IAD thalamic nucleus,unclassified,False,1.6
+day1,52,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanterodorsal nucleus of the thalamus,IAD,-0.9,0.300402301,3.413364144,6300,4413,6000,IAD thalamic nucleus,unclassified,False,1.6
+day1,53,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanterodorsal nucleus of the thalamus,IAD,-0.9,0.308390118,3.368062988,6300,4368,6008,IAD thalamic nucleus,unclassified,False,1.6
+day1,54,VM-thalamus,VM-thalamus,ventromedial thalamus,Interanterodorsal nucleus of the thalamus,IAD,-0.9,0.308390118,3.368062988,6300,4368,6008,IAD thalamic nucleus,unclassified,False,1.6
+day1,55,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.144639886,4.296736699,6300,5297,5845,Nucleus reuniens (Re),unclassified,False,1.6
+day1,56,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.144639886,4.296736699,6300,5297,5845,Nucleus reuniens (Re),unclassified,False,1.6
+day1,57,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.144639886,4.296736699,6300,5297,5845,Nucleus reuniens (Re),unclassified,False,1.6
+day1,58,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.196560691,4.002279181,6300,5002,5897,Nucleus reuniens (Re),unclassified,False,1.6
+day1,59,VM-thalamus,VM-thalamus,ventromedial thalamus,Mediodorsal nucleus of thalamus,MD,-1.3,0.304396209,3.390713566,6700,4391,6004,Mediodorsal thalamic nucleus (MD),unclassified,False,1.6
+day1,60,VM-thalamus,VM-thalamus,ventromedial thalamus,Mediodorsal nucleus of thalamus,MD,-1.3,0.304396209,3.390713566,6700,4391,6004,Mediodorsal thalamic nucleus (MD),unclassified,False,1.6
+day1,61,VM-thalamus,VM-thalamus,ventromedial thalamus,Mediodorsal nucleus of thalamus,MD,-1.3,0.304396209,3.390713566,6700,4391,6004,Mediodorsal thalamic nucleus (MD),unclassified,False,1.6
+day1,62,VM-thalamus,VM-thalamus,ventromedial thalamus,Mediodorsal nucleus of thalamus,MD,-1.3,0.304396209,3.390713566,6700,4391,6004,Mediodorsal thalamic nucleus (MD),unclassified,False,1.6
+day1,63,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.3,0.192566783,4.024929759,6700,5025,5893,Submedial thalamic nucleus (Sub),unclassified,False,1.6
+day1,64,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.3,0.192566783,4.024929759,6700,5025,5893,Submedial thalamic nucleus (Sub),unclassified,False,1.6
+day1,65,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.3,0.208542415,3.934327446,6700,4934,5909,Submedial thalamic nucleus (Sub),unclassified,False,1.6
+day1,66,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.3,0.284426669,3.503966457,6700,4504,5984,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,67,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.3,0.292414485,3.458665301,6700,4459,5992,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,68,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.3,0.292414485,3.458665301,6700,4459,5992,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,69,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.3,0.300402301,3.413364144,6700,4413,6000,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,70,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.3,0.300402301,3.413364144,6700,4413,6000,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,71,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.3,0.300402301,3.413364144,6700,4413,6000,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,72,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.3,0.300402301,3.413364144,6700,4413,6000,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,73,VM-thalamus,VM-thalamus,ventromedial thalamus,Mediodorsal nucleus of thalamus,MD,-1.3,0.308390118,3.368062988,6700,4368,6008,Mediodorsal thalamic nucleus (MD),unclassified,False,1.6
+day1,74,VM-thalamus,VM-thalamus,ventromedial thalamus,Mediodorsal nucleus of thalamus,MD,-1.3,0.308390118,3.368062988,6700,4368,6008,Mediodorsal thalamic nucleus (MD),unclassified,False,1.6
+day1,75,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.3,0.196560691,4.002279181,6700,5002,5897,Submedial thalamic nucleus (Sub),unclassified,False,1.6
+day1,76,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.3,0.196560691,4.002279181,6700,5002,5897,Submedial thalamic nucleus (Sub),unclassified,False,1.6
+day1,77,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.3,0.212536323,3.911676867,6700,4912,5913,Submedial thalamic nucleus (Sub),unclassified,False,1.6
+day1,78,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.3,0.204548507,3.956978024,6700,4957,5905,Submedial thalamic nucleus (Sub),unclassified,False,1.6
+day1,79,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.3,0.204548507,3.956978024,6700,4957,5905,Submedial thalamic nucleus (Sub),unclassified,False,1.6
+day1,80,VM-thalamus,VM-thalamus,ventromedial thalamus,Rhomboid nucleus,RH,-1.1,0.26046322,3.639869927,6500,4640,5960,Rhomboid nucleus,unclassified,False,1.6
+day1,81,VM-thalamus,VM-thalamus,ventromedial thalamus,Rhomboid nucleus,RH,-1.1,0.26046322,3.639869927,6500,4640,5960,Rhomboid nucleus,unclassified,False,1.6
+day1,82,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.268451037,3.594568771,6500,4595,5968,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,83,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.272444945,3.571918192,6500,4572,5972,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,84,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.272444945,3.571918192,6500,4572,5972,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,85,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.268451037,3.594568771,6500,4595,5968,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,86,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.272444945,3.571918192,6500,4572,5972,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,87,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.268451037,3.594568771,6500,4595,5968,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,88,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.272444945,3.571918192,6500,4572,5972,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,89,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.308390118,3.368062988,6500,4368,6008,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,90,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.308390118,3.368062988,6500,4368,6008,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,91,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.292414485,3.458665301,6500,4459,5992,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,92,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.292414485,3.458665301,6500,4459,5992,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,93,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.292414485,3.458665301,6500,4459,5992,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,94,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.284426669,3.503966457,6500,4504,5984,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,95,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.1,0.188572875,4.047580337,6500,5048,5889,Nucleus reuniens (Re),unclassified,False,1.6
+day1,96,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.1,0.188572875,4.047580337,6500,5048,5889,Nucleus reuniens (Re),unclassified,False,1.6
+day1,97,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.1,0.196560691,4.002279181,6500,5002,5897,Nucleus reuniens (Re),unclassified,False,1.6
+day1,98,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.1,0.204548507,3.956978024,6500,4957,5905,Submedial thalamic nucleus (Sub),unclassified,False,1.6
+day1,99,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.1,0.204548507,3.956978024,6500,4957,5905,Submedial thalamic nucleus (Sub),unclassified,False,1.6
+day1,100,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.280432761,3.526617036,6500,4527,5980,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,101,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.280432761,3.526617036,6500,4527,5980,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,102,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.280432761,3.526617036,6500,4527,5980,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,103,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.280432761,3.526617036,6500,4527,5980,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,104,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.280432761,3.526617036,6500,4527,5980,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,105,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.296408393,3.436014723,6500,4436,5996,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,106,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.296408393,3.436014723,6500,4436,5996,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,107,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.296408393,3.436014723,6500,4436,5996,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,108,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.304396209,3.390713566,6500,4391,6004,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,109,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.1,0.172597243,4.13818265,6500,5138,5873,Nucleus reuniens (Re),unclassified,False,1.6
+day1,110,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.1,0.172597243,4.13818265,6500,5138,5873,Nucleus reuniens (Re),unclassified,False,1.6
+day1,111,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.1,0.172597243,4.13818265,6500,5138,5873,Nucleus reuniens (Re),unclassified,False,1.6
+day1,112,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.304396209,3.390713566,6500,4391,6004,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,113,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.304396209,3.390713566,6500,4391,6004,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,114,VM-thalamus,VM-thalamus,ventromedial thalamus,Central medial nucleus of the thalamus,CM,-1.1,0.304396209,3.390713566,6500,4391,6004,Central medial thalamic nucleus (CM),unclassified,False,1.6
+day1,115,PVH,PVH,paraventricular hypothalamus,Nucleus of reuniens,RE,-1.1,0.124670346,4.40998959,6500,5410,5825,Nucleus reuniens (Re),unclassified,False,1.6
+day1,116,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.1,0.07274954,4.704447108,6500,5704,5773,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,1.6
+day1,117,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.1,0.192566783,4.024929759,6500,5025,5893,Nucleus reuniens (Re),unclassified,False,1.6
+day1,118,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.1,0.192566783,4.024929759,6500,5025,5893,Nucleus reuniens (Re),unclassified,False,1.6
+day1,119,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.1,0.192566783,4.024929759,6500,5025,5893,Nucleus reuniens (Re),unclassified,False,1.6
+day1,120,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.1,0.192566783,4.024929759,6500,5025,5893,Nucleus reuniens (Re),unclassified,False,1.6
+day1,121,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.1,0.192566783,4.024929759,6500,5025,5893,Nucleus reuniens (Re),unclassified,False,1.6
+day1,122,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.1,0.192566783,4.024929759,6500,5025,5893,Nucleus reuniens (Re),unclassified,False,1.6
+day1,123,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.1,0.200554599,3.979628602,6500,4980,5901,Nucleus reuniens (Re),unclassified,False,1.6
+day1,124,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.1,0.208542415,3.934327446,6500,4934,5909,Submedial thalamic nucleus (Sub),unclassified,False,1.6
+day1,125,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.1,0.208542415,3.934327446,6500,4934,5909,Submedial thalamic nucleus (Sub),unclassified,False,1.6
+day1,126,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.1,0.208542415,3.934327446,6500,4934,5909,Submedial thalamic nucleus (Sub),unclassified,False,1.6
+night1,1,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.02,0.314058853,4.222867614,6420,5223,6014,Nucleus reuniens (Re),unclassified,False,3.2
+night1,2,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.02,0.314058853,4.222867614,6420,5223,6014,Nucleus reuniens (Re),unclassified,False,3.2
+night1,3,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.02,0.318052761,4.200217036,6420,5200,6018,Nucleus reuniens (Re),unclassified,False,3.2
+night1,4,PVH,PVH,paraventricular hypothalamus,Paraventricular hypothalamic nucleus,PVH,-1.02,0.202229426,4.857083807,6420,5857,5902,Paraventricular hypothalamic nucleus (Pa),unclassified,False,3.2
+night1,5,PVH,PVH,paraventricular hypothalamus,Paraventricular hypothalamic nucleus,PVH,-1.02,0.202229426,4.857083807,6420,5857,5902,Paraventricular hypothalamic nucleus (Pa),unclassified,False,3.2
+night1,6,PVH,PVH,paraventricular hypothalamus,Nucleus of reuniens,RE,-1.02,0.270125864,4.472023976,6420,5472,5970,Nucleus reuniens (Re),unclassified,False,3.2
+night1,7,PVH,PVH,paraventricular hypothalamus,Nucleus of reuniens,RE,-1.02,0.262138048,4.517325132,6420,5517,5962,Nucleus reuniens (Re),unclassified,False,3.2
+night1,8,AH,Anterior HT,anterior hypothalamus,Hypothalamus,HY,-1.02,0.154302529,5.128890747,6420,6129,5854,Hypothalamus,unclassified,False,3.2
+night1,9,AH,Anterior HT,anterior hypothalamus,Hypothalamus,HY,-1.02,0.154302529,5.128890747,6420,6129,5854,Hypothalamus,unclassified,False,3.2
+night1,10,AH,Anterior HT,anterior hypothalamus,Hypothalamus,HY,-1.02,0.146314713,5.174191904,6420,6174,5846,Hypothalamus,unclassified,False,3.2
+night1,11,PVH,PVH,paraventricular hypothalamus,Paraventricular hypothalamic nucleus,PVH,-1.02,0.206223335,4.834433229,6420,5834,5906,Paraventricular hypothalamic nucleus (Pa),unclassified,False,3.2
+night1,12,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.02,0.330034485,4.132265301,6420,5132,6030,Nucleus reuniens (Re),unclassified,False,3.2
+night1,13,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.02,0.330034485,4.132265301,6420,5132,6030,Nucleus reuniens (Re),unclassified,False,3.2
+night1,14,PVH,PVH,paraventricular hypothalamus,Hypothalamus,HY,-1.02,0.186253794,4.94768612,6420,5948,5886,Hypothalamus,unclassified,False,3.2
+night1,15,PVH,PVH,paraventricular hypothalamus,Hypothalamus,HY,-1.02,0.186253794,4.94768612,6420,5948,5886,Hypothalamus,unclassified,False,3.2
+night1,16,PVH,PVH,paraventricular hypothalamus,Hypothalamus,HY,-1.02,0.170278162,5.038288434,6420,6038,5870,Hypothalamus,unclassified,False,3.2
+night1,17,AH,Anterior HT,anterior hypothalamus,Hypothalamus,HY,-1.02,0.158296437,5.106240169,6420,6106,5858,Hypothalamus,unclassified,False,3.2
+night1,18,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.42,0.318052761,4.200217036,6820,5200,6018,Submedial thalamic nucleus (Sub),unclassified,False,3.2
+night1,19,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.154302529,5.128890747,6820,6129,5854,Dorsomedial hypothalamic nucleus (DMH),unclassified,False,3.2
+night1,20,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.146314713,5.174191904,6820,6174,5846,Dorsomedial hypothalamic nucleus (DMH),unclassified,False,3.2
+night1,21,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.146314713,5.174191904,6820,6174,5846,Dorsomedial hypothalamic nucleus (DMH),unclassified,False,3.2
+night1,22,DMH,DMH,dorsomedial hypothalamus,Hypothalamus,HY,-1.42,0.130339081,5.264794217,6820,6265,5830,Hypothalamus,unclassified,False,3.2
+night1,23,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.42,0.322046669,4.177566457,6820,5178,6022,Submedial thalamic nucleus (Sub),unclassified,False,3.2
+night1,24,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.42,0.322046669,4.177566457,6820,5178,6022,Submedial thalamic nucleus (Sub),unclassified,False,3.2
+night1,25,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.42,0.338022301,4.086964144,6820,5087,6038,Submedial thalamic nucleus (Sub),unclassified,False,3.2
+night1,26,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.22,0.346010118,4.041662988,6620,5042,6046,Submedial thalamic nucleus (Sub),unclassified,False,3.2
+night1,27,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.22,0.322046669,4.177566457,6620,5178,6022,Submedial thalamic nucleus (Sub),unclassified,False,3.2
+night1,28,VM-thalamus,VM-thalamus,ventromedial thalamus,Perireunensis nucleus,PR,-1.22,0.282107588,4.404072241,6620,5404,5982,Perireunensis nucleus,unclassified,False,3.2
+night1,29,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.22,0.226192875,4.721180337,6620,5721,5926,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,3.2
+night1,30,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.22,0.210217243,4.81178265,6620,5812,5910,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,3.2
+night1,31,VM-thalamus,VM-thalamus,ventromedial thalamus,"Periventricular hypothalamic nucleus, intermediate part",PVi,-1.22,0.094393908,5.468649422,6620,6469,5794,Periventricular hypothalamic nucleus (Pe),unclassified,False,3.2
+night2,1,VM-thalamus,VM-thalamus,ventromedial thalamus,Perireunensis nucleus,PR,-1.02,0.390716209,4.136013566,6420,5136,6091,Perireunensis nucleus,unclassified,False,0.0
+night2,2,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.02,0.382728393,4.181314723,6420,5181,6083,Nucleus reuniens (Re),unclassified,False,0.0
+night2,3,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.02,0.382728393,4.181314723,6420,5181,6083,Nucleus reuniens (Re),unclassified,False,0.0
+night2,4,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.02,0.374740577,4.226615879,6420,5227,6075,Nucleus reuniens (Re),unclassified,False,0.0
+night2,5,VM-thalamus,VM-thalamus,ventromedial thalamus,Perireunensis nucleus,PR,-1.02,0.386722301,4.158664144,6420,5159,6087,Perireunensis nucleus,unclassified,False,0.0
+night2,6,VMH,Ventromedial HT,ventromedial hypothalamus,Hypothalamus,HY,-1.02,0.163063449,5.42709653,6420,6427,5863,Hypothalamus,unclassified,False,0.0
+night2,7,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.42,0.366752761,4.271917036,6820,5272,6067,Submedial thalamic nucleus (Sub),unclassified,False,0.0
+night2,8,VMH,Ventromedial HT,ventromedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.203002529,5.200590747,6820,6201,5903,Dorsomedial hypothalamic nucleus (DMH),unclassified,False,0.0
+night2,9,VMH,Ventromedial HT,ventromedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.203002529,5.200590747,6820,6201,5903,Dorsomedial hypothalamic nucleus (DMH),unclassified,False,0.0
+night2,10,PVH,PVH,paraventricular hypothalamus,Hypothalamus,HY,-1.42,0.286874599,4.724928602,6820,5725,5987,Hypothalamus,unclassified,False,0.0
+night2,11,VMH,Ventromedial HT,ventromedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.195014713,5.245891904,6820,6246,5895,Dorsomedial hypothalamic nucleus (DMH),unclassified,False,0.0
+night2,12,PVH,PVH,paraventricular hypothalamus,Hypothalamus,HY,-1.42,0.286874599,4.724928602,6820,5725,5987,Hypothalamus,unclassified,False,0.0
+night2,13,VMH,Ventromedial HT,ventromedial hypothalamus,Ventromedial hypothalamic nucleus,VMH,-1.42,0.179039081,5.336494217,6820,6336,5879,Ventromedial hypothalamic nucleus (VMH),unclassified,False,0.0
+night2,14,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.246935518,4.951434385,6820,5951,5947,Dorsomedial hypothalamic nucleus (DMH),unclassified,False,0.0
+night2,15,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.254923335,4.906133229,6820,5906,5955,Dorsomedial hypothalamic nucleus (DMH),unclassified,False,0.0
+night2,16,VMH,Ventromedial HT,ventromedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.199008621,5.223241325,6820,6223,5899,Dorsomedial hypothalamic nucleus (DMH),unclassified,False,0.0
+night2,17,VMH,Ventromedial HT,ventromedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.199008621,5.223241325,6820,6223,5899,Dorsomedial hypothalamic nucleus (DMH),unclassified,False,0.0
+night2,18,DMH,DMH,dorsomedial hypothalamus,Hypothalamus,HY,-1.42,0.274892875,4.792880337,6820,5793,5975,Hypothalamus,unclassified,False,0.0
+night2,19,DMH,DMH,dorsomedial hypothalamus,Hypothalamus,HY,-1.42,0.282880691,4.747579181,6820,5748,5983,Hypothalamus,unclassified,False,0.0
+night2,20,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.22,0.394710118,4.113362988,6620,5113,6095,Submedial thalamic nucleus (Sub),unclassified,False,0.0
+night2,21,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.22,0.394710118,4.113362988,6620,5113,6095,Submedial thalamic nucleus (Sub),unclassified,False,0.0
+night2,22,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.22,0.394710118,4.113362988,6620,5113,6095,Submedial thalamic nucleus (Sub),unclassified,False,0.0
+night2,23,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.22,0.386722301,4.158664144,6620,5159,6087,Submedial thalamic nucleus (Sub),unclassified,False,0.0
+night2,24,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.22,0.386722301,4.158664144,6620,5159,6087,Submedial thalamic nucleus (Sub),unclassified,False,0.0
+night2,25,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.22,0.370746669,4.249266457,6620,5249,6071,Submedial thalamic nucleus (Sub),unclassified,False,0.0
+night2,26,AH,Anterior HT,anterior hypothalamus,Hypothalamus,HY,-1.22,0.199008621,5.223241325,6620,6223,5899,Hypothalamus,unclassified,False,0.0
+night2,27,AH,Anterior HT,anterior hypothalamus,Hypothalamus,HY,-1.22,0.199008621,5.223241325,6620,6223,5899,Hypothalamus,unclassified,False,0.0
+night2,28,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.22,0.390716209,4.136013566,6620,5136,6091,Submedial thalamic nucleus (Sub),unclassified,False,0.0
+night2,29,AH,Anterior HT,anterior hypothalamus,Hypothalamus,HY,-1.22,0.171051265,5.381795373,6620,6382,5871,Hypothalamus,unclassified,False,0.0
+night2,30,AH,Anterior HT,anterior hypothalamus,Hypothalamus,HY,-1.22,0.203002529,5.200590747,6620,6201,5903,Hypothalamus,unclassified,False,0.0
+night2,31,AH,Anterior HT,anterior hypothalamus,Hypothalamus,HY,-1.22,0.203002529,5.200590747,6620,6201,5903,Hypothalamus,unclassified,False,0.0
+night2,32,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.22,0.278886783,4.770229759,6620,5770,5979,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,0.0
+night2,33,AH,Anterior HT,anterior hypothalamus,Hypothalamus,HY,-1.22,0.187026897,5.29119306,6620,6291,5887,Hypothalamus,unclassified,False,0.0
+night2,34,AH,Anterior HT,anterior hypothalamus,Hypothalamus,HY,-1.22,0.179039081,5.336494217,6620,6336,5879,Hypothalamus,unclassified,False,0.0
+night3,1,PVH,PVH,paraventricular hypothalamus,Thalamus,TH,-1.02,0.075789312,4.565520506,6420,5566,5776,Thalamus,unclassified,False,0.0
+night3,2,PVH,PVH,paraventricular hypothalamus,Thalamus,TH,-1.02,0.075789312,4.565520506,6420,5566,5776,Thalamus,unclassified,False,0.0
+night3,3,PVH,PVH,paraventricular hypothalamus,Nucleus of reuniens,RE,-1.02,0.083777129,4.520219349,6420,5520,5784,Nucleus reuniens (Re),unclassified,False,0.0
+night3,4,PVH,PVH,paraventricular hypothalamus,Nucleus of reuniens,RE,-1.02,0.087771037,4.497568771,6420,5498,5788,Nucleus reuniens (Re),unclassified,False,0.0
+night3,5,PVH,PVH,paraventricular hypothalamus,Nucleus of reuniens,RE,-1.02,0.091764945,4.474918192,6420,5475,5792,Nucleus reuniens (Re),unclassified,False,0.0
+night3,6,PVH,PVH,paraventricular hypothalamus,Nucleus of reuniens,RE,-1.02,0.087771037,4.497568771,6420,5498,5788,Nucleus reuniens (Re),unclassified,False,0.0
+night3,7,PVH,PVH,paraventricular hypothalamus,Nucleus of reuniens,RE,-1.02,0.087771037,4.497568771,6420,5498,5788,Nucleus reuniens (Re),unclassified,False,0.0
+night3,8,PVH,PVH,paraventricular hypothalamus,Nucleus of reuniens,RE,-1.02,0.087771037,4.497568771,6420,5498,5788,Nucleus reuniens (Re),unclassified,False,0.0
+night3,9,PVH,PVH,paraventricular hypothalamus,Nucleus of reuniens,RE,-1.02,0.087771037,4.497568771,6420,5498,5788,Nucleus reuniens (Re),unclassified,False,0.0
+night3,10,PVH,PVH,paraventricular hypothalamus,Nucleus of reuniens,RE,-1.02,0.095758853,4.452267614,6420,5452,5796,Nucleus reuniens (Re),unclassified,False,0.0
+night3,11,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.02,0.123716209,4.293713566,6420,5294,5824,Nucleus reuniens (Re),unclassified,False,0.0
+night3,12,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.02,0.115728393,4.339014723,6420,5339,5816,Nucleus reuniens (Re),unclassified,False,0.0
+night3,13,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.02,0.099752761,4.429617036,6420,5430,5800,Nucleus reuniens (Re),unclassified,False,0.0
+night3,14,PVH,PVH,paraventricular hypothalamus,Paraventricular hypothalamic nucleus,PVH,-1.02,0.05981368,4.656122819,6420,5656,5760,Paraventricular hypothalamic nucleus (Pa),unclassified,False,0.0
+night3,15,PVH,PVH,paraventricular hypothalamus,Paraventricular hypothalamic nucleus,PVH,-1.02,0.051825864,4.701423976,6420,5701,5752,Paraventricular hypothalamic nucleus (Pa),unclassified,False,0.0
+night3,16,PVH,PVH,paraventricular hypothalamus,Paraventricular hypothalamic nucleus,PVH,-1.02,0.063807588,4.633472241,6420,5633,5764,Paraventricular hypothalamic nucleus (Pa),unclassified,False,0.0
+night3,17,PVH,PVH,paraventricular hypothalamus,Paraventricular hypothalamic nucleus,PVH,-1.02,0.063807588,4.633472241,6420,5633,5764,Paraventricular hypothalamic nucleus (Pa),unclassified,False,0.0
+night3,18,PVH,PVH,paraventricular hypothalamus,Paraventricular hypothalamic nucleus,PVH,-1.02,0.047831956,4.724074554,6420,5724,5748,Paraventricular hypothalamic nucleus (Pa),unclassified,False,0.0
+night3,19,PVH,PVH,paraventricular hypothalamus,Paraventricular hypothalamic nucleus,PVH,-1.02,0.047831956,4.724074554,6420,5724,5748,Paraventricular hypothalamic nucleus (Pa),unclassified,False,0.0
+night3,20,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.02,0.127710118,4.271062988,6420,5271,5828,Nucleus reuniens (Re),unclassified,False,0.0
+night3,21,VM-thalamus,VM-thalamus,ventromedial thalamus,Paraventricular hypothalamic nucleus,PVH,-1.02,0.031856323,4.814676867,6420,5815,5732,Paraventricular hypothalamic nucleus (Pa),unclassified,False,0.0
+night3,22,VM-thalamus,VM-thalamus,ventromedial thalamus,Paraventricular hypothalamic nucleus,PVH,-1.02,0.031856323,4.814676867,6420,5815,5732,Paraventricular hypothalamic nucleus (Pa),unclassified,False,0.0
+night3,23,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.42,0.115728393,4.339014723,6820,5339,5816,Nucleus reuniens (Re),unclassified,False,0.0
+night3,24,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.42,0.115728393,4.339014723,6820,5339,5816,Nucleus reuniens (Re),unclassified,False,0.0
+night3,25,VM-thalamus,VM-thalamus,ventromedial thalamus,Xiphoid thalamic nucleus,Xi,-1.42,0.099752761,4.429617036,6820,5430,5800,Xiphoid thalamic nucleus (Xi),unclassified,False,0.0
+night3,26,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.42,0.103746669,4.406966457,6820,5407,5804,Nucleus reuniens (Re),unclassified,False,0.0
+night3,27,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.42,0.111734485,4.361665301,6820,5362,5812,Nucleus reuniens (Re),unclassified,False,0.0
+night3,28,PVH,PVH,paraventricular hypothalamus,Xiphoid thalamic nucleus,Xi,-1.22,0.087771037,4.497568771,6620,5498,5788,Xiphoid thalamic nucleus (Xi),unclassified,False,0.0
+night3,29,VM-thalamus,VM-thalamus,ventromedial thalamus,third ventricle,V3,-1.22,0.023868507,4.859978024,6620,5860,5724,third ventricle,unclassified,False,0.0
+night3,30,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.22,0.115728393,4.339014723,6620,5339,5816,Nucleus reuniens (Re),unclassified,False,0.0
+night3,31,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.22,0.115728393,4.339014723,6620,5339,5816,Nucleus reuniens (Re),unclassified,False,0.0
+night3,32,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.22,0.115728393,4.339014723,6620,5339,5816,Nucleus reuniens (Re),unclassified,False,0.0
+night3,33,PVH,PVH,paraventricular hypothalamus,"Periventricular hypothalamic nucleus, intermediate part",PVi,-1.22,0.027862415,4.837327446,6620,5837,5728,Periventricular hypothalamic nucleus (Pe),unclassified,False,0.0
+night4,1,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.266358853,4.218767614,6300,5219,5966,Nucleus reuniens (Re),unclassified,False,2.9
+night4,2,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.286328393,4.105514723,6300,5106,5986,Nucleus reuniens (Re),unclassified,False,2.9
+night4,3,PVH,PVH,paraventricular hypothalamus,Paraventricular hypothalamic nucleus,PVH,-0.9,0.170505059,4.762381494,6300,5762,5871,Paraventricular hypothalamic nucleus (Pa),unclassified,False,2.9
+night4,4,PVH,PVH,paraventricular hypothalamus,Paraventricular hypothalamic nucleus,PVH,-0.9,0.162517243,4.80768265,6300,5808,5863,Paraventricular hypothalamic nucleus (Pa),unclassified,False,2.9
+night4,5,PVH,PVH,paraventricular hypothalamus,Paraventricular hypothalamic nucleus,PVH,-0.9,0.154529426,4.852983807,6300,5853,5855,Paraventricular hypothalamic nucleus (Pa),unclassified,False,2.9
+night4,6,PVH,PVH,paraventricular hypothalamus,Paraventricular hypothalamic nucleus,PVH,-0.9,0.14654161,4.898284964,6300,5898,5847,Paraventricular hypothalamic nucleus (Pa),unclassified,False,2.9
+night4,7,PVH,PVH,paraventricular hypothalamus,Paraventricular hypothalamic nucleus,PVH,-0.9,0.190474599,4.649128602,6300,5649,5890,Paraventricular hypothalamic nucleus (Pa),unclassified,False,2.9
+night4,8,AH,Anterior HT,anterior hypothalamus,"Periventricular hypothalamic nucleus, intermediate part",PVi,-0.9,0.098614713,5.170091904,6300,6170,5799,Periventricular hypothalamic nucleus (Pe),unclassified,False,2.9
+night4,9,PVH,PVH,paraventricular hypothalamus,Paraventricular hypothalamic nucleus,PVH,-0.9,0.142547702,4.920935542,6300,5921,5843,Paraventricular hypothalamic nucleus (Pa),unclassified,False,2.9
+night4,10,PVH,PVH,paraventricular hypothalamus,Paraventricular hypothalamic nucleus,PVH,-0.9,0.142547702,4.920935542,6300,5921,5843,Paraventricular hypothalamic nucleus (Pa),unclassified,False,2.9
+night4,11,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-0.9,0.290322301,4.082864144,6300,5083,5990,Nucleus reuniens (Re),unclassified,False,2.9
+night4,12,DMH,DMH,dorsomedial hypothalamus,Hypothalamus,HY,-1.3,0.170505059,4.762381494,6700,5762,5871,Hypothalamus,unclassified,False,2.9
+night4,13,DMH,DMH,dorsomedial hypothalamus,Hypothalamus,HY,-1.3,0.162517243,4.80768265,6700,5808,5863,Hypothalamus,unclassified,False,2.9
+night4,14,DMH,DMH,dorsomedial hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.3,0.174498967,4.739730915,6700,5740,5874,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,2.9
+night4,15,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.3,0.106602529,5.124790747,6700,6125,5807,Dorsomedial hypothalamic nucleus (DMH),unclassified,False,2.9
+night4,16,DMH,DMH,dorsomedial hypothalamus,Hypothalamus,HY,-1.3,0.190474599,4.649128602,6700,5649,5890,Hypothalamus,unclassified,False,2.9
+night4,17,DMH,DMH,dorsomedial hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.3,0.186480691,4.671779181,6700,5672,5886,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,2.9
+night4,18,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.1,0.258371037,4.264068771,6500,5264,5958,Nucleus reuniens (Re),unclassified,False,2.9
+night4,19,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.1,0.166511151,4.785032072,6500,5785,5867,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,2.9
+night4,20,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.1,0.290322301,4.082864144,6500,5083,5990,Submedial thalamic nucleus (Sub),unclassified,False,2.9
+night4,21,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.1,0.290322301,4.082864144,6500,5083,5990,Submedial thalamic nucleus (Sub),unclassified,False,2.9
+night4,22,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.1,0.142547702,4.920935542,6500,5921,5843,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,2.9
+night4,23,VM-thalamus,VM-thalamus,ventromedial thalamus,Thalamus,TH,-1.1,0.206450232,4.558526289,6500,5559,5906,Thalamus,unclassified,False,2.9
+night4,24,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.1,0.178492875,4.717080337,6500,5717,5878,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,2.9
+night4,25,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.1,0.178492875,4.717080337,6500,5717,5878,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,2.9
+night4,26,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.1,0.186480691,4.671779181,6500,5672,5886,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,2.9
+night4,27,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.1,0.194468507,4.626478024,6500,5626,5894,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,2.9
+night4,28,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.1,0.194468507,4.626478024,6500,5626,5894,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,2.9
+night4,29,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.1,0.202456323,4.581176867,6500,5581,5902,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,2.9
+night4,30,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.1,0.202456323,4.581176867,6500,5581,5902,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,2.9
+night4,31,PVH,PVH,paraventricular hypothalamus,Nucleus of reuniens,RE,-1.1,0.270352761,4.196117036,6500,5196,5970,Nucleus reuniens (Re),unclassified,False,2.9
+night4,32,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.1,0.162517243,4.80768265,6500,5808,5863,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,2.9
+night4,33,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.1,0.170505059,4.762381494,6500,5762,5871,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,2.9
+night4,34,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.1,0.174498967,4.739730915,6500,5740,5874,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,2.9
+night4,35,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.1,0.182486783,4.694429759,6500,5694,5882,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,2.9
+night5,1,VM-thalamus,VM-thalamus,ventromedial thalamus,Thalamus,TH,-1.14,0.070395404,4.559271084,6540,5559,5770,Thalamus,unclassified,False,0.0
+night5,2,VM-thalamus,VM-thalamus,ventromedial thalamus,Xiphoid thalamic nucleus,Xi,-1.14,0.074389312,4.536620506,6540,5537,5774,Xiphoid thalamic nucleus (Xi),unclassified,False,0.0
+night5,3,VM-thalamus,VM-thalamus,ventromedial thalamus,Xiphoid thalamic nucleus,Xi,-1.14,0.090364945,4.446018192,6540,5446,5790,Xiphoid thalamic nucleus (Xi),unclassified,False,0.0
+night5,4,VM-thalamus,VM-thalamus,ventromedial thalamus,Xiphoid thalamic nucleus,Xi,-1.14,0.094358853,4.423367614,6540,5423,5794,Xiphoid thalamic nucleus (Xi),unclassified,False,0.0
+night5,5,VM-thalamus,VM-thalamus,ventromedial thalamus,Xiphoid thalamic nucleus,Xi,-1.14,0.094358853,4.423367614,6540,5423,5794,Xiphoid thalamic nucleus (Xi),unclassified,False,0.0
+night5,6,VM-thalamus,VM-thalamus,ventromedial thalamus,Xiphoid thalamic nucleus,Xi,-1.14,0.094358853,4.423367614,6540,5423,5794,Xiphoid thalamic nucleus (Xi),unclassified,False,0.0
+night5,7,VM-thalamus,VM-thalamus,ventromedial thalamus,Xiphoid thalamic nucleus,Xi,-1.14,0.094358853,4.423367614,6540,5423,5794,Xiphoid thalamic nucleus (Xi),unclassified,False,0.0
+night5,8,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.14,0.106340577,4.355415879,6540,5355,5806,Nucleus reuniens (Re),unclassified,False,0.0
+night5,9,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.14,0.106340577,4.355415879,6540,5355,5806,Nucleus reuniens (Re),unclassified,False,0.0
+night5,10,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.14,0.106340577,4.355415879,6540,5355,5806,Nucleus reuniens (Re),unclassified,False,0.0
+night5,11,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.14,0.106340577,4.355415879,6540,5355,5806,Nucleus reuniens (Re),unclassified,False,0.0
+night5,12,VM-thalamus,VM-thalamus,ventromedial thalamus,Xiphoid thalamic nucleus,Xi,-1.14,0.098352761,4.400717036,6540,5401,5798,Xiphoid thalamic nucleus (Xi),unclassified,False,0.0
+night5,13,VM-thalamus,VM-thalamus,ventromedial thalamus,Xiphoid thalamic nucleus,Xi,-1.14,0.098352761,4.400717036,6540,5401,5798,Xiphoid thalamic nucleus (Xi),unclassified,False,0.0
+night5,14,PVH,PVH,paraventricular hypothalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.14,0.03844414,4.740475711,6540,5740,5738,Posterior paraventricular hypothalamic nucleus (PaPo),unclassified,False,0.0
+night5,15,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.14,0.110334485,4.332765301,6540,5333,5810,Nucleus reuniens (Re),unclassified,False,0.0
+night5,16,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.14,0.118322301,4.287464144,6540,5287,5818,Nucleus reuniens (Re),unclassified,False,0.0
+night5,17,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.14,0.118322301,4.287464144,6540,5287,5818,Nucleus reuniens (Re),unclassified,False,0.0
+night5,18,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.14,0.126310118,4.242162988,6540,5242,5826,Nucleus reuniens (Re),unclassified,False,0.0
+night5,19,VMH,Ventromedial HT,ventromedial hypothalamus,"Periventricular hypothalamic nucleus, intermediate part",PVi,-1.54,-0.073385287,5.374691904,6940,6375,5627,Periventricular hypothalamic nucleus (Pe),unclassified,False,0.0
+night5,20,VMH,Ventromedial HT,ventromedial hypothalamus,"Periventricular hypothalamic nucleus, intermediate part",PVi,-1.54,-0.073385287,5.374691904,6940,6375,5627,Periventricular hypothalamic nucleus (Pe),unclassified,False,0.0
+night5,21,VMH,Ventromedial HT,ventromedial hypothalamus,"Periventricular hypothalamic nucleus, intermediate part",PVi,-1.54,-0.073385287,5.374691904,6940,6375,5627,Periventricular hypothalamic nucleus (Pe),unclassified,False,0.0
+night5,22,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.34,0.118322301,4.287464144,6740,5287,5818,Nucleus reuniens (Re),unclassified,False,0.0
+night5,23,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.34,0.110334485,4.332765301,6740,5333,5810,Nucleus reuniens (Re),unclassified,False,0.0
+night5,24,VM-thalamus,VM-thalamus,ventromedial thalamus,Nucleus of reuniens,RE,-1.34,0.102346669,4.378066457,6740,5378,5802,Nucleus reuniens (Re),unclassified,False,0.0
+day2,1,VM-thalamus,VM-thalamus,ventromedial thalamus,Posterior hypothalamic nucleus,PH,-2.1,0.219195404,4.293071084,7500,5293,5919,Posterior hypothalamic area (PH),E,True,38.7
+day2,2,VM-thalamus,VM-thalamus,ventromedial thalamus,Posterior hypothalamic nucleus,PH,-2.1,0.239164945,4.179818192,7500,5180,5939,Posterior hypothalamic area (PH),E,True,38.7
+day2,3,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.1,0.12334161,4.836684964,7500,5837,5823,Posterior hypothalamic area (PH),E,True,38.7
+day2,4,VM-thalamus,VM-thalamus,ventromedial thalamus,Posterior hypothalamic nucleus,PH,-2.1,0.199225864,4.406323976,7500,5406,5899,Posterior hypothalamic area (PH),E,True,38.7
+day2,5,VM-thalamus,VM-thalamus,ventromedial thalamus,Posterior hypothalamic nucleus,PH,-2.1,0.199225864,4.406323976,7500,5406,5899,Posterior hypothalamic area (PH),I,True,38.7
+day2,6,VM-thalamus,VM-thalamus,ventromedial thalamus,Posterior hypothalamic nucleus,PH,-2.1,0.191238048,4.451625132,7500,5452,5891,Posterior hypothalamic area (PH),I,True,38.7
+day2,7,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-2.1,0.083402529,5.063190747,7500,6063,5783,Posterior hypothalamic area (PH),E,True,38.7
+day2,8,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-2.1,0.083402529,5.063190747,7500,6063,5783,Posterior hypothalamic area (PH),I,True,38.7
+day2,9,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-2.1,0.075414713,5.108491904,7500,6108,5775,Posterior hypothalamic area (PH),I,True,38.7
+day2,10,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-2.1,0.075414713,5.108491904,7500,6108,5775,Posterior hypothalamic area (PH),E,True,38.7
+day2,11,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-2.1,0.075414713,5.108491904,7500,6108,5775,Posterior hypothalamic area (PH),E,True,38.7
+day2,12,DMH,DMH,dorsomedial hypothalamus,Hypothalamus,HY,-2.1,0.067426897,5.15379306,7500,6154,5767,Hypothalamus,I,True,38.7
+day2,13,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.1,0.175262415,4.542227446,7500,5542,5875,Posterior hypothalamic area (PH),E,True,38.7
+day2,14,VM-thalamus,VM-thalamus,ventromedial thalamus,Posterior hypothalamic nucleus,PH,-2.1,0.259134485,4.066565301,7500,5067,5959,Posterior hypothalamic area (PH),E,True,38.7
+day2,15,VM-thalamus,VM-thalamus,ventromedial thalamus,Posterior hypothalamic nucleus,PH,-2.1,0.135323335,4.768733229,7500,5769,5835,Posterior hypothalamic area (PH),E,True,38.7
+day2,16,VM-thalamus,VM-thalamus,ventromedial thalamus,Posterior hypothalamic nucleus,PH,-2.1,0.143311151,4.723432072,7500,5723,5843,Posterior hypothalamic area (PH),E,True,38.7
+day2,17,PVH,PVH,paraventricular hypothalamus,Posterior hypothalamic nucleus,PH,-2.1,0.275110118,3.975962988,7500,4976,5975,Posterior hypothalamic area (PH),I,True,38.7
+day2,18,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.1,0.111359886,4.904636699,7500,5905,5811,Posterior hypothalamic area (PH),E,True,38.7
+day2,19,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.1,0.10337207,4.949937855,7500,5950,5803,Posterior hypothalamic area (PH),I,True,38.7
+day2,20,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.1,0.115353794,4.88198612,7500,5882,5815,Posterior hypothalamic area (PH),E,True,38.7
+day2,21,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.1,0.10337207,4.949937855,7500,5950,5803,Posterior hypothalamic area (PH),E,True,38.7
+day2,22,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.1,0.095384254,4.995239012,7500,5995,5795,Posterior hypothalamic area (PH),E,True,38.7
+day2,23,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.1,0.095384254,4.995239012,7500,5995,5795,Posterior hypothalamic area (PH),I,True,38.7
+day2,24,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.1,0.095384254,4.995239012,7500,5995,5795,Posterior hypothalamic area (PH),I,True,38.7
+day2,25,DMH,DMH,dorsomedial hypothalamus,Hypothalamus,HY,-2.1,0.071420805,5.131142482,7500,6131,5771,Hypothalamus,I,True,38.7
+day2,26,VM-thalamus,VM-thalamus,ventromedial thalamus,Posterior hypothalamic nucleus,PH,-1.7,0.147305059,4.700781494,7100,5701,5847,Posterior hypothalamic area (PH),I,True,38.7
+day2,27,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-1.9,0.147305059,4.700781494,7300,5701,5847,Posterior hypothalamic area (PH),E,True,38.7
+day2,28,DMH,DMH,dorsomedial hypothalamus,"Periventricular hypothalamic nucleus, intermediate part",PVi,-1.9,0.091390346,5.01788959,7300,6018,5791,Periventricular hypothalamic nucleus (Pe),I,True,38.7
+day2,29,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-1.9,0.159286783,4.632829759,7300,5633,5859,Posterior hypothalamic area (PH),E,True,38.7
+day2,30,DMH,DMH,dorsomedial hypothalamus,"Periventricular hypothalamic nucleus, intermediate part",PVi,-1.9,0.067426897,5.15379306,7300,6154,5767,Periventricular hypothalamic nucleus (Pe),E,True,38.7
+day2,31,DMH,DMH,dorsomedial hypothalamus,"Periventricular hypothalamic nucleus, intermediate part",PVi,-1.9,0.067426897,5.15379306,7300,6154,5767,Periventricular hypothalamic nucleus (Pe),E,True,38.7
+night6,1,VM-thalamus,VM-thalamus,ventromedial thalamus,Perireunensis nucleus,PR,-1.42,0.33071368,4.284422819,6820,5284,6031,Perireunensis nucleus,I,True,48.1
+night6,2,VM-thalamus,VM-thalamus,ventromedial thalamus,Perireunensis nucleus,PR,-1.42,0.322725864,4.329723976,6820,5330,6023,Perireunensis nucleus,I,True,48.1
+night6,3,VM-thalamus,VM-thalamus,ventromedial thalamus,Perireunensis nucleus,PR,-1.42,0.314738048,4.375025132,6820,5375,6015,Perireunensis nucleus,E,True,48.1
+night6,4,VM-thalamus,VM-thalamus,ventromedial thalamus,Perireunensis nucleus,PR,-1.42,0.318731956,4.352374554,6820,5352,6019,Perireunensis nucleus,E,True,48.1
+night6,5,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.194920805,5.054542482,6820,6055,5895,Dorsomedial hypothalamic nucleus (DMH),I,True,48.1
+night6,6,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.194920805,5.054542482,6820,6055,5895,Dorsomedial hypothalamic nucleus (DMH),E,True,48.1
+night6,7,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.194920805,5.054542482,6820,6055,5895,Dorsomedial hypothalamic nucleus (DMH),I,True,48.1
+night6,8,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.194920805,5.054542482,6820,6055,5895,Dorsomedial hypothalamic nucleus (DMH),I,True,48.1
+night6,9,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.186932989,5.099843638,6820,6100,5887,Dorsomedial hypothalamic nucleus (DMH),I,True,48.1
+night6,10,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.186932989,5.099843638,6820,6100,5887,Dorsomedial hypothalamic nucleus (DMH),I,True,48.1
+night6,11,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.194920805,5.054542482,6820,6055,5895,Dorsomedial hypothalamic nucleus (DMH),E,True,48.1
+night6,12,VM-thalamus,VM-thalamus,ventromedial thalamus,Hypothalamus,HY,-1.42,0.286780691,4.533579181,6820,5534,5987,Hypothalamus,E,True,48.1
+night6,13,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.186932989,5.099843638,6820,6100,5887,Dorsomedial hypothalamic nucleus (DMH),E,True,48.1
+night6,14,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.186932989,5.099843638,6820,6100,5887,Dorsomedial hypothalamic nucleus (DMH),I,True,48.1
+night6,15,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.186932989,5.099843638,6820,6100,5887,Dorsomedial hypothalamic nucleus (DMH),I,True,48.1
+night6,16,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.178945173,5.145144795,6820,6145,5879,Dorsomedial hypothalamic nucleus (DMH),E,True,48.1
+night6,17,VM-thalamus,VM-thalamus,ventromedial thalamus,Perireunensis nucleus,PR,-1.62,0.306750232,4.420326289,7020,5420,6007,Perireunensis nucleus,E,True,48.1
+night6,18,VM-thalamus,VM-thalamus,ventromedial thalamus,Perireunensis nucleus,PR,-1.62,0.306750232,4.420326289,7020,5420,6007,Perireunensis nucleus,E,True,48.1
+night6,19,PVH,PVH,paraventricular hypothalamus,Hypothalamus,HY,-1.42,0.254829426,4.714783807,6820,5715,5955,Hypothalamus,I,True,48.1
+night6,20,PVH,PVH,paraventricular hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.210896437,4.963940169,6820,5964,5911,Dorsomedial hypothalamic nucleus (DMH),I,True,48.1
+night6,21,VM-thalamus,VM-thalamus,ventromedial thalamus,Perireunensis nucleus,PR,-1.62,0.31074414,4.397675711,7020,5398,6011,Perireunensis nucleus,E,True,48.1
+night6,22,VM-thalamus,VM-thalamus,ventromedial thalamus,Hypothalamus,HY,-1.42,0.274798967,4.601530915,6820,5602,5975,Hypothalamus,E,True,48.1
+night6,23,VMH,Ventromedial HT,ventromedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.174951265,5.167795373,6820,6168,5875,Dorsomedial hypothalamic nucleus (DMH),I,True,48.1
+night6,24,VMH,Ventromedial HT,ventromedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.174951265,5.167795373,6820,6168,5875,Dorsomedial hypothalamic nucleus (DMH),E,True,48.1
+night6,25,VMH,Ventromedial HT,ventromedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.198914713,5.031891904,6820,6032,5899,Dorsomedial hypothalamic nucleus (DMH),I,True,48.1
+night6,26,VM-thalamus,VM-thalamus,ventromedial thalamus,Perireunensis nucleus,PR,-1.42,0.290774599,4.510928602,6820,5511,5991,Perireunensis nucleus,E,True,48.1
+night6,27,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.190926897,5.07719306,6820,6077,5891,Dorsomedial hypothalamic nucleus (DMH),E,True,48.1
+night6,28,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.182939081,5.122494217,6820,6122,5883,Dorsomedial hypothalamic nucleus (DMH),I,True,48.1
+night6,29,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.42,0.182939081,5.122494217,6820,6122,5883,Dorsomedial hypothalamic nucleus (DMH),E,True,48.1
+night6,30,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.62,0.206902529,4.986590747,7020,5987,5907,Dorsomedial hypothalamic nucleus (DMH),I,True,48.1
+night6,31,VM-thalamus,VM-thalamus,ventromedial thalamus,Posterior hypothalamic nucleus,PH,-1.62,0.282786783,4.556229759,7020,5556,5983,Posterior hypothalamic area (PH),E,True,48.1
+night6,32,VM-thalamus,VM-thalamus,ventromedial thalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.62,0.198914713,5.031891904,7020,6032,5899,Dorsomedial hypothalamic nucleus (DMH),I,True,48.1
+night6,33,VM-thalamus,VM-thalamus,ventromedial thalamus,Hypothalamus,HY,-1.62,0.298762415,4.465627446,7020,5466,5999,Hypothalamus,I,True,48.1
+night6,34,PVH,PVH,paraventricular hypothalamus,Hypothalamus,HY,-1.62,0.250835518,4.737434385,7020,5737,5951,Hypothalamus,I,True,48.1
+night6,35,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.62,0.354677129,4.148519349,7020,5149,6055,Submedial thalamic nucleus (Sub),E,True,48.1
+night6,36,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.62,0.354677129,4.148519349,7020,5149,6055,Submedial thalamic nucleus (Sub),E,True,48.1
+night6,37,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.62,0.234859886,4.828036699,7020,5828,5935,Dorsomedial hypothalamic nucleus (DMH),I,True,48.1
+night6,38,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.62,0.222878162,4.895988434,7020,5896,5923,Dorsomedial hypothalamic nucleus (DMH),E,True,48.1
+night6,39,VM-thalamus,VM-thalamus,ventromedial thalamus,Posterior hypothalamic nucleus,PH,-1.62,0.278792875,4.578880337,7020,5579,5979,Posterior hypothalamic area (PH),E,True,48.1
+night6,40,VM-thalamus,VM-thalamus,ventromedial thalamus,Posterior hypothalamic nucleus,PH,-1.62,0.278792875,4.578880337,7020,5579,5979,Posterior hypothalamic area (PH),E,True,48.1
+night6,41,VM-thalamus,VM-thalamus,ventromedial thalamus,Hypothalamus,HY,-1.62,0.294768507,4.488278024,7020,5488,5995,Hypothalamus,E,True,48.1
+night6,42,VM-thalamus,VM-thalamus,ventromedial thalamus,Posterior hypothalamic nucleus,PH,-1.62,0.262817243,4.66948265,7020,5669,5963,Posterior hypothalamic area (PH),I,True,48.1
+night6,43,VM-thalamus,VM-thalamus,ventromedial thalamus,Posterior hypothalamic nucleus,PH,-1.62,0.254829426,4.714783807,7020,5715,5955,Posterior hypothalamic area (PH),I,True,48.1
+night6,44,VM-thalamus,VM-thalamus,ventromedial thalamus,Posterior hypothalamic nucleus,PH,-1.62,0.254829426,4.714783807,7020,5715,5955,Posterior hypothalamic area (PH),I,True,48.1
+night6,45,VM-thalamus,VM-thalamus,ventromedial thalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.22,0.274798967,4.601530915,6620,5602,5975,Posterior paraventricular hypothalamic nucleus (PaPo),E,True,48.1
+night6,46,VM-thalamus,VM-thalamus,ventromedial thalamus,Thalamus,TH,-1.22,0.290774599,4.510928602,6620,5511,5991,Thalamus,E,True,48.1
+night6,47,VM-thalamus,VM-thalamus,ventromedial thalamus,"Paraventricular hypothalamic nucleus, descending division",PVHd,-1.22,0.278792875,4.578880337,6620,5579,5979,Posterior paraventricular hypothalamic nucleus (PaPo),E,True,48.1
+night6,48,VM-thalamus,VM-thalamus,ventromedial thalamus,Perireunensis nucleus,PR,-1.22,0.302756323,4.442976867,6620,5443,6003,Perireunensis nucleus,E,True,48.1
+night6,49,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.42,0.362664945,4.103218192,6820,5103,6063,Submedial thalamic nucleus (Sub),E,True,48.1
+night6,50,VM-thalamus,VM-thalamus,ventromedial thalamus,Submedial nucleus of the thalamus,SMT,-1.42,0.362664945,4.103218192,6820,5103,6063,Submedial thalamic nucleus (Sub),E,True,48.1
+night6,51,PVH,PVH,paraventricular hypothalamus,Hypothalamus,HY,-1.42,0.250835518,4.737434385,6820,5737,5951,Hypothalamus,I,True,48.1
+night6,52,PVH,PVH,paraventricular hypothalamus,Hypothalamus,HY,-1.42,0.250835518,4.737434385,6820,5737,5951,Hypothalamus,I,True,48.1
+night6,53,PVH,PVH,paraventricular hypothalamus,Hypothalamus,HY,-1.42,0.250835518,4.737434385,6820,5737,5951,Hypothalamus,I,True,48.1
+night6,54,PVH,PVH,paraventricular hypothalamus,Hypothalamus,HY,-1.42,0.250835518,4.737434385,6820,5737,5951,Hypothalamus,I,True,48.1
+night7,1,VM-thalamus,VM-thalamus,ventromedial thalamus,mammillothalamic tract,mtt,-1.98,0.622328393,4.332414723,7380,5332,6322,Mammillothalamic tract (mt),I,True,41.8
+night7,2,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.542450232,4.785426289,7380,5785,6242,Posterior hypothalamic area (PH),E,True,41.8
+night7,3,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.98,0.418639081,5.487594217,7380,6488,6119,Dorsomedial hypothalamic nucleus (DMH),E,True,41.8
+night7,4,VM-thalamus,VM-thalamus,ventromedial thalamus,mammillothalamic tract,mtt,-1.98,0.618334485,4.355065301,7380,5355,6318,Mammillothalamic tract (mt),I,True,41.8
+night7,5,VM-thalamus,VM-thalamus,ventromedial thalamus,Hypothalamus,HY,-1.98,0.626322301,4.309764144,7380,5310,6326,Hypothalamus,E,True,41.8
+night7,6,VM-thalamus,VM-thalamus,ventromedial thalamus,Hypothalamus,HY,-1.98,0.626322301,4.309764144,7380,5310,6326,Hypothalamus,E,True,41.8
+night7,7,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.454584254,5.283739012,7380,6284,6155,Posterior hypothalamic area (PH),E,True,41.8
+night7,8,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.454584254,5.283739012,7380,6284,6155,Posterior hypothalamic area (PH),E,True,41.8
+night7,9,VMH,Ventromedial HT,ventromedial hypothalamus,Ventral premammillary nucleus,PMv,-1.98,0.382693908,5.691449422,7380,6691,6083,Ventral premammillary nucleus (PMV),E,True,41.8
+night7,10,DMH,DMH,dorsomedial hypothalamus,Hypothalamus,HY,-1.98,0.438608621,5.374341325,7380,6374,6139,Hypothalamus,E,True,41.8
+night7,11,PH,PH,posterior hypothalamus,Lateral hypothalamic area,LHA,-2.18,0.550438048,4.740125132,7580,5740,6250,Lateral hypothalamic area (LH),E,True,41.8
+night7,12,PH,PH,posterior hypothalamus,Lateral hypothalamic area,LHA,-2.18,0.550438048,4.740125132,7580,5740,6250,Lateral hypothalamic area (LH),E,True,41.8
+night7,13,PH,PH,posterior hypothalamus,Lateral hypothalamic area,LHA,-2.18,0.550438048,4.740125132,7580,5740,6250,Lateral hypothalamic area (LH),E,True,41.8
+night7,14,PH,PH,posterior hypothalamus,Lateral hypothalamic area,LHA,-2.18,0.542450232,4.785426289,7580,5785,6242,Lateral hypothalamic area (LH),I,True,41.8
+night7,15,PH,PH,posterior hypothalamus,Lateral hypothalamic area,LHA,-2.18,0.542450232,4.785426289,7580,5785,6242,Lateral hypothalamic area (LH),E,True,41.8
+night7,16,PH,PH,posterior hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.514492875,4.943980337,7580,5944,6214,Dorsal premammillary nucleus (PMD),I,True,41.8
+night7,17,PH,PH,posterior hypothalamus,Lateral hypothalamic area,LHA,-2.18,0.54644414,4.762775711,7580,5763,6246,Lateral hypothalamic area (LH),I,True,41.8
+night7,18,PH,PH,posterior hypothalamus,Lateral hypothalamic area,LHA,-2.18,0.54644414,4.762775711,7580,5763,6246,Lateral hypothalamic area (LH),I,True,41.8
+night7,19,DMH,DMH,dorsomedial hypothalamus,Ventral premammillary nucleus,PMv,-2.18,0.430620805,5.419642482,7580,6420,6131,Ventral premammillary nucleus (PMV),I,True,41.8
+night7,20,DMH,DMH,dorsomedial hypothalamus,Ventral premammillary nucleus,PMv,-2.18,0.430620805,5.419642482,7580,6420,6131,Ventral premammillary nucleus (PMV),I,True,41.8
+night7,21,PH,PH,posterior hypothalamus,Midbrain,MB,-2.18,0.606352761,4.423017036,7580,5423,6306,Midbrain,I,True,41.8
+night7,22,PH,PH,posterior hypothalamus,Midbrain,MB,-2.18,0.614340577,4.377715879,7580,5378,6314,Midbrain,E,True,41.8
+night7,23,PH,PH,posterior hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.490529426,5.079883807,7580,6080,6191,Dorsal premammillary nucleus (PMD),I,True,41.8
+night7,24,VM-thalamus,VM-thalamus,ventromedial thalamus,Midbrain,MB,-2.18,0.630316209,4.287113566,7580,5287,6330,Midbrain,I,True,41.8
+night7,25,VM-thalamus,VM-thalamus,ventromedial thalamus,Midbrain,MB,-2.18,0.630316209,4.287113566,7580,5287,6330,Midbrain,I,True,41.8
+night7,26,PH,PH,posterior hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.506505059,4.989281494,7580,5989,6207,Dorsal premammillary nucleus (PMD),E,True,41.8
+night7,27,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.466565978,5.215787277,7580,6216,6167,Dorsal premammillary nucleus (PMD),E,True,41.8
+night7,28,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.454584254,5.283739012,7580,6284,6155,Dorsal premammillary nucleus (PMD),I,True,41.8
+night7,29,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.466565978,5.215787277,7580,6216,6167,Dorsal premammillary nucleus (PMD),I,True,41.8
+night7,30,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.466565978,5.215787277,7580,6216,6167,Dorsal premammillary nucleus (PMD),I,True,41.8
+night7,31,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.454584254,5.283739012,7580,6284,6155,Dorsal premammillary nucleus (PMD),E,True,41.8
+night7,32,ARH,ARH,arcuate hypothalamus,Ventral premammillary nucleus,PMv,-2.18,0.382693908,5.691449422,7580,6691,6083,Ventral premammillary nucleus (PMV),I,True,41.8
+night7,33,ARH,ARH,arcuate hypothalamus,Ventral premammillary nucleus,PMv,-2.18,0.382693908,5.691449422,7580,6691,6083,Ventral premammillary nucleus (PMV),I,True,41.8
+night7,34,ARH,ARH,arcuate hypothalamus,Ventral premammillary nucleus,PMv,-2.18,0.39866954,5.600847108,7580,6601,6099,Ventral premammillary nucleus (PMV),I,True,41.8
+night7,35,ARH,ARH,arcuate hypothalamus,Ventral premammillary nucleus,PMv,-2.18,0.39866954,5.600847108,7580,6601,6099,Ventral premammillary nucleus (PMV),I,True,41.8
+night7,36,ARH,ARH,arcuate hypothalamus,Ventral premammillary nucleus,PMv,-2.18,0.406657357,5.555545952,7580,6556,6107,Ventral premammillary nucleus (PMV),I,True,41.8
+night7,37,ARH,ARH,arcuate hypothalamus,Ventral premammillary nucleus,PMv,-2.18,0.406657357,5.555545952,7580,6556,6107,Ventral premammillary nucleus (PMV),E,True,41.8
+night7,38,ARH,ARH,arcuate hypothalamus,Ventral premammillary nucleus,PMv,-2.18,0.410651265,5.532895373,7580,6533,6111,Ventral premammillary nucleus (PMV),E,True,41.8
+night7,39,ARH,ARH,arcuate hypothalamus,Ventral premammillary nucleus,PMv,-2.18,0.442602529,5.351690747,7580,6352,6143,Ventral premammillary nucleus (PMV),I,True,41.8
+night7,40,PH,PH,posterior hypothalamus,Hypothalamus,HY,-2.18,0.526474599,4.876028602,7580,5876,6226,Hypothalamus,I,True,41.8
+night7,41,ARH,ARH,arcuate hypothalamus,Ventral premammillary nucleus,PMv,-2.18,0.434614713,5.396991904,7580,6397,6135,Ventral premammillary nucleus (PMV),E,True,41.8
+night7,42,PH,PH,posterior hypothalamus,Lateral hypothalamic area,LHA,-2.18,0.534462415,4.830727446,7580,5831,6234,Lateral hypothalamic area (LH),E,True,41.8
+night7,43,ZI,ZI,zona incerta,Hypothalamus,HY,-1.58,0.558425864,4.694823976,6980,5695,6258,Hypothalamus,E,True,41.8
+night7,44,ZI,ZI,zona incerta,Hypothalamus,HY,-1.58,0.54644414,4.762775711,6980,5763,6246,Hypothalamus,E,True,41.8
+night7,45,ZI,ZI,zona incerta,Hypothalamus,HY,-1.58,0.54644414,4.762775711,6980,5763,6246,Hypothalamus,E,True,41.8
+night7,46,VMH,Ventromedial HT,ventromedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.58,0.442602529,5.351690747,6980,6352,6143,Dorsomedial hypothalamic nucleus (DMH),I,True,41.8
+night7,47,VMH,Ventromedial HT,ventromedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.58,0.434614713,5.396991904,6980,6397,6135,Dorsomedial hypothalamic nucleus (DMH),I,True,41.8
+night7,48,VMH,Ventromedial HT,ventromedial hypothalamus,Ventromedial hypothalamic nucleus,VMH,-1.58,0.426626897,5.44229306,6980,6442,6127,Ventromedial hypothalamic nucleus (VMH),E,True,41.8
+night7,49,VMH,Ventromedial HT,ventromedial hypothalamus,Ventromedial hypothalamic nucleus,VMH,-1.58,0.418639081,5.487594217,6980,6488,6119,Ventromedial hypothalamic nucleus (VMH),E,True,41.8
+night7,50,VMH,Ventromedial HT,ventromedial hypothalamus,Ventromedial hypothalamic nucleus,VMH,-1.58,0.418639081,5.487594217,6980,6488,6119,Ventromedial hypothalamic nucleus (VMH),I,True,41.8
+night7,51,ZI,ZI,zona incerta,mammillothalamic tract,mtt,-1.58,0.610346669,4.400366457,6980,5400,6310,Mammillothalamic tract (mt),I,True,41.8
+night7,52,ZI,ZI,zona incerta,mammillothalamic tract,mtt,-1.58,0.610346669,4.400366457,6980,5400,6310,Mammillothalamic tract (mt),I,True,41.8
+night7,53,ZI,ZI,zona incerta,mammillothalamic tract,mtt,-1.58,0.618334485,4.355065301,6980,5355,6318,Mammillothalamic tract (mt),E,True,41.8
+night7,54,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.58,0.494523335,5.057233229,6980,6057,6195,Dorsomedial hypothalamic nucleus (DMH),I,True,41.8
+night7,55,ZI,ZI,zona incerta,mammillothalamic tract,mtt,-1.58,0.626322301,4.309764144,6980,5310,6326,Mammillothalamic tract (mt),E,True,41.8
+night7,56,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.58,0.470559886,5.193136699,6980,6193,6171,Dorsomedial hypothalamic nucleus (DMH),I,True,41.8
+night7,57,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.58,0.46257207,5.238437855,6980,6238,6163,Dorsomedial hypothalamic nucleus (DMH),E,True,41.8
+night7,58,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.58,0.474553794,5.17048612,6980,6170,6175,Dorsomedial hypothalamic nucleus (DMH),E,True,41.8
+night7,59,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.58,0.454584254,5.283739012,6980,6284,6155,Dorsomedial hypothalamic nucleus (DMH),I,True,41.8
+night7,60,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.58,0.450590346,5.30638959,6980,6306,6151,Dorsomedial hypothalamic nucleus (DMH),I,True,41.8
+night7,61,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.486535518,5.102534385,7180,6103,6187,Dorsomedial hypothalamic nucleus (DMH),I,True,41.8
+night7,62,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-1.78,0.570407588,4.626872241,7180,5627,6270,Posterior hypothalamic area (PH),I,True,41.8
+night7,63,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-1.78,0.54644414,4.762775711,7180,5763,6246,Posterior hypothalamic area (PH),E,True,41.8
+night7,64,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-1.78,0.542450232,4.785426289,7180,5785,6242,Posterior hypothalamic area (PH),E,True,41.8
+night7,65,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.438608621,5.374341325,7180,6374,6139,Dorsomedial hypothalamic nucleus (DMH),E,True,41.8
+night7,66,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.430620805,5.419642482,7180,6420,6131,Dorsomedial hypothalamic nucleus (DMH),E,True,41.8
+night7,67,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.430620805,5.419642482,7180,6420,6131,Dorsomedial hypothalamic nucleus (DMH),E,True,41.8
+night7,68,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.414645173,5.510244795,7180,6510,6115,Dorsomedial hypothalamic nucleus (DMH),E,True,41.8
+night7,69,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.414645173,5.510244795,7180,6510,6115,Dorsomedial hypothalamic nucleus (DMH),E,True,41.8
+night7,70,ZI,ZI,zona incerta,mammillothalamic tract,mtt,-1.78,0.606352761,4.423017036,7180,5423,6306,Mammillothalamic tract (mt),E,True,41.8
+night7,71,ZI,ZI,zona incerta,mammillothalamic tract,mtt,-1.78,0.606352761,4.423017036,7180,5423,6306,Mammillothalamic tract (mt),E,True,41.8
+night7,72,ZI,ZI,zona incerta,mammillothalamic tract,mtt,-1.78,0.614340577,4.377715879,7180,5378,6314,Mammillothalamic tract (mt),E,True,41.8
+night7,73,DMH,DMH,dorsomedial hypothalamus,Hypothalamus,HY,-1.78,0.490529426,5.079883807,7180,6080,6191,Hypothalamus,E,True,41.8
+night7,74,VM-thalamus,VM-thalamus,ventromedial thalamus,mammillothalamic tract,mtt,-1.78,0.622328393,4.332414723,7180,5332,6322,Mammillothalamic tract (mt),E,True,41.8
+night7,75,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.470559886,5.193136699,7180,6193,6171,Dorsomedial hypothalamic nucleus (DMH),E,True,41.8
+night7,76,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.46257207,5.238437855,7180,6238,6163,Dorsomedial hypothalamic nucleus (DMH),E,True,41.8
+night7,77,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.474553794,5.17048612,7180,6170,6175,Dorsomedial hypothalamic nucleus (DMH),E,True,41.8
+night7,78,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.446596437,5.329040169,7180,6329,6147,Dorsomedial hypothalamic nucleus (DMH),E,True,41.8
+night7,79,DMH,DMH,dorsomedial hypothalamus,Ventromedial hypothalamic nucleus,VMH,-1.78,0.382693908,5.691449422,7180,6691,6083,Ventromedial hypothalamic nucleus (VMH),E,True,41.8
+day3,1,PH,PH,posterior hypothalamus,Midbrain,MB,-2.46,0.372616209,4.336513566,7860,5337,6073,Midbrain,I,True,51.1
+day3,2,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.46,0.240817243,5.08398265,7860,6084,5941,Mammillary nucleus (MM),E,True,51.1
+day3,3,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.46,0.248805059,5.038681494,7860,6039,5949,Mammillary nucleus (MM),I,True,51.1
+day3,4,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.46,0.240817243,5.08398265,7860,6084,5941,Mammillary nucleus (MM),E,True,51.1
+day3,5,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.46,0.22484161,5.174584964,7860,6175,5925,Mammillary nucleus (MM),E,True,51.1
+day3,6,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.46,0.22484161,5.174584964,7860,6175,5925,Mammillary nucleus (MM),E,True,51.1
+day3,7,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.46,0.296731956,4.766874554,7860,5767,5997,Supramammillary nucleus (SuM),E,True,51.1
+day3,8,PH,PH,posterior hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.46,0.276762415,4.880127446,7860,5880,5977,Mammillary nucleus (MM),I,True,51.1
+day3,9,MC,Mammillary Complex,mammillary complex,"Periventricular hypothalamic nucleus, posterior part",PVp,-2.46,0.168926897,5.49169306,7860,6492,5869,Periventricular hypothalamic nucleus (Pe),I,True,51.1
+day3,10,MC,Mammillary Complex,mammillary complex,"Periventricular hypothalamic nucleus, posterior part",PVp,-2.46,0.160939081,5.536994217,7860,6537,5861,Periventricular hypothalamic nucleus (Pe),E,True,51.1
+day3,11,PH,PH,posterior hypothalamus,Midbrain,MB,-2.46,0.352646669,4.449766457,7860,5450,6053,Midbrain,I,True,51.1
+day3,12,PH,PH,posterior hypothalamus,Midbrain,MB,-2.46,0.360634485,4.404465301,7860,5404,6061,Midbrain,E,True,51.1
+day3,13,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.46,0.256792875,4.993380337,7860,5993,5957,Mammillary nucleus (MM),E,True,51.1
+day3,14,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.46,0.272768507,4.902778024,7860,5903,5973,Mammillary nucleus (MM),E,True,51.1
+day3,15,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.46,0.280756323,4.857476867,7860,5857,5981,Mammillary nucleus (MM),I,True,51.1
+day3,16,PH,PH,posterior hypothalamus,Midbrain,MB,-2.66,0.376610118,4.313862988,8060,5314,6077,Midbrain,I,True,51.1
+day3,17,PH,PH,posterior hypothalamus,Midbrain,MB,-2.66,0.352646669,4.449766457,8060,5450,6053,Midbrain,I,True,51.1
+day3,18,MC,Mammillary Complex,mammillary complex,Supramammillary nucleus,SUM,-2.66,0.304719772,4.721573397,8060,5722,6005,Supramammillary nucleus (SuM),E,True,51.1
+day3,19,MC,Mammillary Complex,mammillary complex,Supramammillary nucleus,SUM,-2.66,0.296731956,4.766874554,8060,5767,5997,Supramammillary nucleus (SuM),I,True,51.1
+day3,20,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, dorsal part",MMd,-2.66,0.28874414,4.812175711,8060,5812,5989,Mammillary nucleus (MM),I,True,51.1
+day3,21,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, dorsal part",MMd,-2.66,0.28874414,4.812175711,8060,5812,5989,Mammillary nucleus (MM),E,True,51.1
+day3,22,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, median part",MMme,-2.66,0.172920805,5.469042482,8060,6469,5873,Mammillary nucleus (MM),E,True,51.1
+day3,23,PH,PH,posterior hypothalamus,Midbrain,MB,-2.66,0.356640577,4.427115879,8060,5427,6057,Midbrain,E,True,51.1
+day3,24,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.200878162,5.310488434,8060,6310,5901,Mammillary nucleus (MM),E,True,51.1
+day3,25,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.192890346,5.35578959,8060,6356,5893,Mammillary nucleus (MM),I,True,51.1
+day3,26,ARH,ARH,arcuate hypothalamus,Outside brain,,-2.66,0.144963449,5.62759653,8060,6628,5845,Outside brain,I,True,51.1
+day3,27,ARH,ARH,arcuate hypothalamus,Outside brain,,-2.66,0.152951265,5.582295373,8060,6582,5853,Outside brain,E,True,51.1
+day3,28,ARH,ARH,arcuate hypothalamus,Outside brain,,-2.66,0.152951265,5.582295373,8060,6582,5853,Outside brain,I,True,51.1
+day3,29,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.252798967,5.016030915,8060,6016,5953,Mammillary nucleus (MM),I,True,51.1
+day3,30,MC,Mammillary Complex,mammillary complex,Dorsomedial nucleus of the hypothalamus,DMH,-2.06,0.168926897,5.49169306,7460,6492,5869,Dorsomedial hypothalamic nucleus (DMH),I,True,51.1
+day3,31,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.06,0.276762415,4.880127446,7460,5880,5977,Posterior hypothalamic area (PH),E,True,51.1
+day3,32,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-2.06,0.220847702,5.197235542,7460,6197,5921,Posterior hypothalamic area (PH),E,True,51.1
+day3,33,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-2.06,0.244811151,5.061332072,7460,6061,5945,Posterior hypothalamic area (PH),I,True,51.1
+day3,34,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-2.06,0.212859886,5.242536699,7460,6243,5913,Posterior hypothalamic area (PH),I,True,51.1
+day3,35,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-2.06,0.208865978,5.265187277,7460,6265,5909,Posterior hypothalamic area (PH),I,True,51.1
+day3,36,MC,Mammillary Complex,mammillary complex,Dorsomedial nucleus of the hypothalamus,DMH,-2.06,0.164932989,5.514343638,7460,6514,5865,Dorsomedial hypothalamic nucleus (DMH),I,True,51.1
+day3,37,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.26,0.304719772,4.721573397,7660,5722,6005,Posterior hypothalamic area (PH),I,True,51.1
+day3,38,PH,PH,posterior hypothalamus,Dorsal premammillary nucleus,PMd,-2.26,0.248805059,5.038681494,7660,6039,5949,Dorsal premammillary nucleus (PMD),E,True,51.1
+day3,39,PH,PH,posterior hypothalamus,Dorsal premammillary nucleus,PMd,-2.26,0.248805059,5.038681494,7660,6039,5949,Dorsal premammillary nucleus (PMD),E,True,51.1
+day3,40,PH,PH,posterior hypothalamus,Dorsal premammillary nucleus,PMd,-2.26,0.248805059,5.038681494,7660,6039,5949,Dorsal premammillary nucleus (PMD),I,True,51.1
+day3,41,MC,Mammillary Complex,mammillary complex,Dorsal premammillary nucleus,PMd,-2.26,0.208865978,5.265187277,7660,6265,5909,Dorsal premammillary nucleus (PMD),I,True,51.1
+day3,42,MC,Mammillary Complex,mammillary complex,Dorsal premammillary nucleus,PMd,-2.26,0.196884254,5.333139012,7660,6333,5897,Dorsal premammillary nucleus (PMD),I,True,51.1
+day3,43,ARH,ARH,arcuate hypothalamus,"Periventricular hypothalamic nucleus, posterior part",PVp,-2.26,0.124993908,5.740849422,7660,6741,5825,Periventricular hypothalamic nucleus (Pe),E,True,51.1
+day3,44,ARH,ARH,arcuate hypothalamus,"Periventricular hypothalamic nucleus, posterior part",PVp,-2.26,0.132981724,5.695548265,7660,6696,5833,Periventricular hypothalamic nucleus (Pe),E,True,51.1
+day3,45,ARH,ARH,arcuate hypothalamus,"Periventricular hypothalamic nucleus, posterior part",PVp,-2.26,0.128987816,5.718198843,7660,6718,5829,Periventricular hypothalamic nucleus (Pe),E,True,51.1
+day3,46,ARH,ARH,arcuate hypothalamus,"Tuberomammillary nucleus, dorsal part",TMd,-2.26,0.148957357,5.604945952,7660,6605,5849,Tuberomammillary nucleus (TM),E,True,51.1
+day3,47,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.26,0.268774599,4.925428602,7660,5925,5969,Supramammillary nucleus (SuM),I,True,51.1
+day4,1,VMH,Ventromedial HT,ventromedial hypothalamus,Ventromedial hypothalamic nucleus,VMH,-1.58,0.334802529,5.462190747,6980,6462,6035,Ventromedial hypothalamic nucleus (VMH),I,True,42.6
+day4,2,VMH,Ventromedial HT,ventromedial hypothalamus,Ventromedial hypothalamic nucleus,VMH,-1.58,0.342790346,5.41688959,6980,6417,6043,Ventromedial hypothalamic nucleus (VMH),E,True,42.6
+day4,3,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.58,0.414680691,5.009179181,6980,6009,6115,Dorsomedial hypothalamic nucleus (DMH),I,True,42.6
+day4,4,VM-thalamus,VM-thalamus,ventromedial thalamus,Hypothalamus,HY,-1.58,0.47858322,4.646769927,6980,5647,6179,Hypothalamus,I,True,42.6
+day4,5,VM-thalamus,VM-thalamus,ventromedial thalamus,Hypothalamus,HY,-1.58,0.474589312,4.669420506,6980,5669,6175,Hypothalamus,I,True,42.6
+day4,6,VM-thalamus,VM-thalamus,ventromedial thalamus,Hypothalamus,HY,-1.58,0.482577129,4.624119349,6980,5624,6183,Hypothalamus,I,True,42.6
+day4,7,VM-thalamus,VM-thalamus,ventromedial thalamus,Hypothalamus,HY,-1.58,0.482577129,4.624119349,6980,5624,6183,Hypothalamus,I,True,42.6
+day4,8,VM-thalamus,VM-thalamus,ventromedial thalamus,Hypothalamus,HY,-1.58,0.47858322,4.646769927,6980,5647,6179,Hypothalamus,E,True,42.6
+day4,9,VMH,Ventromedial HT,ventromedial hypothalamus,mammillothalamic tract,mtt,-1.58,0.526510118,4.374962988,6980,5375,6227,Mammillothalamic tract (mt),I,True,42.6
+day4,10,VMH,Ventromedial HT,ventromedial hypothalamus,mammillothalamic tract,mtt,-1.58,0.526510118,4.374962988,6980,5375,6227,Mammillothalamic tract (mt),I,True,42.6
+day4,11,VMH,Ventromedial HT,ventromedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.322820805,5.530142482,7180,6530,6023,Dorsomedial hypothalamic nucleus (DMH),I,True,42.6
+day4,12,VMH,Ventromedial HT,ventromedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.326814713,5.507491904,7180,6507,6027,Dorsomedial hypothalamic nucleus (DMH),E,True,42.6
+day4,13,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.358765978,5.326287277,7180,6326,6059,Dorsomedial hypothalamic nucleus (DMH),E,True,42.6
+day4,14,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.366753794,5.28098612,7180,6281,6067,Dorsomedial hypothalamic nucleus (DMH),E,True,42.6
+day4,15,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.366753794,5.28098612,7180,6281,6067,Dorsomedial hypothalamic nucleus (DMH),I,True,42.6
+day4,16,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.382729426,5.190383807,7180,6190,6083,Dorsomedial hypothalamic nucleus (DMH),I,True,42.6
+day4,17,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.37474161,5.235684964,7180,6236,6075,Dorsomedial hypothalamic nucleus (DMH),I,True,42.6
+day4,18,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.386723335,5.167733229,7180,6168,6087,Dorsomedial hypothalamic nucleus (DMH),E,True,42.6
+day4,19,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.394711151,5.122432072,7180,6122,6095,Dorsomedial hypothalamic nucleus (DMH),I,True,42.6
+day4,20,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.394711151,5.122432072,7180,6122,6095,Dorsomedial hypothalamic nucleus (DMH),I,True,42.6
+day4,21,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.390717243,5.14508265,7180,6145,6091,Dorsomedial hypothalamic nucleus (DMH),E,True,42.6
+day4,22,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.78,0.406692875,5.054480337,7180,6054,6107,Dorsomedial hypothalamic nucleus (DMH),I,True,42.6
+day4,23,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.362759886,5.303636699,7380,6304,6063,Posterior hypothalamic area (PH),E,True,42.6
+day4,24,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.434650232,4.895926289,7380,5896,6135,Posterior hypothalamic area (PH),E,True,42.6
+day4,25,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.430656323,4.918576867,7380,5919,6131,Posterior hypothalamic area (PH),E,True,42.6
+day4,26,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.430656323,4.918576867,7380,5919,6131,Posterior hypothalamic area (PH),E,True,42.6
+day4,27,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.430656323,4.918576867,7380,5919,6131,Posterior hypothalamic area (PH),E,True,42.6
+day4,28,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.434650232,4.895926289,7380,5896,6135,Posterior hypothalamic area (PH),E,True,42.6
+day4,29,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.43864414,4.873275711,7380,5873,6139,Posterior hypothalamic area (PH),E,True,42.6
+day4,30,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.442638048,4.850625132,7380,5851,6143,Posterior hypothalamic area (PH),E,True,42.6
+day4,31,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.442638048,4.850625132,7380,5851,6143,Posterior hypothalamic area (PH),E,True,42.6
+day4,32,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.442638048,4.850625132,7380,5851,6143,Posterior hypothalamic area (PH),E,True,42.6
+day4,33,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.43864414,4.873275711,7380,5873,6139,Posterior hypothalamic area (PH),I,True,42.6
+day4,34,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.454619772,4.782673397,7380,5783,6155,Posterior hypothalamic area (PH),I,True,42.6
+day4,35,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.45861368,4.760022819,7380,5760,6159,Posterior hypothalamic area (PH),E,True,42.6
+day4,36,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.45861368,4.760022819,7380,5760,6159,Posterior hypothalamic area (PH),E,True,42.6
+day4,37,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.462607588,4.737372241,7380,5737,6163,Posterior hypothalamic area (PH),E,True,42.6
+day4,38,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-1.98,0.474589312,4.669420506,7380,5669,6175,Posterior hypothalamic area (PH),E,True,42.6
+day4,39,PH,PH,posterior hypothalamus,mammillothalamic tract,mtt,-1.98,0.506540577,4.488215879,7380,5488,6207,Mammillothalamic tract (mt),E,True,42.6
+day4,40,DMH,DMH,dorsomedial hypothalamus,Ventral premammillary nucleus,PMv,-2.18,0.338796437,5.439540169,7580,6440,6039,Ventral premammillary nucleus (PMV),E,True,42.6
+day4,41,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.382729426,5.190383807,7580,6190,6083,Dorsal premammillary nucleus (PMD),I,True,42.6
+day4,42,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.382729426,5.190383807,7580,6190,6083,Dorsal premammillary nucleus (PMD),I,True,42.6
+day4,43,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.402698967,5.077130915,7580,6077,6103,Dorsal premammillary nucleus (PMD),I,True,42.6
+day4,44,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.398705059,5.099781494,7580,6100,6099,Dorsal premammillary nucleus (PMD),I,True,42.6
+day4,45,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.398705059,5.099781494,7580,6100,6099,Dorsal premammillary nucleus (PMD),E,True,42.6
+day4,46,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.402698967,5.077130915,7580,6077,6103,Dorsal premammillary nucleus (PMD),E,True,42.6
+day4,47,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.402698967,5.077130915,7580,6077,6103,Dorsal premammillary nucleus (PMD),I,True,42.6
+day4,48,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.406692875,5.054480337,7580,6054,6107,Dorsal premammillary nucleus (PMD),I,True,42.6
+day4,49,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.410686783,5.031829759,7580,6032,6111,Dorsal premammillary nucleus (PMD),E,True,42.6
+day4,50,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.402698967,5.077130915,7580,6077,6103,Dorsal premammillary nucleus (PMD),E,True,42.6
+day4,51,PH,PH,posterior hypothalamus,Dorsal premammillary nucleus,PMd,-2.18,0.418674599,4.986528602,7580,5987,6119,Dorsal premammillary nucleus (PMD),E,True,42.6
+day4,52,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.18,0.434650232,4.895926289,7580,5896,6135,Supramammillary nucleus (SuM),E,True,42.6
+day4,53,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.18,0.434650232,4.895926289,7580,5896,6135,Supramammillary nucleus (SuM),E,True,42.6
+day4,54,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.18,0.43864414,4.873275711,7580,5873,6139,Supramammillary nucleus (SuM),E,True,42.6
+day4,55,PH,PH,posterior hypothalamus,principal mammillary tract,pm,-2.18,0.474589312,4.669420506,7580,5669,6175,Principal mammillary tract (pm),I,True,42.6
+day4,56,PH,PH,posterior hypothalamus,principal mammillary tract,pm,-2.18,0.47858322,4.646769927,7580,5647,6179,Principal mammillary tract (pm),E,True,42.6
+day4,57,PH,PH,posterior hypothalamus,principal mammillary tract,pm,-2.18,0.498552761,4.533517036,7580,5534,6199,Principal mammillary tract (pm),E,True,42.6
+day4,58,PH,PH,posterior hypothalamus,principal mammillary tract,pm,-2.18,0.494558853,4.556167614,7580,5556,6195,Principal mammillary tract (pm),I,True,42.6
+day4,59,PH,PH,posterior hypothalamus,principal mammillary tract,pm,-2.18,0.494558853,4.556167614,7580,5556,6195,Principal mammillary tract (pm),I,True,42.6
+day4,60,PH,PH,posterior hypothalamus,mammillothalamic tract,mtt,-2.18,0.522516209,4.397613566,7580,5398,6223,Mammillothalamic tract (mt),E,True,42.6
+day4,61,PH,PH,posterior hypothalamus,mammillothalamic tract,mtt,-2.18,0.526510118,4.374962988,7580,5375,6227,Mammillothalamic tract (mt),E,True,42.6
+day5,1,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-2.06,0.126635978,5.380687277,7460,6381,5827,Dorsomedial hypothalamic nucleus (DMH),E,True,43.7
+day5,2,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.06,0.190538507,5.018278024,7460,6018,5891,Posterior hypothalamic area (PH),E,True,43.7
+day5,3,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.06,0.22648368,4.814422819,7460,5814,5926,Posterior hypothalamic area (PH),E,True,43.7
+day5,4,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.06,0.234471496,4.769121662,7460,5769,5934,Posterior hypothalamic area (PH),I,True,43.7
+day5,5,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.06,0.278404485,4.519965301,7460,5520,5978,Posterior hypothalamic area (PH),I,True,43.7
+day5,6,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.06,0.286392301,4.474664144,7460,5475,5986,Posterior hypothalamic area (PH),I,True,43.7
+day5,7,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.06,0.294380118,4.429362988,7460,5429,5994,Posterior hypothalamic area (PH),I,True,43.7
+day5,8,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.06,0.290386209,4.452013566,7460,5452,5990,Posterior hypothalamic area (PH),E,True,43.7
+day5,9,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.06,0.294380118,4.429362988,7460,5429,5994,Posterior hypothalamic area (PH),I,True,43.7
+day5,10,PH,PH,posterior hypothalamus,Dorsal premammillary nucleus,PMd,-2.26,0.162581151,5.176832072,7660,6177,5863,Dorsal premammillary nucleus (PMD),E,True,43.7
+day5,11,PH,PH,posterior hypothalamus,Dorsal premammillary nucleus,PMd,-2.26,0.170568967,5.131530915,7660,6132,5871,Dorsal premammillary nucleus (PMD),I,True,43.7
+day5,12,PH,PH,posterior hypothalamus,Dorsal premammillary nucleus,PMd,-2.26,0.170568967,5.131530915,7660,6132,5871,Dorsal premammillary nucleus (PMD),I,True,43.7
+day5,13,PH,PH,posterior hypothalamus,Dorsal premammillary nucleus,PMd,-2.26,0.166575059,5.154181494,7660,6154,5867,Dorsal premammillary nucleus (PMD),I,True,43.7
+day5,14,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.26,0.234471496,4.769121662,7660,5769,5934,Supramammillary nucleus (SuM),E,True,43.7
+day5,15,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.26,0.234471496,4.769121662,7660,5769,5934,Supramammillary nucleus (SuM),I,True,43.7
+day5,16,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.26,0.230477588,4.791772241,7660,5792,5930,Supramammillary nucleus (SuM),I,True,43.7
+day5,17,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.26,0.234471496,4.769121662,7660,5769,5934,Supramammillary nucleus (SuM),I,True,43.7
+day5,18,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.26,0.24645322,4.701169927,7660,5701,5946,Posterior hypothalamic area (PH),I,True,43.7
+day5,19,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, median part",MMme,-2.46,0.174562875,5.108880337,7860,6109,5875,Mammillary nucleus (MM),I,True,43.7
+day5,20,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.46,0.182550691,5.063579181,7860,6064,5883,Mammillary nucleus (MM),I,True,43.7
+day5,21,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.46,0.20651414,4.927675711,7860,5928,5907,Mammillary nucleus (MM),E,True,43.7
+day5,22,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, median part",MMme,-2.46,0.218495864,4.859723976,7860,5860,5918,Mammillary nucleus (MM),E,True,43.7
+day5,23,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, median part",MMme,-2.46,0.222489772,4.837073397,7860,5837,5922,Mammillary nucleus (MM),E,True,43.7
+day5,24,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, median part",MMme,-2.66,0.110660346,5.47128959,8060,6471,5811,Mammillary nucleus (MM),E,True,43.7
+day5,25,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, median part",MMme,-2.66,0.110660346,5.47128959,8060,6471,5811,Mammillary nucleus (MM),E,True,43.7
+day5,26,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, median part",MMme,-2.66,0.12264207,5.403337855,8060,6403,5823,Mammillary nucleus (MM),E,True,43.7
+day5,27,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, median part",MMme,-2.66,0.126635978,5.380687277,8060,6381,5827,Mammillary nucleus (MM),E,True,43.7
+day5,28,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, median part",MMme,-2.66,0.126635978,5.380687277,8060,6381,5827,Mammillary nucleus (MM),I,True,43.7
+day5,29,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, median part",MMme,-2.66,0.126635978,5.380687277,8060,6381,5827,Mammillary nucleus (MM),I,True,43.7
+day5,30,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, median part",MMme,-2.66,0.134623794,5.33538612,8060,6335,5835,Mammillary nucleus (MM),I,True,43.7
+day5,31,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, median part",MMme,-2.66,0.134623794,5.33538612,8060,6335,5835,Mammillary nucleus (MM),I,True,43.7
+day5,32,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, median part",MMme,-2.66,0.146605518,5.267434385,8060,6267,5847,Mammillary nucleus (MM),E,True,43.7
+day5,33,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, median part",MMme,-2.66,0.14261161,5.290084964,8060,6290,5843,Mammillary nucleus (MM),E,True,43.7
+day5,34,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, median part",MMme,-2.66,0.14261161,5.290084964,8060,6290,5843,Mammillary nucleus (MM),E,True,43.7
+day5,35,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.154593335,5.222133229,8060,6222,5855,Mammillary nucleus (MM),E,True,43.7
+day5,36,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.154593335,5.222133229,8060,6222,5855,Mammillary nucleus (MM),E,True,43.7
+day5,37,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.150599426,5.244783807,8060,6245,5851,Mammillary nucleus (MM),E,True,43.7
+day5,38,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.154593335,5.222133229,8060,6222,5855,Mammillary nucleus (MM),E,True,43.7
+day5,39,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.154593335,5.222133229,8060,6222,5855,Mammillary nucleus (MM),E,True,43.7
+day5,40,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.150599426,5.244783807,8060,6245,5851,Mammillary nucleus (MM),E,True,43.7
+day5,41,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.158587243,5.19948265,8060,6199,5859,Mammillary nucleus (MM),I,True,43.7
+day5,42,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.170568967,5.131530915,8060,6132,5871,Mammillary nucleus (MM),I,True,43.7
+day5,43,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.166575059,5.154181494,8060,6154,5867,Mammillary nucleus (MM),E,True,43.7
+day5,44,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.170568967,5.131530915,8060,6132,5871,Mammillary nucleus (MM),E,True,43.7
+day5,45,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.170568967,5.131530915,8060,6132,5871,Mammillary nucleus (MM),E,True,43.7
+day5,46,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.174562875,5.108880337,8060,6109,5875,Mammillary nucleus (MM),E,True,43.7
+day5,47,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.174562875,5.108880337,8060,6109,5875,Mammillary nucleus (MM),E,True,43.7
+day5,48,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.182550691,5.063579181,8060,6064,5883,Mammillary nucleus (MM),E,True,43.7
+day5,49,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.186544599,5.040928602,8060,6041,5887,Mammillary nucleus (MM),I,True,43.7
+day5,50,PVH,PVH,paraventricular hypothalamus,"Medial mammillary nucleus, medial part",MMm,-2.66,0.182550691,5.063579181,8060,6064,5883,Mammillary nucleus (MM),E,True,43.7
+day5,51,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.66,0.186544599,5.040928602,8060,6041,5887,Mammillary nucleus (MM),I,True,43.7
+day5,52,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.66,0.190538507,5.018278024,8060,6018,5891,Mammillary nucleus (MM),I,True,43.7
+day5,53,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.66,0.190538507,5.018278024,8060,6018,5891,Mammillary nucleus (MM),I,True,43.7
+day5,54,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.66,0.202520232,4.950326289,8060,5950,5903,Mammillary nucleus (MM),E,True,43.7
+day5,55,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, dorsal part",MMd,-2.66,0.20651414,4.927675711,8060,5928,5907,Mammillary nucleus (MM),E,True,43.7
+day5,56,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, dorsal part",MMd,-2.66,0.210508048,4.905025132,8060,5905,5911,Mammillary nucleus (MM),E,True,43.7
+day5,57,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, dorsal part",MMd,-2.66,0.210508048,4.905025132,8060,5905,5911,Mammillary nucleus (MM),E,True,43.7
+day5,58,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, dorsal part",MMd,-2.66,0.20651414,4.927675711,8060,5928,5907,Mammillary nucleus (MM),E,True,43.7
+day5,59,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, dorsal part",MMd,-2.66,0.218495864,4.859723976,8060,5860,5918,Mammillary nucleus (MM),I,True,43.7
+day5,60,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, dorsal part",MMd,-2.66,0.22648368,4.814422819,8060,5814,5926,Mammillary nucleus (MM),E,True,43.7
+day5,61,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, dorsal part",MMd,-2.66,0.22648368,4.814422819,8060,5814,5926,Mammillary nucleus (MM),E,True,43.7
+day5,62,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, dorsal part",MMd,-2.66,0.22648368,4.814422819,8060,5814,5926,Mammillary nucleus (MM),I,True,43.7
+day5,63,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, dorsal part",MMd,-2.66,0.22648368,4.814422819,8060,5814,5926,Mammillary nucleus (MM),E,True,43.7
+day5,64,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.66,0.242459312,4.723820506,8060,5724,5942,Supramammillary nucleus (SuM),I,True,43.7
+day5,65,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.66,0.242459312,4.723820506,8060,5724,5942,Supramammillary nucleus (SuM),E,True,43.7
+day5,66,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.66,0.24645322,4.701169927,8060,5701,5946,Supramammillary nucleus (SuM),E,True,43.7
+day5,67,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.66,0.24645322,4.701169927,8060,5701,5946,Supramammillary nucleus (SuM),E,True,43.7
+day5,68,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.66,0.258434945,4.633218192,8060,5633,5958,Supramammillary nucleus (SuM),I,True,43.7
+day5,69,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.66,0.274410577,4.542615879,8060,5543,5974,Supramammillary nucleus (SuM),I,True,43.7
+day5,70,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.66,0.274410577,4.542615879,8060,5543,5974,Supramammillary nucleus (SuM),I,True,43.7
+day5,71,PH,PH,posterior hypothalamus,Midbrain,MB,-2.66,0.294380118,4.429362988,8060,5429,5994,Midbrain,I,True,43.7
+day6,1,VMH,Ventromedial HT,ventromedial hypothalamus,Ventromedial hypothalamic nucleus,VMH,-1.82,0.408139081,5.656694217,7220,6657,6108,Ventromedial hypothalamic nucleus (VMH),I,True,46.4
+day6,2,VMH,Ventromedial HT,ventromedial hypothalamus,Ventromedial hypothalamic nucleus,VMH,-1.82,0.408139081,5.656694217,7220,6657,6108,Ventromedial hypothalamic nucleus (VMH),I,True,46.4
+day6,3,VMH,Ventromedial HT,ventromedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.82,0.424114713,5.566091904,7220,6566,6124,Dorsomedial hypothalamic nucleus (DMH),I,True,46.4
+day6,4,VMH,Ventromedial HT,ventromedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.82,0.432102529,5.520790747,7220,6521,6132,Dorsomedial hypothalamic nucleus (DMH),I,True,46.4
+day6,5,MC,Mammillary Complex,mammillary complex,Supramammillary nucleus,SUM,-2.42,0.567895404,4.750671084,7820,5751,6268,Supramammillary nucleus (SuM),E,True,46.4
+day6,6,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.82,0.460059886,5.362236699,7220,6362,6160,Dorsomedial hypothalamic nucleus (DMH),E,True,46.4
+day6,7,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.82,0.476035518,5.271634385,7220,6272,6176,Dorsomedial hypothalamic nucleus (DMH),E,True,46.4
+day6,8,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.82,0.496005059,5.158381494,7220,6158,6196,Dorsomedial hypothalamic nucleus (DMH),I,True,46.4
+day6,9,DMH,DMH,dorsomedial hypothalamus,Dorsomedial nucleus of the hypothalamus,DMH,-1.82,0.496005059,5.158381494,7220,6158,6196,Dorsomedial hypothalamic nucleus (DMH),E,True,46.4
+day6,10,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-1.82,0.515974599,5.045128602,7220,6045,6216,Posterior hypothalamic area (PH),E,True,46.4
+day6,11,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-1.82,0.57588322,4.705369927,7220,5705,6276,Posterior hypothalamic area (PH),E,True,46.4
+day6,12,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-1.82,0.583871037,4.660068771,7220,5660,6284,Posterior hypothalamic area (PH),I,True,46.4
+day6,13,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-1.82,0.599846669,4.569466457,7220,5569,6300,Posterior hypothalamic area (PH),E,True,46.4
+day6,14,PH,PH,posterior hypothalamus,mammillothalamic tract,mtt,-1.82,0.607834485,4.524165301,7220,5524,6308,Mammillothalamic tract (mt),I,True,46.4
+day6,15,PH,PH,posterior hypothalamus,mammillothalamic tract,mtt,-1.82,0.623810118,4.433562988,7220,5434,6324,Mammillothalamic tract (mt),E,True,46.4
+day6,16,PH,PH,posterior hypothalamus,mammillothalamic tract,mtt,-1.82,0.619816209,4.456213566,7220,5456,6320,Mammillothalamic tract (mt),I,True,46.4
+day6,17,PH,PH,posterior hypothalamus,mammillothalamic tract,mtt,-1.82,0.615822301,4.478864144,7220,5479,6316,Mammillothalamic tract (mt),E,True,46.4
+day6,18,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-2.02,0.464053794,5.33958612,7420,6340,6164,Posterior hypothalamic area (PH),E,True,46.4
+day6,19,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-2.02,0.47204161,5.294284964,7420,6294,6172,Posterior hypothalamic area (PH),I,True,46.4
+day6,20,DMH,DMH,dorsomedial hypothalamus,Posterior hypothalamic nucleus,PH,-2.02,0.519968507,5.022478024,7420,6022,6220,Posterior hypothalamic area (PH),E,True,46.4
+day6,21,PH,PH,posterior hypothalamus,Posterior hypothalamic nucleus,PH,-2.02,0.539938048,4.909225132,7420,5909,6240,Posterior hypothalamic area (PH),E,True,46.4
+day6,22,PH,PH,posterior hypothalamus,Hypothalamus,HY,-2.02,0.595852761,4.592117036,7420,5592,6296,Hypothalamus,E,True,46.4
+day6,23,PH,PH,posterior hypothalamus,mammillothalamic tract,mtt,-2.02,0.611828393,4.501514723,7420,5502,6312,Mammillothalamic tract (mt),E,True,46.4
+day6,24,PH,PH,posterior hypothalamus,mammillothalamic tract,mtt,-2.02,0.611828393,4.501514723,7420,5502,6312,Mammillothalamic tract (mt),E,True,46.4
+day6,25,PH,PH,posterior hypothalamus,mammillothalamic tract,mtt,-2.02,0.623810118,4.433562988,7420,5434,6324,Mammillothalamic tract (mt),E,True,46.4
+day6,26,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.22,0.484023335,5.226333229,7620,6226,6184,Dorsal premammillary nucleus (PMD),I,True,46.4
+day6,27,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.22,0.480029426,5.248983807,7620,6249,6180,Dorsal premammillary nucleus (PMD),I,True,46.4
+day6,28,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.22,0.488017243,5.20368265,7620,6204,6188,Dorsal premammillary nucleus (PMD),E,True,46.4
+day6,29,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.22,0.499998967,5.135730915,7620,6136,6200,Dorsal premammillary nucleus (PMD),I,True,46.4
+day6,30,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.22,0.503992875,5.113080337,7620,6113,6204,Dorsal premammillary nucleus (PMD),E,True,46.4
+day6,31,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.22,0.503992875,5.113080337,7620,6113,6204,Dorsal premammillary nucleus (PMD),I,True,46.4
+day6,32,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.22,0.507986783,5.090429759,7620,6090,6208,Dorsal premammillary nucleus (PMD),I,True,46.4
+day6,33,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.22,0.511980691,5.067779181,7620,6068,6212,Dorsal premammillary nucleus (PMD),E,True,46.4
+day6,34,DMH,DMH,dorsomedial hypothalamus,Dorsal premammillary nucleus,PMd,-2.22,0.519968507,5.022478024,7620,6022,6220,Dorsal premammillary nucleus (PMD),E,True,46.4
+day6,35,DMH,DMH,dorsomedial hypothalamus,Hypothalamus,HY,-2.22,0.539938048,4.909225132,7620,5909,6240,Hypothalamus,I,True,46.4
+day6,36,DMH,DMH,dorsomedial hypothalamus,Lateral hypothalamic area,LHA,-2.22,0.559907588,4.795972241,7620,5796,6260,Lateral hypothalamic area (LH),E,True,46.4
+day6,37,MC,Mammillary Complex,mammillary complex,Ventral premammillary nucleus,PMv,-2.42,0.424114713,5.566091904,7820,6566,6124,Ventral premammillary nucleus (PMV),E,True,46.4
+day6,38,MC,Mammillary Complex,mammillary complex,Dorsal premammillary nucleus,PMd,-2.42,0.440090346,5.47548959,7820,6475,6140,Dorsal premammillary nucleus (PMD),I,True,46.4
+day6,39,MC,Mammillary Complex,mammillary complex,Dorsal premammillary nucleus,PMd,-2.42,0.464053794,5.33958612,7820,6340,6164,Dorsal premammillary nucleus (PMD),E,True,46.4
+day6,40,MC,Mammillary Complex,mammillary complex,Dorsal premammillary nucleus,PMd,-2.42,0.464053794,5.33958612,7820,6340,6164,Dorsal premammillary nucleus (PMD),I,True,46.4
+day6,41,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.42,0.476035518,5.271634385,7820,6272,6176,Mammillary nucleus (MM),I,True,46.4
+day6,42,MC,Mammillary Complex,mammillary complex,Dorsal premammillary nucleus,PMd,-2.42,0.47204161,5.294284964,7820,6294,6172,Dorsal premammillary nucleus (PMD),E,True,46.4
+day6,43,MC,Mammillary Complex,mammillary complex,Dorsal premammillary nucleus,PMd,-2.42,0.47204161,5.294284964,7820,6294,6172,Dorsal premammillary nucleus (PMD),E,True,46.4
+day6,44,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.42,0.484023335,5.226333229,7820,6226,6184,Mammillary nucleus (MM),E,True,46.4
+day6,45,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, medial part",MMm,-2.42,0.496005059,5.158381494,7820,6158,6196,Mammillary nucleus (MM),I,True,46.4
+day6,46,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, lateral part",MMl,-2.42,0.515974599,5.045128602,7820,6045,6216,Mammillary nucleus (MM),E,True,46.4
+day6,47,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, lateral part",MMl,-2.42,0.511980691,5.067779181,7820,6068,6212,Mammillary nucleus (MM),I,True,46.4
+day6,48,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, lateral part",MMl,-2.42,0.531950232,4.954526289,7820,5955,6232,Mammillary nucleus (MM),I,True,46.4
+day6,49,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, lateral part",MMl,-2.42,0.543931956,4.886574554,7820,5887,6244,Mammillary nucleus (MM),I,True,46.4
+day6,50,MC,Mammillary Complex,mammillary complex,"Medial mammillary nucleus, lateral part",MMl,-2.42,0.543931956,4.886574554,7820,5887,6244,Mammillary nucleus (MM),I,True,46.4
+day6,51,PH,PH,posterior hypothalamus,Supramammillary nucleus,SUM,-2.42,0.583871037,4.660068771,7820,5660,6284,Supramammillary nucleus (SuM),I,True,46.4
+day6,52,PH,PH,posterior hypothalamus,medial forebrain bundle,mfb,-2.42,0.595852761,4.592117036,7820,5592,6296,Medial forebrain bundle (mfb),I,True,46.4
+day6,53,PH,PH,posterior hypothalamus,medial forebrain bundle,mfb,-2.42,0.591858853,4.614767614,7820,5615,6292,Medial forebrain bundle (mfb),E,True,46.4
+day6,54,PH,PH,posterior hypothalamus,medial forebrain bundle,mfb,-2.42,0.603840577,4.546815879,7820,5547,6304,Medial forebrain bundle (mfb),I,True,46.4
+day6,55,PH,PH,posterior hypothalamus,medial forebrain bundle,mfb,-2.42,0.611828393,4.501514723,7820,5502,6312,Medial forebrain bundle (mfb),E,True,46.4
+day6,56,PH,PH,posterior hypothalamus,Midbrain,MB,-2.42,0.619816209,4.456213566,7820,5456,6320,Midbrain,E,True,46.4
