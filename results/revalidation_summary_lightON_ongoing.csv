@@ -1,0 +1,27 @@
+animal,condition,status,n_units,n_possible_edges,n_significant,edge_survival_rate,n_surrogates,encoding,fdr_procedure,source
+day1,lightON,ok,126,15750,15730,0.9987,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+day2,lightON,ok,31,930,922,0.9914,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+day3,lightON,ok,47,2162,1764,0.8159,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+day4,lightON,ok,61,3660,3530,0.9645,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+day5,lightON,ok,71,4970,4954,0.9968,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+day6,lightON,ok,56,3080,3018,0.9799,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+night1,lightON,ok,31,930,930,1.0,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+night2,lightON,skipped,,,,,100,,,GLMCC matrix is 50x50 for a 34-unit recording
+night3,lightON,ok,33,1056,1054,0.9981,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+night4,lightON,ok,35,1190,1122,0.9429,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+night5,lightON,ok,24,552,532,0.9638,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+night6,lightON,ok,54,2862,2714,0.9483,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+night7,lightON,ok,79,6162,5930,0.9623,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+day1,ongoing,ok,126,15750,15382,0.9766,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+day2,ongoing,ok,31,930,894,0.9613,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+day3,ongoing,ok,47,2162,1400,0.6475,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+day4,ongoing,ok,61,3660,3124,0.8536,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+day5,ongoing,ok,71,4970,4634,0.9324,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+day6,ongoing,ok,56,3080,2288,0.7429,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+night1,ongoing,ok,31,930,876,0.9419,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+night2,ongoing,ok,34,1122,942,0.8396,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+night3,ongoing,ok,33,1056,1056,1.0,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+night4,ongoing,ok,35,1190,1098,0.9227,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+night5,ongoing,ok,24,552,454,0.8225,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+night6,ongoing,ok,54,2862,2606,0.9106,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
+night7,ongoing,ok,79,6162,5244,0.851,100,glmcc_weight_masked,benjamini_hochberg_step_up,recomputed from persisted p-values
