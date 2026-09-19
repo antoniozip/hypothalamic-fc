@@ -1,0 +1,13 @@
+"animal","condition","source","target","density"
+"night4","ongoing","VM-thalamus","PVH",0
+"night4","ongoing","VM-thalamus","AH",0
+"night4","ongoing","VM-thalamus","DMH",0
+"night4","ongoing","PVH","VM-thalamus",0.0136054421768707
+"night4","ongoing","PVH","AH",0.0476190476190476
+"night4","ongoing","PVH","DMH",0
+"night4","ongoing","AH","VM-thalamus",0
+"night4","ongoing","AH","PVH",0.0952380952380952
+"night4","ongoing","AH","DMH",0
+"night4","ongoing","DMH","VM-thalamus",0
+"night4","ongoing","DMH","PVH",0
+"night4","ongoing","DMH","AH",0

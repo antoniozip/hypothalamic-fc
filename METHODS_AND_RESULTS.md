@@ -65,9 +65,16 @@ carries 10–30× more spikes than `lightON`, the condition contrast remains con
 A third problem is unchanged: the surrogate validation layer removes 0.0% of `lightON` edges and
 4.6% of `ongoing` edges, so "validated" connectivity is essentially raw GLMCC output.
 
+**The rate confound was then tested directly (§5.4) and it accounts for the condition effect.**
+Matching observation geometry and per-unit spike count between `lightON` and a light-off control
+collapses the ANOVA F for condition from 378→3.9 (node strength), 1049→4.9 (clustering),
+533→3.3 (local efficiency) and 409→0.47 (hub score). Nothing survives Holm correction across the
+four metrics. A small residual remains — the light-off arm is ~2% denser, reproducible across 9
+of 10 thinning seeds — in the opposite direction to the original claim.
+
 **Recommendation: the connectivity is defensible as a timing-based measurement, but the
-`lightON` vs `ongoing` contrast is not yet interpretable** because of the rate confound and the
-inert validation null. Section 9 lists what remains.
+`lightON` vs `ongoing` contrast as reported is a detection-power artifact and should be retired.**
+Section 9 lists what remains.
 
 ---
 
@@ -385,6 +392,42 @@ which is expected from the ~10× reduction in observation time, but does not rev
 
 No claim in this document now rests on a geometry-driven sign flip.
 
+### 5.4 Rate matching — the condition effect does not survive
+
+Full analysis in `reports/rate_matched/`; figure `figures/main/figR1_rate_matched.png`;
+matrices in `results/glmcc_rm/`.
+
+Across the 26 main matrices, Spearman ρ between spikes-per-unit and edge density is **+0.955
+(p = 3.7e-14)**, and `ongoing` carries 10.2–13.7× more spikes per unit than `lightON`. GLMCC's
+threshold `J_min ∝ 1/sqrt(cc₀)` falls as spikes accumulate, so density follows spike count by
+construction.
+
+**Design.** Two arms differing only in whether the light was on: `lightON` inside its true
+stimulus windows, and a light-off control built from `ongoing` gapped to those same windows
+shifted +45 s. Window count, duration and period are identical, so `T_observed` matches; each
+unit is then thinned to the smaller of its two counts, so `n_i` matches per unit. Thinning is
+uniform sampling without replacement, which preserves correlogram shape while lowering counts.
+
+**Result.** 26/26 arms estimated. Median density 3.09% (lightON) vs 3.10% (light-off).
+
+| metric | F raw | p raw | F matched | p matched | p Holm |
+|---|---|---|---|---|---|
+| node_strength | 378.48 | 3.2e-67 | 3.93 | 0.048 | 0.143 |
+| clustering_coefficient | 1049.02 | 2.9e-170 | 4.87 | 0.028 | 0.111 |
+| local_efficiency | 533.36 | 1.5e-99 | 3.33 | 0.068 | 0.143 |
+| hub_score | 408.51 | 2.4e-71 | 0.47 | 0.492 | 0.492 |
+
+F collapses by two to three orders of magnitude; 8 of 12 terms lose significance; **nothing
+survives multiple-comparison correction.** The `conditionlightON` fixed effects are all
+non-significant (p = 0.49–0.99).
+
+**The residual.** Repeating over 10 thinning seeds, the light-off arm is consistently ~0.07 pp
+(~2% relative) denser, significant in 9 of 10. This is not explained by the lightON arm being
+thinned harder: the excess is *smaller* where thinning was more asymmetric (ρ = −0.311,
+p < 0.001, n = 130), the opposite of that prediction. It is ~2% of the effect size originally
+reported and runs in the opposite direction, so it is a different phenomenon and needs the
+symmetric-thinning control before interpretation.
+
 ## 6. What changed our belief
 
 | before this round | after |
@@ -395,14 +438,12 @@ No claim in this document now rests on a geometry-driven sign flip.
 | Edges are consistent across conditions (0.636) | Edge consistency is 0.075 |
 | Surrogate validation constrains the edge set | It removes 0.0% of lightON and 4.6% of ongoing edges |
 | *(mid-round)* The edge set carries no timing information and is not synaptic | **Withdrawn.** That rested on control runs at 1 s resolution. Corrected, edges break between 5 and 25 ms |
-| The condition effect is the finding | The condition effect is real in the statistics but confounded with firing rate, which gates GLMCC's detection threshold |
+| The condition effect is the finding | **Tested: the condition effect is the confound.** Matching geometry and spike count collapses F by 100–1000× and nothing survives correction (§5.4) |
 
 ## 7. Limitations and negative results
 
-1. **Spike count gates detection.** Whether a pair is testable at all is set by its spike-count
-   product through `J_min ∝ 1/sqrt(cc₀)` (§5.2a). `ongoing` carries 10–30× more spikes than
-   `lightON`, so the condition contrast is confounded with rate. This is now the principal
-   threat to the headline result.
+1. **The headline condition effect does not exist once detection power is equalised** (§5.4).
+   This is the principal negative result of the round.
 2. **The validation null is inert** — 0.0% of lightON and 4.6% of ongoing edges removed (§4.2).
 3. **`lightON` is at or below the detection floor** for several animals (§5.1). night3 lightON
    yields 3 edges from 33 units.
@@ -426,7 +467,8 @@ Only five figures survive this round; the rest were built on discarded data.
 | `figures/main/figT1_region_decomposition.png` | within- vs between-region edge share | current; supports §4.5 — high variance across animals |
 | `figures/main/figT1_centrality_convergence.png` | rank agreement among four centrality measures | current; supports §4.5 |
 | `figures/main/figT2_null_models.png` | z-scores for modularity / clustering vs nulls | current; supports §4.6 — 3/13 and 2/13 significant |
-| `figures/main/figJ1_jitter_sensitivity.png` | edge survival vs displacement, with shuffle floor and the spike-count mechanism | current; supports §5.2a — the key negative result |
+| `figures/main/figJ1_jitter_sensitivity.png` | edge survival vs displacement, with shuffle floor and the spike-count mechanism | current; supports §5.2a — edges are timing-dependent |
+| `figures/main/figR1_rate_matched.png` | the rate confound, F before/after matching, paired matched densities | current; supports §5.4 — the key negative result |
 
 `figT2_small_world.png` was **not** produced: there is nothing to plot (§4.6).
 
@@ -436,10 +478,8 @@ Only five figures survive this round; the rest were built on discarded data.
 
 1. ~~Find the scale at which jitter breaks the edge set.~~ **Done (§5.2a).** It breaks between
    5 and 25 ms. The edges are timing-dependent and the synaptic interpretation is available.
-2. **Break the rate confound.** This is now the top item. Sub-sample `ongoing` to `lightON`
-   spike counts per unit and re-estimate, or restrict every condition comparison to pairs matched
-   on spike-count product. Until then the condition effect cannot be separated from a firing-rate
-   difference acting through GLMCC's threshold.
+2. ~~Break the rate confound.~~ **Done (§5.4).** The condition effect is the confound. Retire the
+   raw `lightON` vs `ongoing` contrast; `results/glmcc_rm/` holds the defensible comparison.
 3. **Replace the shuffle-ISI null with a within-window shuffle null**, per pair at q = 0.05.
    `scripts/jitter_sensitivity.py` already implements the surrogate. The ~1% shuffle survival in
    §5.2a predicts the real edges will largely pass, so this is a strengthening step rather than a
@@ -451,8 +491,9 @@ Only five figures survive this round; the rest were built on discarded data.
    `run_glmcc_c_missing.sh` has been disabled. Any new call site must use it.
 7. Only then regenerate community/participation/hub-stability/circos and the manuscript figures.
 
-Item 2 decides whether the condition contrast means anything. Item 3 decides whether the edge
-counts are quotable.
+Items 1 and 2 are settled. The condition contrast as framed does not survive. Item 3 decides
+whether the edge counts are quotable; the symmetric-thinning control decides whether the small
+light-off excess is worth pursuing as a question in its own right.
 
 ## 10. Reproducibility index
 
@@ -468,6 +509,9 @@ the purge commit message); superseded reports are in `reports/superseded/`.
 | Aligned control | `python3 scripts/run_gapped_ongoing_aligned.py` | ~5 min |
 | Jitter control | `python3 scripts/run_jitter_control.py` | ~12 min |
 | Positive control | `python3 scripts/glmcc_positive_control.py` | 7 s |
+| Rate-matched contrast | `python3 scripts/rate_matched_contrast.py` | ~1 min |
+| Matched metrics + LME | `ESTIMATOR=glmcc_rm bash scripts/rebuild_downstream.sh` | ~3 min |
+| Matched figure | `python3 scripts/plot_rate_matched.py` | ~10 s |
 | Jitter sensitivity sweep | `python3 scripts/jitter_sensitivity.py` | ~45 min |
 | Sweep figure | `python3 scripts/plot_jitter_sensitivity.py` | ~30 s |
 | Edge validation | `python3 scripts/revalidate_all.py` | ~35 min |

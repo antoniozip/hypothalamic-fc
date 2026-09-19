@@ -1,0 +1,12 @@
+{
+  "encoding": "glmcc_weight_masked",
+  "note": "rate- and geometry-matched arms; 'ongoing' here is the light-off control, not the raw ongoing epoch",
+  "condition": "ongoing",
+  "offset_s": 45.0,
+  "seed": 42,
+  "n_windows": 105,
+  "spikes_before": 26891,
+  "spikes_after": 26801,
+  "matching": "per-unit thinning to min(lightON, lightOFF) count",
+  "written_at": "2026-09-19T20:06:02.668579+00:00"
+}

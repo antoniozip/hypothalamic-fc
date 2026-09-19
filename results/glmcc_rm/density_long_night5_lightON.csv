@@ -1,0 +1,7 @@
+"animal","condition","source","target","density"
+"night5","lightON","VM-thalamus","PVH",0.05
+"night5","lightON","VM-thalamus","VMH",0.0333333333333333
+"night5","lightON","PVH","VM-thalamus",0
+"night5","lightON","PVH","VMH",0
+"night5","lightON","VMH","VM-thalamus",0.0166666666666667
+"night5","lightON","VMH","PVH",0
