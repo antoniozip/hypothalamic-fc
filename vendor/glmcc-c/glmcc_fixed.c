@@ -407,7 +407,11 @@ int main(int argc, char **argv) {
             }
 
             double c_E=2.532, c_I=0.612, scale=1.277;
-            double Jp=best_par[NPAR-2], Jm=best_par[NPAR-1];
+            /* Est_Data.py writes par[NPAR-1] as J_+ and par[NPAR-2] as J_-, then sets
+             * W[i][j] = calc_PSP(J_+, Jmin[1]*scale) and W[j][i] = calc_PSP(J_-, Jmin[0]*scale).
+             * This port had the two slots the other way round, so each direction received
+             * the other's coefficient and threshold. */
+            double Jp=best_par[NPAR-1], Jm=best_par[NPAR-2];
             double Wij=0, Wji=0;
 
             if (is_LR) {
@@ -423,10 +427,10 @@ int main(int argc, char **argv) {
                 if (2*D1 > z_a) Wij = (Jp>=0) ? c_E*Jp : c_I*Jp;
                 if (2*D2 > z_a) Wji = (Jm>=0) ? c_E*Jm : c_I*Jm;
             } else {
-                if (Jp > Jmin[0]*scale) Wij = Jp*c_E;
-                else if (Jp < -Jmin[0]*scale) Wij = Jp*c_I;
-                if (Jm > Jmin[1]*scale) Wji = Jm*c_E;
-                else if (Jm < -Jmin[1]*scale) Wji = Jm*c_I;
+                if (Jp > Jmin[1]*scale) Wij = Jp*c_E;
+                else if (Jp < -Jmin[1]*scale) Wij = Jp*c_I;
+                if (Jm > Jmin[0]*scale) Wji = Jm*c_E;
+                else if (Jm < -Jmin[0]*scale) Wji = Jm*c_I;
             }
 
             #pragma omp critical
