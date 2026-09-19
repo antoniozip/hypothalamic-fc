@@ -18,6 +18,14 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 library(RColorBrewer)
+source(here::here("src", "r", "compat.R"))
+
+# Seed before ANY stochastic step. These scripts build degree-preserving null
+# models with rewire(); previously tier1 seeded only at line ~468, after its
+# nulls had already been drawn, and tier2 never seeded at all, so the rich-club,
+# small-world and null-model statistics were not reproducible run to run.
+set.seed(42)  # reproducibility
+
 
 dir.create(here("figures", "main"), showWarnings = FALSE, recursive = TRUE)
 
@@ -176,7 +184,7 @@ p1c <- ggplot(rc_top, aes(x = phi_null_mean, y = phi_obs, color = day_night)) +
        color = "Phase") +
   theme_minimal(base_size = 11)
 
-fig1 <- ggpubr::ggarrange(p1a, p1b, p1c, ncol = 1, heights = c(1, 1, 1.1))
+fig1 <- ggpubr$ggarrange(p1a, p1b, p1c, ncol = 1, heights = c(1, 1, 1.1))
 ggsave(here("figures", "main", "figT1_rich_club.png"),
        fig1, width = 9, height = 14, dpi = 150)
 
@@ -284,7 +292,7 @@ p2b <- ggplot(region_cons, aes(x = region, y = mean_consistency)) +
   coord_flip() +
   theme_minimal(base_size = 11)
 
-fig2 <- ggpubr::ggarrange(p2a, p2b, ncol = 1, heights = c(1.3, 1))
+fig2 <- ggpubr$ggarrange(p2a, p2b, ncol = 1, heights = c(1.3, 1))
 ggsave(here("figures", "main", "figT1_edge_consistency.png"),
        fig2, width = 9, height = 11, dpi = 150)
 
@@ -483,7 +491,7 @@ p4b <- ggplot(centrality_sample,
        color = "Phase") +
   theme_minimal(base_size = 11)
 
-fig4 <- ggpubr::ggarrange(p4a, p4b, ncol = 1, heights = c(1, 1.2))
+fig4 <- ggpubr$ggarrange(p4a, p4b, ncol = 1, heights = c(1, 1.2))
 ggsave(here("figures", "main", "figT1_centrality_convergence.png"),
        fig4, width = 10, height = 9, dpi = 150)
 

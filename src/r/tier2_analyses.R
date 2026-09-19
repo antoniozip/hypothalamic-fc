@@ -16,6 +16,14 @@ library(igraph)
 library(ggplot2)
 library(dplyr)
 library(tidyr)
+source(here::here("src", "r", "compat.R"))
+
+# Seed before ANY stochastic step. These scripts build degree-preserving null
+# models with rewire(); previously tier1 seeded only at line ~468, after its
+# nulls had already been drawn, and tier2 never seeded at all, so the rich-club,
+# small-world and null-model statistics were not reproducible run to run.
+set.seed(42)  # reproducibility
+
 
 dir.create(here("figures", "main"), showWarnings = FALSE, recursive = TRUE)
 
@@ -168,7 +176,7 @@ p1b <- ggplot(null_scatter,
        color = "Phase") +
   theme_minimal(base_size = 11)
 
-fig6 <- ggpubr::ggarrange(p1a, p1b, ncol = 1, heights = c(1, 1.3))
+fig6 <- ggpubr$ggarrange(p1a, p1b, ncol = 1, heights = c(1, 1.3))
 ggsave(here("figures", "main", "figT2_null_models.png"),
        fig6, width = 10, height = 10, dpi = 150)
 
@@ -314,7 +322,7 @@ p2c <- ggplot(sw_results, aes(x = C_obs, y = L_obs, color = day_night)) +
        color = "Phase") +
   theme_minimal(base_size = 11)
 
-fig7 <- ggpubr::ggarrange(p2a, ggpubr::ggarrange(p2b, p2c, ncol = 2),
+fig7 <- ggpubr$ggarrange(p2a, ggpubr$ggarrange(p2b, p2c, ncol = 2),
                           ncol = 1, heights = c(1, 1.1))
 ggsave(here("figures", "main", "figT2_small_world.png"),
        fig7, width = 12, height = 10, dpi = 150)
