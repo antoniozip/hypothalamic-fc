@@ -435,6 +435,16 @@ int main(int argc, char **argv) {
 
             #pragma omp critical
             {
+                if (getenv("GLMCC_DUMP_J")) {
+                    FILE *jf = fopen("J_c.txt", "a");
+                    if (jf) {
+                        /* Same column order as Est_Data.py's J_py_*.txt:
+                         * i j J_+ J_- Jmin_+ Jmin_- */
+                        fprintf(jf, "%d %d %.6f %.6f %.6f %.6f\n",
+                                i, j, Jp, Jm, Jmin[1], Jmin[0]);
+                        fclose(jf);
+                    }
+                }
                 W[i*N+j] = Wij;
                 W[j*N+i] = Wji;
                 done++;
