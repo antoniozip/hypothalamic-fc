@@ -17,22 +17,29 @@ large and significant everywhere. Two negative controls fail.
 
 ## Blocking questions, in order
 
-1. **Why does ±25 ms jitter remove no edges?** 41,827 of 41,842 survive (100.0%). Jitter at
-   5/10/25/50/100 ms and find the timescale where the edge set starts to break. Until this has
-   an answer, no connectivity claim here is safe.
+1. ~~Why does ±25 ms jitter remove no edges?~~ **ANSWERED — `reports/jitter_sensitivity/`.**
+   There is no timescale at which it breaks. Survival is 99.98/99.97/99.95/99.93/99.92% at
+   5/10/25/50/100 ms, and **99.30% under a full within-window shuffle** that randomises every
+   spike time. Weights stay correlated at r = 0.96 through the shuffle. Edge presence is set by
+   the pair's spike-count product (day3: median n_i*n_j 1,159,561 with an edge vs 1,674 without,
+   p = 8.5e-297) — GLMCC's J_min threshold, not coupling. **The connectivity is not synaptic.**
 2. **Retire the raw `lightON` vs `ongoing` contrast.** Sign follows recording geometry —
    continuous ongoing is 97–100% negative, the same spikes gapped to the lightON duty cycle are
    ~100% positive. Use `lightON` vs aligned-ongoing, which matches window count, duration and
    period.
-3. **Replace the shuffle-ISI null.** It rejects 0.0% of lightON and 4.6% of ongoing edges, so it
-   constrains nothing. Build a jitter null at the timescale from (1).
+3. **Replace the shuffle-ISI null with the within-window shuffle** (already implemented in
+   `scripts/jitter_sensitivity.py`). The current null rejects 0.0% of lightON and 4.6% of ongoing
+   edges, so it constrains nothing; the within-window shuffle is a null this edge set
+   demonstrably fails. **This is now the step that decides whether there is a paper.**
 4. **Handle the spike-count confound.** `ongoing` has 10–30x more spikes than `lightON`, and
    GLMCC's threshold shrinks as 1/sqrt(cc0), so density tracks spike count directly.
 5. **Respecify the second-level model.** It is rank deficient (76 columns dropped) and every
    contrast returns `nonEst`.
 
-Items 1 and 2 decide whether there is a paper. Items 3-5 are prerequisites for trusting any
-number in the results.
+Item 1 is settled and the answer is negative. Item 3 now decides the outcome: if a
+within-window-shuffle null leaves too few edges to analyse -- which 99.30% survival predicts --
+then GLMCC at this operating point does not support a connectivity claim on this dataset, and
+that is the result. Items 2, 4 and 5 matter only if item 3 leaves something standing.
 
 ## Deliberately not re-run
 

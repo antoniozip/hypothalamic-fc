@@ -51,3 +51,14 @@ bDATAnight*/
 node_modules/
 package*.json
 backups/
+
+# Raw recordings and surrogates: ~36 GB that must never enter git history.
+# A bare `git add -A` will otherwise try to stage all of it and write several GB
+# of loose objects before anyone notices. data/processed/ is tracked and stays.
+data/surrogates/
+data/allen_atlas/
+data/raw/
+# core.ignorecase is true here, so a `DATA*/` pattern would also match `data/` and
+# hide new files in the tracked data/processed/. DATA?*/ cannot match `data/`.
+DATA?*
+*.mat
