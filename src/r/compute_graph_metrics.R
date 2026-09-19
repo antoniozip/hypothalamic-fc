@@ -32,17 +32,29 @@ neuron_id <- seq_len(n_nodes)
 
 strength <- strength(g, mode = "all")
 clustering <- transitivity(g, type = "local")
+# Local efficiency, Latora & Marchiori (2001): the mean inverse shortest-path
+# distance among a node's neighbours. Two corrections over the previous version,
+# which were self-cancelling for a uniform complete neighbour subgraph and so went
+# unnoticed (see tests/test_local_efficiency.R):
+#   1. Edge length is 1/|weight|. Coupling strength is not a distance -- a stronger
+#      connection must be a SHORTER path, not a longer one.
+#   2. Efficiency is mean(1/d), not 1/mean(1/d). The latter is the harmonic mean of
+#      distances, which inverts the metric a second time.
+# |weight| is used because GLMCC weights are signed; magnitude carries the coupling
+# strength and the sign is an E/I label, not a path length.
 loc_eff <- numeric(n_nodes)
 for (v in seq_len(n_nodes)) {
   neighbors_v <- neighbors(g, v, mode = "all")
-  if (length(neighbors_v) > 0) {
-    sg <- induced_subgraph(g, neighbors_v)
-    E(sg)$weight <- abs(E(sg)$weight)
-    d <- distances(sg, weights = E(sg)$weight)
-    d[d == 0] <- NA
-    loc_eff[v] <- 1 / mean(1 / d, na.rm = TRUE)
-    if (is.infinite(loc_eff[v]) || is.na(loc_eff[v])) loc_eff[v] <- 0
-  }
+  if (length(neighbors_v) < 2) next          # a pair needs two neighbours
+  sg <- induced_subgraph(g, neighbors_v)
+  if (ecount(sg) == 0) next                  # no paths among them
+  E(sg)$weight <- 1 / abs(E(sg)$weight)
+  d <- distances(sg, weights = E(sg)$weight)
+  diag(d) <- NA                              # exclude self-pairs
+  # Disconnected pairs give d = Inf, hence 1/d = 0, which is the correct
+  # contribution: unreachable neighbours add no efficiency.
+  loc_eff[v] <- mean(1 / d, na.rm = TRUE)
+  if (!is.finite(loc_eff[v])) loc_eff[v] <- 0
 }
 clustering[is.na(clustering)] <- 0
 loc_eff[is.na(loc_eff)] <- 0

@@ -1,0 +1,14 @@
+animal,n_expected,lightON,ongoing,note
+day1,126,126,126,
+day2,31,31,31,
+day3,47,47,47,
+day4,61,61,61,
+day5,71,71,71,
+day6,56,56,56,
+night1,31,31,31,
+night2,34,,34,lightON excluded: adj_night2_lightON.csv: matrix is 50x50 but the recording has 34 units and 0 of them are spike-free. The matri
+night3,33,33,33,
+night4,35,35,35,
+night5,24,24,24,
+night6,54,54,54,
+night7,79,79,79,
