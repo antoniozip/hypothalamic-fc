@@ -28,6 +28,7 @@ import numpy as np
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 from gap_spike_trains import gap_directory, measure_windows  # noqa: E402
+from glmcc_units import run_glmcc  # noqa: E402
 
 GLMCC_BIN = PROJECT_ROOT / "vendor" / "glmcc-c" / "glmcc"
 RESULTS = PROJECT_ROOT / "results" / "glmcc"
@@ -70,18 +71,16 @@ def run_one(animal: str, workroot: Path) -> dict:
     })
 
     n_cells = len(list(ongoing_dir.glob("cell*.txt")))
-    started = time.time()
-    proc = subprocess.run([str(GLMCC_BIN), ".", str(n_cells), "exp", "GLM"],
-                          cwd=work, capture_output=True, text=True)
-    row["elapsed_s"] = round(time.time() - started, 1)
-
-    produced = sorted(work.glob("W_py_*.csv"))
-    if proc.returncode != 0 or not produced:
+    # Spike files here are in SECONDS. GLMCC reads WIN/DELTA/tau in the file's own
+    # unit, so running them directly built a +/-50 SECOND correlogram at 1 s resolution.
+    # run_glmcc() converts to 0-based ms and passes the true T. See scripts/glmcc_units.py.
+    W, elapsed, err = run_glmcc(work, n_cells)
+    row["elapsed_s"] = elapsed
+    if W is None:
         row["status"] = "error"
-        row["note"] = (proc.stderr or "no W_py output").strip()[:200]
+        row["note"] = err
         return row
 
-    W = np.loadtxt(produced[0], delimiter=",")
     out = RESULTS / f"adj_{animal}_ongoing_gapped.csv"
     np.savetxt(out, W, delimiter=",", fmt="%.6f")
 

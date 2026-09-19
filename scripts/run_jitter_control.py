@@ -36,6 +36,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 from gap_spike_trains import gap_directory_windows, stimulus_windows  # noqa: E402
 from jitter_spike_trains import jitter_directory  # noqa: E402
+from glmcc_units import run_glmcc  # noqa: E402
 
 GLMCC_BIN = PROJECT_ROOT / "vendor" / "glmcc-c" / "glmcc"
 RESULTS = PROJECT_ROOT / "results" / "glmcc"
@@ -49,14 +50,10 @@ ANIMAL_MAP = {
 
 
 def _glmcc(work: Path, n_cells: int) -> tuple[np.ndarray | None, float, str]:
-    started = time.time()
-    proc = subprocess.run([str(GLMCC_BIN), ".", str(n_cells), "exp", "GLM"],
-                          cwd=work, capture_output=True, text=True)
-    elapsed = round(time.time() - started, 1)
-    produced = sorted(work.glob("W_py_*.csv"))
-    if proc.returncode != 0 or not produced:
-        return None, elapsed, (proc.stderr or "no W_py output").strip()[:200]
-    return np.loadtxt(produced[0], delimiter=","), elapsed, ""
+    # Spike files here are in SECONDS. GLMCC reads WIN/DELTA/tau in the file's own
+    # unit, so running them directly built a +/-50 SECOND correlogram at 1 s resolution.
+    # run_glmcc() converts to 0-based ms and passes the true T. See scripts/glmcc_units.py.
+    return run_glmcc(work, n_cells)
 
 
 def _sign_stats(W: np.ndarray) -> dict:

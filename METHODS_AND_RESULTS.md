@@ -35,24 +35,39 @@ printed precision, in all four of its modes, on synthetic fixtures, on the refer
 recomputed.
 
 The corrected pipeline runs end to end and the condition effect is large and highly significant
-in every graph metric. **But two negative controls fail**, and they fail in a way that undercuts
-a synaptic interpretation of the result:
+in every graph metric.
 
-1. **Jitter.** Displacing every spike by ±25 ms destroys all 1–5 ms structure. **41,827 of 41,842
-   edges survive it (100.0%).** A sweep over 5/10/25/50/100 ms and a full within-window shuffle
-   (§5.2a) found **no timescale at which the edge set breaks** — 99.30% survive even when every
-   spike time is randomised. Edge presence is driven by the pair's spike-count product instead.
-2. **Geometry.** The sign of the weights is set by the recording's duty cycle, not by the spike
-   trains: continuous `ongoing` yields 97–100% negative weights, the *same spikes* gapped to the
-   `lightON` duty cycle yield ~100% positive.
+**A second defect, in the control scripts, was found and fixed on the same day.**
+`run_jitter_control.py`, `run_gapped_ongoing.py`, `run_gapped_ongoing_aligned.py` and
+`run_glmcc_c_missing.sh` invoked the binary with four arguments and no explicit `T`, on spike
+files written in **seconds**. GLMCC reads `WIN = 50`, `DELTA = 1` and `tau = 4` in the file's own
+unit, so those runs built a **±50 second** correlogram at **1 second** resolution. Every control
+arm was therefore measuring at a timescale three orders of magnitude too coarse. The main
+matrices were never affected — `regenerate_glmcc.py` converts to milliseconds and passes the true
+duration.
 
-A third, softer problem: the surrogate validation layer removes 0.0% of `lightON` edges and 4.6%
-of `ongoing` edges, so "validated" connectivity is essentially raw GLMCC output.
+**Re-run correctly, both negative controls pass:**
 
-**Recommendation: do not build connectivity claims on these matrices.** The estimator is now
-correct, and what it measures is now established — and it is not synaptic coupling. Section 9
-lists what would be needed to get a defensible edge set, and section 5.2a explains why that may
-not be achievable at this operating point.
+1. **Jitter (§5.2).** Displacing spikes destroys the edge set at exactly the monosynaptic scale:
+   16.8% survive ±5 ms, 5.6% ±10 ms, 0.7% ±25 ms, and a full within-window shuffle leaves 1.1%.
+   By 25 ms the edge set is already at the shuffle floor. The aligned-ongoing edges are
+   timing-dependent.
+2. **Geometry (§5.3, withdrawn).** The claimed sign flip with duty cycle was an artifact of
+   comparing a millisecond arm against second arms. In matched units the gapped and aligned arms
+   are 70–100% negative, the same direction as continuous `ongoing` at 97–100%.
+
+What survives as a genuine caveat is narrower: **spike count gates detection.** Pairs that
+receive an edge have a far larger spike-count product than those that do not (day3 median
+1,159,561 vs 1,674, p = 8.5e-297) — GLMCC's `J_min ∝ 1/sqrt(cc₀)` threshold. Firing rate decides
+which pairs are testable; timing decides whether a testable pair gets an edge. Since `ongoing`
+carries 10–30× more spikes than `lightON`, the condition contrast remains confounded with rate.
+
+A third problem is unchanged: the surrogate validation layer removes 0.0% of `lightON` edges and
+4.6% of `ongoing` edges, so "validated" connectivity is essentially raw GLMCC output.
+
+**Recommendation: the connectivity is defensible as a timing-based measurement, but the
+`lightON` vs `ongoing` contrast is not yet interpretable** because of the rate confound and the
+inert validation null. Section 9 lists what remains.
 
 ---
 
@@ -317,125 +332,88 @@ GLMCC recovers 80–92% of injected couplings with near-perfect sign accuracy wh
 carry 21 k–345 k spikes across 24–126 units, i.e. roughly 0.6–4.4 k per unit — at or below that
 floor for the smaller animals.
 
-### 5.2 Jitter — **this control fails**
+### 5.2 Jitter — **this control passes** (corrected)
 
-Each aligned-ongoing matrix compared with its jittered twin (identical window geometry,
-identical 45 s offset; only `jitter_ms` differs):
+Superseded numbers: the original ±25 ms control reported 41,827 of 41,842 edges surviving. That
+run used a ±50 second correlogram (see §1). Re-run in milliseconds, the same control produces
+446 edges against the 2,758-edge aligned-ongoing baseline — ±25 ms removes most of the edge set.
 
-| animal | real | jittered | overlap | surviving |
-|---|---|---|---|---|
-| day1 | 15,721 | 15,722 | 15,721 | 100.0% |
-| day2 | 870 | 870 | 870 | 100.0% |
-| day3 | 1,508 | 1,507 | 1,507 | 99.9% |
-| day4 | 3,356 | 3,355 | 3,355 | 100.0% |
-| day5 | 4,774 | 4,773 | 4,773 | 100.0% |
-| day6 | 2,824 | 2,823 | 2,823 | 100.0% |
-| night1 | 924 | 924 | 924 | 100.0% |
-| night2 | 978 | 977 | 977 | 99.9% |
-| night3 | 1,029 | 1,028 | 1,028 | 99.9% |
-| night4 | 1,077 | 1,076 | 1,076 | 99.9% |
-| night5 | 530 | 531 | 530 | 100.0% |
-| night6 | 2,452 | 2,449 | 2,449 | 99.9% |
-| night7 | 5,799 | 5,794 | 5,794 | 99.9% |
-| **TOTAL** | **41,842** | **41,829** | **41,827** | **100.0%** |
+The full sweep is in §5.2a.
 
-A ±25 ms displacement destroys every 1–5 ms feature a synapse could produce. **Essentially no
-edge notices.** Whatever these matrices index, it is not millisecond-scale coupling.
-
-(`retention_pct` in `results/jitter_control_summary.csv` is the fraction of *spikes* retained,
-~99.87% — not edge survival. The table above is the edge statistic.)
-
-### 5.2a Jitter sensitivity sweep — **no timescale exists at which edges break**
+### 5.2a Jitter sensitivity sweep — edges break at the monosynaptic scale
 
 Full analysis in `reports/jitter_sensitivity/`; figure `figures/main/figJ1_jitter_sensitivity.png`.
+13 animals, 91/91 runs, aligned-ongoing arm, geometry fixed across levels.
 
-The 25 ms result above admits two readings: the edges are not synaptic, or 25 ms was a poor
-choice. Sweeping the displacement settles it. Same arm, same geometry at every level, 13 animals,
-91/91 runs:
-
-| displacement | edges surviving (mean ± SD) | weight r | spike retention |
+| displacement | edges surviving (mean ± SD) | median | range |
 |---|---|---|---|
-| 0 ms (identity check) | 100.00 ± 0.00 % | 1.0000 | 100.000% |
-| 5 ms | 99.98 ± 0.03 % | 1.0000 | 99.971% |
-| 10 ms | 99.97 ± 0.04 % | 0.9999 | 99.948% |
-| 25 ms | 99.95 ± 0.05 % | 0.9998 | 99.868% |
-| 50 ms | 99.93 ± 0.09 % | 0.9996 | 99.746% |
-| 100 ms | 99.92 ± 0.09 % | 0.9993 | 99.495% |
-| **full within-window shuffle** | **99.30 ± 1.14 %** | **0.9602** | 100.000% |
+| 0 ms (identity check) | 100.00 ± 0.00 % | 100.00 | — |
+| 5 ms | 16.77 ± 17.81 % | 9.09 | 2.44 – 66.67 |
+| 10 ms | 5.60 ± 6.81 % | 2.44 | 0.00 – 19.64 |
+| 25 ms | 0.73 ± 1.05 % | 0.00 | 0.00 – 3.14 |
+| 50 ms | 2.18 ± 2.97 % | 1.22 | 0.00 – 11.11 |
+| 100 ms | 0.42 ± 0.51 % | 0.00 | 0.00 – 1.22 |
+| **full within-window shuffle (floor)** | **1.11 ± 1.28 %** | 0.99 | 0.00 – 4.55 |
 
-The 0 ms level reproduces the baseline exactly (41,842 → 41,842 edges, r = 1.0000), so the
-comparison is against a correct reference.
+The 0 ms level reproduces the baseline exactly in all 13 animals. **By 25 ms the edge set has
+already reached the shuffle floor** — further displacement removes nothing more, because nothing
+finer than 25 ms is left. Wilcoxon rejects a 100% null at every level from 5 ms (p = 2.4e-04).
 
-The last row is the decisive one. A full within-window shuffle redraws every spike uniformly
-inside the 10 s window it came from — per-cell per-window counts preserved, every finer temporal
-relationship destroyed. **99.30% of edges survive, with weights still correlated at r = 0.96.**
-No edge set resting on 1–5 ms structure can behave this way.
+Absolute counts: 2,758 baseline edges → 457 at 5 ms, 225 at 25 ms, 134 after full shuffle; of
+those only 242 / 57 / 30 coincide with a baseline edge.
 
-Wilcoxon signed-rank against a 100% null (Holm-corrected) rejects at 25/50/100 ms and shuffle,
-but the largest median loss anywhere is **0.42 percentage points**, against the ~94 points a
-synaptic edge set would lose by 25 ms. Detectable; nil.
+**What still holds from the earlier analysis.** Spike count gates *detection*: pairs with an edge
+have a much larger spike-count product than pairs without (night5 4.0×, day3 693×, night6 15×;
+p ≤ 2.1e-08). That is GLMCC's `J_min = sqrt(16.3/τ/cc₀)` threshold. Firing rate decides which
+pairs are testable; timing decides the outcome for a testable pair.
 
-**What drives edge presence instead.** The pair's spike-count product:
+### 5.3 Geometry — **withdrawn**
 
-| animal | median $n_i n_j$ with edge | without | ratio | Mann–Whitney p |
-|---|---|---|---|---|
-| night5 | 1,193,248 | 302,022 | 4.0× | 2.1e-08 |
-| day3 | 1,159,561 | 1,674 | 693× | 8.5e-297 |
-| night6 | 234,234 | 15,351 | 15× | 4.2e-227 |
+This section reported that the same spikes re-windowed to the lightON duty cycle flipped from
+97–100% negative to ~100% positive. That compared a millisecond arm against second arms (§1).
 
-This is GLMCC's threshold working as specified, not malfunctioning: `J_min = sqrt(16.3/τ/cc₀)`,
-and `cc₀` scales with coincidence count, which scales with $n_i n_j$. More spikes ⇒ lower
-threshold ⇒ edge. It is the same mechanism behind the density range in §4.1, and it supplies a
-complete non-biological account of the condition effect, since `ongoing` carries 10–30× more
-spikes than `lightON`.
-
-### 5.3 Geometry — sign is set by duty cycle
+With both in milliseconds there is no flip:
 
 | arm | edges | negative |
 |---|---|---|
 | ongoing, continuous | 19,993 | 97–100% |
-| ongoing, gapped to lightON duty cycle | 43,285 | **0.0–0.2%** |
-| ongoing, gapped to real pulse geometry (45 s shifted) | 41,842 | **0.0–0.1%** |
+| ongoing, gapped to lightON duty cycle | 3,463 | 70.4–100% |
+| ongoing, gapped to real pulse geometry (45 s shifted) | 2,758 | 76.2–100% |
 
-The same spikes, re-windowed, flip from almost entirely inhibitory to almost entirely
-excitatory, and roughly double in edge count. Both extremes are implausible as biology. The
-`lightON`/`ongoing` contrast the study rests on differs in exactly this way.
+All three agree in direction. The duty-cycle geometry reduces the edge count roughly six-fold,
+which is expected from the ~10× reduction in observation time, but does not reverse the sign.
 
----
+No claim in this document now rests on a geometry-driven sign flip.
 
 ## 6. What changed our belief
 
 | before this round | after |
 |---|---|
 | GLMCC does not recover connectivity on data like this (0–5% sign accuracy) | It recovers 80–92% with 97–100% sign accuracy — the earlier failure was the port |
-| The `lightON`/`ongoing` sign asymmetry is a duty-cycle artifact of GLMCC's baseline | Partly; but the headline contrast compared a Python-derived arm against a defective-C arm, so the effect size was never measured cleanly |
+| The `lightON`/`ongoing` sign asymmetry is a duty-cycle artifact of GLMCC's baseline | Not established. The evidence for it compared a millisecond arm against second arms; in matched units the asymmetry is not there |
 | Connectivity is small-world with rich-club structure | Small-world is not computable (all graphs disconnected); rich club survives in 4 of 13 |
 | Edges are consistent across conditions (0.636) | Edge consistency is 0.075 |
 | Surrogate validation constrains the edge set | It removes 0.0% of lightON and 4.6% of ongoing edges |
-| The condition effect is the finding | The condition effect is large and significant — and is also exactly what the geometry artifact predicts |
-
----
+| *(mid-round)* The edge set carries no timing information and is not synaptic | **Withdrawn.** That rested on control runs at 1 s resolution. Corrected, edges break between 5 and 25 ms |
+| The condition effect is the finding | The condition effect is real in the statistics but confounded with firing rate, which gates GLMCC's detection threshold |
 
 ## 7. Limitations and negative results
 
-1. **The edge set carries no spike-timing information at any scale** (§5.2, §5.2a). Edges
-   survive a full randomisation of spike times within windows; presence is set by firing rates.
-   This is the single most important result in this document and it is negative. It removes the
-   synaptic interpretation of every connectivity number here.
-2. **The sign is a function of recording geometry** (§5.3), and the two conditions differ in
-   that geometry by design.
+1. **Spike count gates detection.** Whether a pair is testable at all is set by its spike-count
+   product through `J_min ∝ 1/sqrt(cc₀)` (§5.2a). `ongoing` carries 10–30× more spikes than
+   `lightON`, so the condition contrast is confounded with rate. This is now the principal
+   threat to the headline result.
+2. **The validation null is inert** — 0.0% of lightON and 4.6% of ongoing edges removed (§4.2).
 3. **`lightON` is at or below the detection floor** for several animals (§5.1). night3 lightON
    yields 3 edges from 33 units.
-4. **Density confounds with spike count**, and `ongoing` has 10–30× more spikes than `lightON`.
-   Any unnormalised comparison between conditions inherits this.
-5. **The second-level model is rank deficient** and currently supports no contrast (§4.4).
-6. **LME residuals are non-normal** in all four first-level models; two fits are singular.
-7. **Small-world and path-length statistics are undefined** on these graphs.
+4. **The second-level model is rank deficient** and supports no contrast (§4.4).
+5. **LME residuals are non-normal** in all four first-level models; two fits are singular.
+6. **Small-world and path-length statistics are undefined** on these graphs (§4.6).
+7. **Two implementation defects were found in one day** — a sign inversion in the port and a
+   time-base error in every control script. Both produced plausible-looking output for months.
+   Anything not re-derived since 2026-09-19 16:00 should be treated as unverified.
 8. **Not re-run this round:** community detection, participation coefficient, hub stability,
-   circos plots, main manuscript figures, tier-3 analyses. Their previous outputs were deleted
-   rather than refreshed, because regenerating them before §5.2 is resolved would waste the effort.
-
----
+   circos plots, main manuscript figures, tier-3 analyses.
 
 ## 8. Figure index
 
@@ -456,30 +434,25 @@ Only five figures survive this round; the rest were built on discarded data.
 
 ## 9. Next actions
 
-**Before any further analysis, settle what the estimator is measuring.** In priority order:
+1. ~~Find the scale at which jitter breaks the edge set.~~ **Done (§5.2a).** It breaks between
+   5 and 25 ms. The edges are timing-dependent and the synaptic interpretation is available.
+2. **Break the rate confound.** This is now the top item. Sub-sample `ongoing` to `lightON`
+   spike counts per unit and re-estimate, or restrict every condition comparison to pairs matched
+   on spike-count product. Until then the condition effect cannot be separated from a firing-rate
+   difference acting through GLMCC's threshold.
+3. **Replace the shuffle-ISI null with a within-window shuffle null**, per pair at q = 0.05.
+   `scripts/jitter_sensitivity.py` already implements the surrogate. The ~1% shuffle survival in
+   §5.2a predicts the real edges will largely pass, so this is a strengthening step rather than a
+   demolition — but it is needed before any edge count is quotable.
+4. **Regenerate everything derived from the control arms.** The duty-cycle and geometry analyses,
+   and any figure or table quoting them, were computed at the wrong time base.
+5. **Respecify the second-level model** so it is not rank deficient.
+6. **Audit for further unit errors.** `scripts/glmcc_units.py` centralises the conversion;
+   `run_glmcc_c_missing.sh` has been disabled. Any new call site must use it.
+7. Only then regenerate community/participation/hub-stability/circos and the manuscript figures.
 
-1. ~~Explain or accept the jitter result.~~ **Done (§5.2a).** There is no such scale; edge
-   presence tracks the spike-count product. The connectivity is non-synaptic.
-2. **Make the conditions geometrically comparable.** The aligned-ongoing control already builds
-   a light-off arm with identical window count, duration and period. The `lightON` vs
-   aligned-ongoing contrast is the only one currently free of the geometry confound; the raw
-   `lightON` vs `ongoing` contrast is not, and should be retired.
-3. **Replace the shuffle-ISI null with a within-window shuffle null.** At 0.0–4.6% rejection the
-   current surrogate does no work. The within-window shuffle of §5.2a is a null this edge set
-   demonstrably fails — applied per pair at q = 0.05 it would reject on the order of 99% of edges.
-   That is the highest-value next step, and it is already implemented in
-   `scripts/jitter_sensitivity.py`.
-4. **Match spike counts, or normalise density explicitly**, before comparing conditions.
-5. **Respecify the second-level model** so it is not rank deficient — likely by collapsing
-   `region_pair` or dropping the three-way interaction.
-6. Only then regenerate community/participation/hub-stability/circos and the manuscript figures.
-
-Item 1 is settled and the answer is negative. **Item 3 now decides whether there is a paper**: if
-a within-window-shuffle null leaves too few edges to analyse — which the 99.30% survival figure
-predicts — then GLMCC at this operating point does not support a connectivity claim on this
-dataset, and that is the result. Items 2, 4 and 5 only matter if item 3 leaves something standing.
-
----
+Item 2 decides whether the condition contrast means anything. Item 3 decides whether the edge
+counts are quotable.
 
 ## 10. Reproducibility index
 

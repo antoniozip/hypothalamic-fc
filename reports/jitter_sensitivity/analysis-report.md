@@ -1,123 +1,128 @@
 # Jitter sensitivity: at what timescale does the GLMCC edge set break?
 
-**Date:** 2026-09-19 · **Branch:** `analysis/glmcc-corrected`
+**Date:** 2026-09-19 (corrected same day — see §0) · **Branch:** `analysis/glmcc-corrected`
 **Resolves:** Next Action 1 in `METHODS_AND_RESULTS.md` §9
 **Artifacts:** `results/jitter_sensitivity.csv`, `figures/main/figJ1_jitter_sensitivity.png`,
 `results/glmcc/sensitivity/`
 
-## Analysis question
+## 0. Correction notice
 
-The ±25 ms jitter control left 100.0% of aligned-ongoing edges standing. Either the edge set is
-not synaptic, or the control was not doing what it claimed. This sweep varies the displacement
-and asks: **at what scale do edges start to disappear?**
+The first version of this report concluded that the edge set carried **no** spike-timing
+information at any scale. **That was wrong**, and so was the ±25 ms jitter result it was built on.
 
-## Answer
+The control scripts — `run_jitter_control.py`, `run_gapped_ongoing.py`,
+`run_gapped_ongoing_aligned.py` and the first version of `jitter_sensitivity.py` — invoked the
+GLMCC binary with four arguments and no explicit `T`, on spike files written in **seconds**.
+GLMCC reads `WIN = 50`, `DELTA = 1` and `tau = 4` in whatever unit the file uses, so those runs
+built a **±50 second** cross-correlogram at **1 second** resolution with a 4 s synaptic time
+constant and a 1–4 **second** delay scan.
 
-**They never do.** There is no timescale between 5 ms and the full 10-second observation window
-at which the edge set meaningfully changes.
+At 1-second resolution a ±25 ms displacement is 1/40 of a single bin. The invariance was
+guaranteed by arithmetic, not discovered in the data.
 
-| displacement | edges surviving (mean ± SD, n=13) | weight r vs baseline | spike retention |
+The main connectivity matrices were never affected: `regenerate_glmcc.py` converts to 0-based
+milliseconds and passes the true duration. Only the control arms were wrong. Everything below is
+re-run through `scripts/glmcc_units.py`, which does the same conversion.
+
+The discrepancy that exposed it: night7 took 157 s per run in the sweep but 8 s in the main
+pipeline — a ±50 s window has ~1000× more coincidences to process.
+
+## 1. Answer
+
+**Edges break between 5 and 25 ms** — the monosynaptic range.
+
+| displacement | edges surviving (mean ± SD, n=13) | median | range |
 |---|---|---|---|
-| 0 ms (identity) | 100.00 ± 0.00 % | 1.0000 | 100.000% |
-| 5 ms | 99.98 ± 0.03 % | 1.0000 | 99.971% |
-| 10 ms | 99.97 ± 0.04 % | 0.9999 | 99.948% |
-| 25 ms | 99.95 ± 0.05 % | 0.9998 | 99.868% |
-| 50 ms | 99.93 ± 0.09 % | 0.9996 | 99.746% |
-| 100 ms | 99.92 ± 0.09 % | 0.9993 | 99.495% |
-| **full within-window shuffle** | **99.30 ± 1.14 %** | **0.9602** | 100.000% |
+| 0 ms (identity check) | 100.00 ± 0.00 % | 100.00 | — |
+| 5 ms | 16.77 ± 17.81 % | 9.09 | 2.44 – 66.67 |
+| 10 ms | 5.60 ± 6.81 % | 2.44 | 0.00 – 19.64 |
+| 25 ms | 0.73 ± 1.05 % | 0.00 | 0.00 – 3.14 |
+| 50 ms | 2.18 ± 2.97 % | 1.22 | 0.00 – 11.11 |
+| 100 ms | 0.42 ± 0.51 % | 0.00 | 0.00 – 1.22 |
+| **full within-window shuffle (floor)** | **1.11 ± 1.28 %** | 0.99 | 0.00 – 4.55 |
 
-91/91 runs completed. The 0 ms level reproduces the baseline exactly (survival 100.00%,
-r = 1.0000, 41,842 → 41,842 edges), so the comparison machinery is sound and every other number
-here is measured against a correct reference.
+91/91 runs. The 0 ms level reproduces the baseline exactly in all 13 animals, so the comparison
+is against a correct reference.
 
-**The decisive row is the last one.** A full within-window shuffle redraws every spike time
-uniformly inside the 10 s window it came from. It preserves each cell's spike count per window
-and the window geometry, and destroys every temporal relationship finer than a window — there is
-no correlogram structure left to find. **99.30% of edges survive it, and the weights are still
-correlated with the originals at r = 0.96.**
+**By 25 ms the edge set is already at the shuffle floor.** Displacing spikes further buys
+nothing, because there is nothing left to destroy. That is the signature of an edge set resting
+on structure finer than 25 ms.
 
-An edge set built on 1–5 ms synaptic structure cannot behave this way. By 25 ms a real
-monosynaptic peak is smeared across half the ±50 ms correlogram window; essentially every such
-edge should be gone.
+Absolute counts tell the same story: the aligned-ongoing baseline has 2,758 edges across the 13
+animals; jittered data produces 457 at 5 ms, 225 at 25 ms, 134 after a full shuffle — and of
+those, only 242 / 57 / 30 respectively coincide with a baseline edge.
 
-## What the edge set does depend on
+Wilcoxon signed-rank against a 100% null rejects at every level from 5 ms up (p = 2.4e-04, the
+floor for n = 13). Here the effect size is not in tension with the p-value: the median loss at
+25 ms is 100 percentage points.
 
-If not timing, then what? Edge presence is predicted by the pair's spike-count product:
+## 2. Per-animal
 
-| animal | edges | median $n_i n_j$, edge present | median $n_i n_j$, absent | ratio | Mann–Whitney p |
-|---|---|---|---|---|---|
-| night5 | 530 / 552 | 1,193,248 | 302,022 | 4.0× | 2.1e-08 |
-| day3 | 1,508 / 2,162 | 1,159,561 | 1,674 | **693×** | 8.5e-297 |
-| night6 | 2,452 / 2,862 | 234,234 | 15,351 | 15× | 4.2e-227 |
+| animal | baseline edges | 5 ms | 25 ms | shuffle |
+|---|---|---|---|---|
+| day1 | 509 | 17.68% | 2.36% | 1.38% |
+| day2 | 35 | 8.57% | 0.00% | 0.00% |
+| day3 | 82 | 2.44% | 0.00% | 0.00% |
+| day4 | 202 | 15.35% | 0.99% | 0.99% |
+| day5 | 167 | 4.79% | 1.20% | 1.80% |
+| day6 | 337 | 2.67% | 0.30% | 1.78% |
+| night1 | 69 | 4.35% | 1.45% | 1.45% |
+| night2 | 22 | 9.09% | 0.00% | 4.55% |
+| night3 | 6 | 66.67% | 0.00% | 0.00% |
+| night4 | 9 | 22.22% | 0.00% | 0.00% |
+| night5 | 21 | 28.57% | 0.00% | 0.00% |
+| night6 | 56 | 30.36% | 0.00% | 1.79% |
+| night7 | 1,243 | 5.23% | 3.14% | 0.72% |
 
-This is GLMCC's detection threshold behaving exactly as specified rather than malfunctioning.
-The threshold is `J_min = sqrt(16.3 / τ / cc₀)`, where `cc₀` is the fitted correlogram height near
-the synaptic delay. `cc₀` grows with the pair's coincidence count, which for independent trains
-is proportional to $n_i n_j$. More spikes ⇒ smaller threshold ⇒ edge. When the correlogram carries
-no peak — as after a full shuffle — the threshold still falls with spike count, and `J` still
-absorbs whatever mismatch remains between the stiff smoothed baseline (β = 4000 over 100 bins) and
-the observed level. The result is an edge call driven by counts, not coupling.
+The 5 ms column is noisy because several animals have very few baseline edges — night3's
+"66.67%" is 4 of 6. The 25 ms and shuffle columns are stable across the whole range.
 
-This also explains the density pattern already noted in `METHODS_AND_RESULTS.md` §4.1: density
-ranges 0.28% to 62.67% and tracks spike count across datasets.
+## 3. What this does and does not license
 
-## Statistical note
+**It does** establish that the aligned-ongoing edge set depends on millisecond spike timing, and
+that ±25 ms destroys it. Both jitter controls now pass.
 
-Wilcoxon signed-rank tests against a 100%-survival null (n = 13, Holm-corrected across the six
-non-zero levels) reject at 25 ms (p = 0.020), 50 ms (p = 0.047), 100 ms (p = 0.031) and shuffle
-(p = 0.0029); 5 ms (p = 0.25) and 10 ms (p = 0.13) do not reject.
+**It does not** rehabilitate everything. Spike count still gates *detection*: pairs receiving an
+edge have a far larger spike-count product than those that do not (day3 median 1,159,561 vs
+1,674). That is GLMCC's `J_min ∝ 1/sqrt(cc₀)` threshold, unchanged by this result. So which pairs
+are testable is set by firing rate, even though whether a testable pair gets an edge is set by
+timing. The density-vs-spike-count confound in `METHODS_AND_RESULTS.md` §4.1 stands.
 
-**These rejections are not the finding.** The between-animal variance is so small that a median
-loss of 0.02–0.42 percentage points is detectable. The effect size is what matters: the worst
-case across every level is a **0.42 point** median loss, against the ~94 point loss a synaptic
-edge set would show by 25 ms. Statistically detectable, materially nil.
+## 4. Knock-on corrections
 
-## What this changes
+Re-running the three control scripts with the correct time base changes them all:
 
-1. **Next Action 1 is resolved, negatively.** The question was "find the scale at which edges
-   start to disappear". There is none. The prior ±25 ms result was not an artifact of a badly
-   chosen displacement; the edge set simply does not encode spike timing.
+| control | seconds (invalid) | milliseconds (correct) |
+|---|---|---|
+| gapped ongoing | 43,285 edges, 0.0–0.2% negative | 3,463 edges, 70.4–100% negative |
+| aligned ongoing | 41,842 edges, 0.0–0.1% negative | 2,758 edges, 76.2–100% negative |
+| jitter control | 84,005 edges, 0.0–2.2% negative | 446 edges, 50–100% negative |
 
-2. **The synaptic interpretation is not available for these matrices.** Whatever
-   `adj_*_ongoing_aligned.csv` and, by the same mechanism, the main `adj_*_{lightON,ongoing}.csv`
-   measure, it is not millisecond-scale coupling. Network statistics computed on them — the
-   condition effects in §4.3, rich club, modularity, edge consistency — describe a graph whose
-   edges are set by firing rates and recording geometry.
+**The "sign flips with recording geometry" result is dead.** It compared continuous `ongoing`
+(correct ms) against gapped arms (seconds). With both in milliseconds the gapped and aligned arms
+are 70–100% negative, the same direction as continuous `ongoing` at 97–100%. There is no flip.
+`METHODS_AND_RESULTS.md` §5.3 is withdrawn.
 
-3. **The condition effect now has a sufficient non-biological explanation.** `ongoing` carries
-   10–30× more spikes than `lightON`. If edge presence follows spike count, a large and highly
-   significant `lightON` vs `ongoing` contrast follows from that alone, with no circuitry
-   involved. This sits alongside the geometry result (§5.3) — sign flips with duty cycle — and
-   the two together account for the contrast without appeal to connectivity.
+## 5. Limitations
 
-4. **The shuffle test should replace the shuffle-ISI surrogate null.** The existing validation
-   rejects 0.0% of lightON and 4.6% of ongoing edges. A within-window-shuffle null applied
-   per-pair would reject ~99% of them, and is a null the data can actually fail.
+- One arm (aligned-ongoing). Chosen because its geometry is fixed across levels. `lightON` was
+  not swept.
+- One jitter draw per level, seed 42. Reported spread is between animals.
+- Several animals have <25 baseline edges, so their per-level percentages are coarse. The
+  aggregate is carried by day1, day6 and night7.
+- The 50 ms level sits slightly above 25 ms and 100 ms (2.18% vs 0.73% and 0.42%). With a mean of
+  2–3 edges per animal at these levels this is sampling noise around the floor, not structure.
+- Mechanism panel (spike-count gating) covers 3 of 13 animals.
 
-## Limitations
+## 6. Next actions
 
-- One arm only (aligned-ongoing). It was chosen because its geometry is fixed across levels, so
-  displacement is the only variable. The mechanism is a property of GLMCC's threshold, not of
-  this arm, so it should generalise — but `lightON` was not swept and that has not been shown.
-- The mechanism panel covers 3 of 13 animals (night5, day3, night6), chosen for size. The
-  direction is identical in all three and the p-values are extreme, but it is not the full set.
-- One seed per level (42). Between-animal spread (n = 13) is the variability reported; jitter-draw
-  variability within an animal is not characterised.
-- Spike retention falls to 99.5% at 100 ms as displaced spikes leave their windows. This is far
-  too small to account for the survival numbers, and the shuffle level has 100% retention with the
-  largest effect, so loss of spikes is not driving the result.
-- The red dashed curve in figure panel A is a **schematic** expectation for a synaptic edge set,
-  not a measurement. It is drawn to give the flat blue curve a scale.
-
-## Next actions
-
-1. **Retire the synaptic framing** for the current matrices in `METHODS_AND_RESULTS.md`. Done in
-   this commit.
-2. **Replace the surrogate null** with a per-pair within-window shuffle at q = 0.05, and re-run
-   validation. This is the single highest-value next step: it is the test that the present edge
-   set fails, so it will produce an edge set that at least carries timing information.
-3. **Match spike counts between conditions** before any condition contrast, or abandon the raw
-   contrast. Sub-sampling `ongoing` to `lightON` counts is the cleanest version.
-4. If (2) leaves too few edges to analyse — likely, given 99% would be rejected — then GLMCC at
-   this operating point does not support a connectivity claim on this dataset, and that is the
-   result.
+1. **Next Action 1 is closed, positively.** The edge set is timing-dependent. The synaptic
+   interpretation is available again.
+2. **Re-run anything derived from the control arms.** The duty-cycle argument, the geometry
+   argument, and any figure or table quoting them need regenerating from the corrected outputs.
+3. **Next Action 3 is now worth doing on its merits** rather than as a coup de grâce. A
+   within-window-shuffle null replaces the near-saturated shuffle-ISI null, and the ~1% shuffle
+   survival predicts the real edges will largely pass it.
+4. **Audit every other call site of the GLMCC binary** for the same four-argument pattern.
+   `scripts/glmcc_units.py` now centralises the conversion; `scripts/run_glmcc_c_missing.sh`
+   still calls the binary directly and should be checked.

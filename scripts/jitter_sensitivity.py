@@ -67,15 +67,49 @@ FIELDS = [
 ]
 
 
+def _to_milliseconds(src: Path, dst: Path) -> float:
+    """Rewrite a directory of second-valued spike files as 0-based milliseconds.
+
+    GLMCC reads WIN=50 and DELTA=1 in whatever unit the file is written in. Handed
+    seconds it builds a +/-50 SECOND correlogram at 1 s resolution, with tau and the
+    delay scan in seconds too -- not a synaptic measurement, and one in which any
+    millisecond-scale manipulation is invisible by construction. Returns the span in
+    seconds so the caller can pass a correct T.
+    """
+    dst.mkdir(parents=True, exist_ok=True)
+    cells = sorted(src.glob("cell*.txt"), key=lambda p: int(p.stem[4:]))
+    trains = [np.atleast_1d(np.loadtxt(c)) for c in cells]
+    nonempty = [t for t in trains if t.size]
+    if not nonempty:
+        return 0.0
+    t0 = min(t.min() for t in nonempty)
+    t1 = max(t.max() for t in nonempty)
+    for path, t in zip(cells, trains):
+        w = np.sort((t - t0) * 1000.0) if t.size else t
+        np.savetxt(dst / path.name, w, fmt="%.3f")
+    return float(t1 - t0)
+
+
 def _glmcc(work: Path, n_cells: int):
+    # Convert to milliseconds and pass the true duration, exactly as
+    # scripts/regenerate_glmcc.py does for the main matrices.
+    ms = work.parent / (work.name + "_ms")
+    shutil.rmtree(ms, ignore_errors=True)
+    dur_s = _to_milliseconds(work, ms)
+    if dur_s <= 0:
+        return None, 0.0, "no spikes"
     started = time.time()
-    proc = subprocess.run([str(GLMCC_BIN), ".", str(n_cells), "exp", "GLM"],
-                          cwd=work, capture_output=True, text=True)
+    proc = subprocess.run([str(GLMCC_BIN), ".", str(n_cells), "exp", "GLM",
+                           f"{dur_s * 1.01:.1f}"],
+                          cwd=ms, capture_output=True, text=True)
     elapsed = round(time.time() - started, 1)
-    produced = sorted(work.glob("W_py_*.csv"))
+    produced = sorted(ms.glob("W_py_*.csv"))
     if proc.returncode != 0 or not produced:
+        shutil.rmtree(ms, ignore_errors=True)
         return None, elapsed, (proc.stderr or "no W_py output").strip()[:180]
-    return np.loadtxt(produced[0], delimiter=","), elapsed, ""
+    W = np.loadtxt(produced[0], delimiter=",")
+    shutil.rmtree(ms, ignore_errors=True)
+    return W, elapsed, ""
 
 
 def shuffle_directory(src: Path, dst: Path, starts: np.ndarray, ends: np.ndarray,
