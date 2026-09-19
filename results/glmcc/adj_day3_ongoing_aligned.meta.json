@@ -1,0 +1,13 @@
+{
+  "encoding": "glmcc_weight_raw",
+  "condition": "ongoing_aligned",
+  "mask_source": "DATA180302_ongoing.mat",
+  "pulse_s": 10.001000000000204,
+  "offset_s": 45.0,
+  "n_windows": 109,
+  "duty_cycle_pct": 10.391178257041588,
+  "spikes_kept": 84040,
+  "spikes_total": 964399,
+  "glmcc": "vendor/glmcc-c/glmcc exp GLM",
+  "written_at": "2026-09-19T14:47:35.498317+00:00"
+}

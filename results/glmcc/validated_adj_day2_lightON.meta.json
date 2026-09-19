@@ -1,0 +1,9 @@
+{
+  "encoding": "glmcc_weight_masked",
+  "method": "ccg",
+  "n_units": 31,
+  "n_surrogates": 100,
+  "fdr_q": 0.05,
+  "fdr_procedure": "benjamini_hochberg_step_up",
+  "written_at": "2026-09-19T15:54:02.106124+00:00"
+}

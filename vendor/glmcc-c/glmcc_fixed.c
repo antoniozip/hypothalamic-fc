@@ -57,6 +57,12 @@ typedef struct {
     double grad[NPAR];
     double hessian[NPAR * NPAR];
     double delta[NPAR];
+    /* Reduced system for the constrained (cond > 0) fits. Held here rather than on the
+     * stack: at 102*102 doubles this is 83 KB, which overflows the default per-thread
+     * stack in the OpenMP region on some systems. */
+    double Hr[NPAR * NPAR], gr[NPAR];
+    /* Log posterior and log likelihood at the parameters lm_optimize converged to. */
+    double log_post, log_lik;
 } Workspace;
 
 static void init_par(double *par, double rate) {
@@ -79,9 +85,12 @@ static void calc_Gk(const double *par, double tau0, double tau1,
                 Gk[i] = DELTA * exp(par[i]);
             }
         } else if (x_k > delay_synapse) {
-            double arg = par[NPAR-2] * func_f(x_k - DELTA, delay_synapse, tau0);
-            if (fabs(arg) > 1e-6) {
-                double arg2 = par[NPAR-2] * func_f(x_k, delay_synapse, tau0);
+            /* Python guards this branch on f(x_k), the smaller of the two endpoints,
+             * not on f(x_k-DELTA) -- see glmcc.py calc_Gk. Guarding on the larger one
+             * admits bins that the reference sends to the DELTA*exp(par[i]) fallback. */
+            double arg2 = par[NPAR-2] * func_f(x_k, delay_synapse, tau0);
+            if (fabs(arg2) > 1e-6) {
+                double arg = par[NPAR-2] * func_f(x_k - DELTA, delay_synapse, tau0);
                 Gk[i] = (expi(arg) - expi(arg2)) * exp(par[i]) * tau0;
             } else {
                 Gk[i] = DELTA * exp(par[i]);
@@ -92,11 +101,16 @@ static void calc_Gk(const double *par, double tau0, double tau1,
     }
 }
 
-static double calc_log_post(const double *par, double beta, double tau0, double tau1,
-                            const double *c, const double *Gk) {
+/* Returns the log posterior, and through *log_lik (when non-NULL) the log likelihood,
+ * which is the same quantity without the smoothness penalty. The likelihood-ratio test
+ * needs the likelihood, not the posterior -- see Est_Data.py, which takes D1/D2 from
+ * calc_log_posterior's second return value. */
+static double calc_log_post(const double *par, double beta, const double *c,
+                            const double *Gk, double *log_lik) {
     double ll = 0.0;
     for (int i = 0; i < NPAR; i++) ll += par[i] * c[i];
     for (int i = 0; i < NPAR_M2; i++) ll -= Gk[i];
+    if (log_lik) *log_lik = ll;
     double reg = 0.0;
     for (int i = 0; i < NPAR_M2 - 1; i++) {
         double d = par[i+1] - par[i];
@@ -143,7 +157,7 @@ static void calc_grad(const double *par, double beta, double tau0, double tau1,
 }
 
 static void calc_hess(const double *par, double beta, double tau0, double tau1,
-                      const double *c, const double *Gk, int ds, double *H) {
+                      const double *Gk, int ds, double *H) {
     memset(H, 0, NPAR * NPAR * sizeof(double));
     for (int i = 0; i < NPAR_M2; i++) {
         double x_k = (i + 1) * DELTA - WIN;
@@ -168,24 +182,32 @@ static void calc_hess(const double *par, double beta, double tau0, double tau1,
             }
         }
     }
+    /* d^2P/dJ^2. The two couplings are NOT mirror images of one another under x_k -> -x_k:
+     * bin k spans lags [x_k-DELTA, x_k], so on the positive-lag side the kernel is sampled
+     * at |lag| = x_k-DELTA .. x_k, and on the negative-lag side at |lag| = -x_k .. -x_k+DELTA.
+     * An earlier version folded both through a sign flip, which shifted the negative side by
+     * one bin and dropped the x_k == -ds bin. Written out separately to keep it honest. */
     for (int i = NPAR-2; i < NPAR; i++) {
-        int l = i - (NPAR-2);  /* 0 or 1 */
+        int l = i - (NPAR-2);  /* 0 = J_- (positive lags, tau0); 1 = J_+ (negative lags, tau1) */
         double taul = (l==0) ? tau0 : tau1;
         double J = par[i];
         for (int k = 0; k < NPAR_M2; k++) {
             double x_k = (k + 1) * DELTA - WIN;
-            int sign = (l==0) ? 1 : -1;
-            double sx = sign * x_k;
-            if ((l==0 && sx > ds) || (l==1 && sx > ds)) {
-                double f0 = func_f(sx-DELTA, ds, taul);
-                double f1 = func_f(sx, ds, taul);
-                if (fabs(J) < 1e-3) {
-                    double tmp = (taul/2)*f0*f0*(1-exp(-2*DELTA/taul));
-                    H[i*NPAR+i] -= tmp;
-                } else {
-                    double t0 = (J*f0-1)*exp(J*f0) - (J*f1-1)*exp(J*f1);
-                    H[i*NPAR+i] -= (taul*exp(par[k])/(J*J))*t0;
-                }
+            double f_a, f_b;
+            if (l == 0) {
+                if (!(x_k > ds)) continue;
+                f_a = func_f(x_k - DELTA, ds, taul);
+                f_b = func_f(x_k, ds, taul);
+            } else {
+                if (!(x_k <= -ds)) continue;
+                f_a = func_f(-x_k, ds, taul);
+                f_b = func_f(-x_k + DELTA, ds, taul);
+            }
+            if (fabs(J) < 1e-3) {
+                H[i*NPAR+i] -= (taul/2)*f_a*f_a*(1-exp(-2*DELTA/taul));
+            } else {
+                double t0 = (J*f_a-1)*exp(J*f_a) - (J*f_b-1)*exp(J*f_b);
+                H[i*NPAR+i] -= (taul*exp(par[k])/(J*J))*t0;
             }
         }
         for (int j = 0; j < NPAR_M2; j++)
@@ -228,16 +250,21 @@ static int lm_optimize(Workspace *W, double beta, double tau0, double tau1,
     double C_lm = 0.01, eta = 0.1;
     if (cond > 0) W->par[NPAR - 3 + cond] = 0.0;
 
+    /* Seeded here so W->log_post / W->log_lik always describe W->par, even if no step is
+     * ever accepted. Callers read them instead of recomputing with a stale W->Gk. */
+    calc_Gk(W->par, tau0, tau1, ds, W->Gk);
+    W->log_post = calc_log_post(W->par, beta, c, W->Gk, &W->log_lik);
+
     for (int iter = 0; iter <= MAX_ITER; iter++) {
         calc_Gk(W->par, tau0, tau1, ds, W->Gk);
-        double lp = calc_log_post(W->par, beta, tau0, tau1, c, W->Gk);
+        double lp = calc_log_post(W->par, beta, c, W->Gk, NULL);
         calc_grad(W->par, beta, tau0, tau1, c, n_sp, t_sp, ds, W->Gk, W->grad);
-        calc_hess(W->par, beta, tau0, tau1, c, W->Gk, ds, W->hessian);
+        calc_hess(W->par, beta, tau0, tau1, W->Gk, ds, W->hessian);
 
         /* Build reduced system if cond > 0 */
         int sn = NPAR;
         double *H = W->hessian, *g = W->grad;
-        double Hr[NPAR*NPAR], gr[NPAR];
+        double *Hr = W->Hr, *gr = W->gr;
         int idx = -1;
         if (cond > 0) {
             idx = NPAR - 3 + cond;
@@ -284,10 +311,14 @@ static int lm_optimize(Workspace *W, double beta, double tau0, double tau1,
         }
 
         calc_Gk(W->new_par, tau0, tau1, ds, W->new_Gk);
-        double nlp = calc_log_post(W->new_par, beta, tau0, tau1, c, W->new_Gk);
+        double nll = 0.0;
+        double nlp = calc_log_post(W->new_par, beta, c, W->new_Gk, &nll);
 
         if (nlp >= lp) {
             memcpy(W->par, W->new_par, NPAR * sizeof(double));
+            memcpy(W->Gk, W->new_Gk, NPAR_M2 * sizeof(double));
+            W->log_post = nlp;
+            W->log_lik  = nll;
             C_lm *= eta;
         } else {
             C_lm /= eta;
@@ -310,11 +341,12 @@ static int read_spikes(const char *path, double *buf, int maxn) {
     return n;
 }
 
-/* Build cross-correlogram. Returns spike count. */
+/* Build cross-correlogram. Fills bins [0, n_bins) of the design vector and the
+ * lag list t_sp. Returns the number of lags. */
 static int cross_corr(const double *c1, int n1, const double *c2, int n2,
-                      double *t_sp, double *hist, int hist_len) {
+                      double *t_sp, double *cvec, int n_bins) {
     int cnt = 0, w = (int)WIN;
-    memset(hist, 0, hist_len * sizeof(double));
+    memset(cvec, 0, n_bins * sizeof(double));
     int min_idx = 0;
     for (int i = 0; i < n2; i++) {
         double lo = c2[i] - w, hi = c2[i] + w;
@@ -323,12 +355,46 @@ static int cross_corr(const double *c1, int n1, const double *c2, int n2,
             double diff = c1[j] - c2[i];
             if (diff < WIN && diff > -WIN) {
                 if (cnt < 5000000) t_sp[cnt++] = diff;
-                int bin = (int)((diff + w) / DELTA);
-                if (bin >= 0 && bin < hist_len) hist[bin] += 1.0;
+                /* Python splits a lag that lands exactly on a bin edge half into each
+                 * neighbouring bin (glmcc.py GLMCC: `if k-tmp == 0`). Only -WIN < diff
+                 * < WIN reaches here, so 0 < k < n_bins and both indices are in range.
+                 * Irrelevant for the recordings, whose times carry sub-ms decimals, but
+                 * it decides parity on integer-millisecond synthetic fixtures. */
+                double k = (diff + w) / DELTA;
+                int bin = (int)k;
+                if (k == (double)bin && bin >= 1 && bin < n_bins) {
+                    cvec[bin] += 0.5;
+                    cvec[bin-1] += 0.5;
+                } else if (bin >= 0 && bin < n_bins) {
+                    cvec[bin] += 1.0;
+                }
             }
         }
     }
     return cnt;
+}
+
+/* The last two entries of the design vector are the coupling sufficient statistics.
+ * Python builds them in GLMCC() alongside the histogram:
+ *
+ *     new_c[NPAR-2] = sum_{t >  delay} exp(-(t - delay) / tau[0])    (J_-, positive lags)
+ *     new_c[NPAR-1] = sum_{t < -delay} exp( (t + delay) / tau[1])    (J_+, negative lags)
+ *
+ * calc_log_post consumes them as par[NPAR-2]*c[NPAR-2] + par[NPAR-1]*c[NPAR-1]; they are
+ * the only terms in the objective that reward J > 0. This port passed the bare 100-bin
+ * histogram instead, so those two reads ran off the end of the buffer and the log
+ * posterior fell monotonically in J -- LM drove both couplings to the -3 clamp and every
+ * weight came out inhibitory. They depend on the delay, so they are rebuilt per delay,
+ * exactly as Python rebuilds new_c on each GLMCC() call. */
+static void build_coupling_stats(const double *t_sp, int n_sp, int ds,
+                                 double tau0, double tau1, double *cvec) {
+    double s_pos = 0.0, s_neg = 0.0;
+    for (int s = 0; s < n_sp; s++) {
+        if (ds < t_sp[s])  s_pos += exp(-(t_sp[s] - ds) / tau0);
+        if (t_sp[s] < -ds) s_neg += exp( (t_sp[s] + ds) / tau1);
+    }
+    cvec[NPAR-2] = s_pos;
+    cvec[NPAR-1] = s_neg;
 }
 
 int main(int argc, char **argv) {
@@ -343,7 +409,7 @@ int main(int argc, char **argv) {
     if (argc == 6) T_SEC = atof(argv[5]);
     double beta = is_LR ? 10000.0 : 4000.0;
     double tau[2] = {4.0, 4.0};
-    int hist_len = (int)(2 * WIN / DELTA);
+    int n_bins = (int)(2 * WIN / DELTA);   /* 100; the design vector is NPAR = 102 long */
 
     fprintf(stderr, "GLMCC C: dir=%s N=%d mode=%s method=%s beta=%.0f\n",
             dir, N, is_exp?"exp":"sim", is_LR?"LR":"GLM", beta);
@@ -359,7 +425,7 @@ int main(int argc, char **argv) {
         double *c1 = (double*)malloc(50000000 * sizeof(double));
         double *c2 = (double*)malloc(50000000 * sizeof(double));
         double *t_sp = (double*)malloc(50000000 * sizeof(double));
-        double *hist = (double*)calloc(hist_len, sizeof(double));
+        double *cvec = (double*)calloc(NPAR, sizeof(double));
         Workspace *ws = (Workspace*)calloc(1, sizeof(Workspace));
         char p1[1024], p2[1024];
 
@@ -370,25 +436,33 @@ int main(int argc, char **argv) {
             int n2 = read_spikes(p2, c2, 5000000);
             if (n1 <= 0 || n2 <= 0) continue;
 
-            int n_sp = cross_corr(c1, n1, c2, n2, t_sp, hist, hist_len);
+            int n_sp = cross_corr(c1, n1, c2, n2, t_sp, cvec, n_bins);
             if (n_sp == 0) continue;
 
             double best_par[NPAR], best_lp = 0, best_ll = 0;
             int best_ds = 1;
 
             if (!is_exp) {
+                build_coupling_stats(t_sp, n_sp, 3, tau[0], tau[1], cvec);
                 init_par(ws->par, (double)n_sp / (2*WIN));
-                lm_optimize(ws, beta, tau[0], tau[1], hist, n_sp, t_sp, 3, 0);
+                lm_optimize(ws, beta, tau[0], tau[1], cvec, n_sp, t_sp, 3, 0);
                 memcpy(best_par, ws->par, NPAR*sizeof(double));
+                best_lp = ws->log_post;
+                best_ll = ws->log_lik;
                 best_ds = 3;
             } else {
+                /* Est_Data.py selects the delay on the log POSTERIOR for GLM and on the
+                 * log LIKELIHOOD for LR. best_ll was previously never assigned, which left
+                 * the LR branch comparing against a constant 0. */
                 for (int m = 1; m <= 4; m++) {
+                    build_coupling_stats(t_sp, n_sp, m, tau[0], tau[1], cvec);
                     init_par(ws->par, (double)n_sp / (2*WIN));
-                    lm_optimize(ws, beta, tau[0], tau[1], hist, n_sp, t_sp, m, 0);
-                    double lp = calc_log_post(ws->par, beta, tau[0], tau[1], hist, ws->Gk);
-                    if (m == 1 || (!is_LR && lp > best_lp) || (is_LR && lp > best_ll)) {
+                    lm_optimize(ws, beta, tau[0], tau[1], cvec, n_sp, t_sp, m, 0);
+                    if (m == 1 || (!is_LR && ws->log_post > best_lp)
+                                || (is_LR && ws->log_lik > best_ll)) {
                         memcpy(best_par, ws->par, NPAR*sizeof(double));
-                        best_lp = lp;
+                        best_lp = ws->log_post;
+                        best_ll = ws->log_lik;
                         best_ds = m;
                     }
                 }
@@ -412,20 +486,26 @@ int main(int argc, char **argv) {
              * This port had the two slots the other way round, so each direction received
              * the other's coefficient and threshold. */
             double Jp=best_par[NPAR-1], Jm=best_par[NPAR-2];
-            double Wij=0, Wji=0;
+            double Wij=0, Wji=0, dump_D2=0, dump_D1=0;
 
             if (is_LR) {
-                /* Likelihood ratio test */
+                /* Likelihood-ratio test against each coupling being absent. cond=1 pins
+                 * par[NPAR-2] = J_- at zero, so its statistic D1 belongs to Wji; cond=2
+                 * pins par[NPAR-1] = J_+, so D2 belongs to Wij. The two were swapped here.
+                 * The delay's coupling statistics must be rebuilt first: cvec still holds
+                 * those of m = 4, the last delay the selection loop tried. */
+                build_coupling_stats(t_sp, n_sp, best_ds, tau[0], tau[1], cvec);
                 init_par(ws->par, (double)n_sp/(2*WIN));
-                lm_optimize(ws, beta, tau[0], tau[1], hist, n_sp, t_sp, best_ds, 1);
-                double ll_p = calc_log_post(ws->par, beta, tau[0], tau[1], hist, ws->Gk);
+                lm_optimize(ws, beta, tau[0], tau[1], cvec, n_sp, t_sp, best_ds, 1);
+                double ll_p = ws->log_lik;
                 init_par(ws->par, (double)n_sp/(2*WIN));
-                lm_optimize(ws, beta, tau[0], tau[1], hist, n_sp, t_sp, best_ds, 2);
-                double ll_n = calc_log_post(ws->par, beta, tau[0], tau[1], hist, ws->Gk);
+                lm_optimize(ws, beta, tau[0], tau[1], cvec, n_sp, t_sp, best_ds, 2);
+                double ll_n = ws->log_lik;
                 double D1 = best_ll - ll_p, D2 = best_ll - ll_n;
                 double z_a = 15.14;
-                if (2*D1 > z_a) Wij = (Jp>=0) ? c_E*Jp : c_I*Jp;
-                if (2*D2 > z_a) Wji = (Jm>=0) ? c_E*Jm : c_I*Jm;
+                if (2*D2 > z_a) Wij = (Jp>=0) ? c_E*Jp : c_I*Jp;
+                if (2*D1 > z_a) Wji = (Jm>=0) ? c_E*Jm : c_I*Jm;
+                if (getenv("GLMCC_DUMP_J")) { dump_D2 = D2; dump_D1 = D1; }
             } else {
                 if (Jp > Jmin[1]*scale) Wij = Jp*c_E;
                 else if (Jp < -Jmin[1]*scale) Wij = Jp*c_I;
@@ -439,9 +519,9 @@ int main(int argc, char **argv) {
                     FILE *jf = fopen("J_c.txt", "a");
                     if (jf) {
                         /* Same column order as Est_Data.py's J_py_*.txt:
-                         * i j J_+ J_- Jmin_+ Jmin_- */
-                        fprintf(jf, "%d %d %.6f %.6f %.6f %.6f\n",
-                                i, j, Jp, Jm, Jmin[1], Jmin[0]);
+                         * i j J_+ J_- Jmin_+ Jmin_- D_+ D_- */
+                        fprintf(jf, "%d %d %.6f %.6f %.6f %.6f %.6f %.6f\n",
+                                i, j, Jp, Jm, Jmin[1], Jmin[0], dump_D2, dump_D1);
                         fclose(jf);
                     }
                 }
@@ -452,7 +532,7 @@ int main(int argc, char **argv) {
                     fprintf(stderr, "\r  %d/%d pairs (%.0f%%)", done, total_pairs, 100.0*done/total_pairs);
             }
         }
-        free(c1); free(c2); free(t_sp); free(hist); free(ws);
+        free(c1); free(c2); free(t_sp); free(cvec); free(ws);
     }
     fprintf(stderr, "\n");
 

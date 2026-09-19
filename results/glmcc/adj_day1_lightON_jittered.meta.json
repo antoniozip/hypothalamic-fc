@@ -1,0 +1,13 @@
+{
+  "encoding": "glmcc_weight_raw",
+  "condition": "lightON_jittered",
+  "jitter_ms": 25.0,
+  "seed": 42,
+  "offset_s": 0,
+  "mask_source": "DATA171019_ongoing.mat",
+  "n_windows": 95,
+  "spikes_kept": 169080,
+  "spikes_total": 169282,
+  "glmcc": "vendor/glmcc-c/glmcc exp GLM",
+  "written_at": "2026-09-19T14:51:26.020563+00:00"
+}

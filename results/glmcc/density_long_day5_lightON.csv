@@ -1,0 +1,13 @@
+"animal","condition","source","target","density"
+"day5","lightON","DMH","PH",0.16
+"day5","lightON","DMH","MC",0.192307692307692
+"day5","lightON","DMH","PVH",0.421052631578947
+"day5","lightON","PH","DMH",0.28
+"day5","lightON","PH","MC",0.0292307692307692
+"day5","lightON","PH","PVH",0.0336842105263158
+"day5","lightON","MC","DMH",0.192307692307692
+"day5","lightON","MC","PH",0.0276923076923077
+"day5","lightON","MC","PVH",0.0323886639676113
+"day5","lightON","PVH","DMH",0.263157894736842
+"day5","lightON","PVH","PH",0.04
+"day5","lightON","PVH","MC",0.0364372469635627

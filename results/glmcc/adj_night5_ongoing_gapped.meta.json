@@ -1,0 +1,12 @@
+{
+  "encoding": "glmcc_weight_raw",
+  "condition": "ongoing_gapped",
+  "gap_source": "DATA180111 lightON window structure",
+  "window_s": 9.934000000000196,
+  "period_s": 90.01599999999962,
+  "duty_cycle_pct": 11.07524933527133,
+  "spikes_kept": 45702,
+  "spikes_total": 406608,
+  "glmcc": "vendor/glmcc-c/glmcc exp GLM",
+  "written_at": "2026-09-19T14:43:36.571437+00:00"
+}

@@ -252,16 +252,30 @@ for (animal in animals) {
 write.csv(sw_results, here("results", "glmcc", "small_world.csv"),
           row.names = FALSE)
 
-cat(sprintf("\n  Mean σ: %.3f ± %.3f\n",
-            mean(sw_results$sigma), sd(sw_results$sigma)))
-cat(sprintf("  Mean ω: %.3f ± %.3f\n",
-            mean(sw_results$omega), sd(sw_results$omega)))
-cat(sprintf("  Small-world (σ>1): %d/%d animals\n",
-            sum(sw_results$sigma > 1), nrow(sw_results)))
-cat(sprintf("  Small-world (ω≈0): %d/%d animals (|ω|<0.5)\n",
-            sum(abs(sw_results$omega) < 0.5), nrow(sw_results)))
+# Small-world indices are only defined on a connected graph, so animals whose
+# lightON graph is disconnected are skipped above. When connectivity is sparse
+# enough that NONE survive, sw_results is empty and these summaries have nothing
+# to average; report that instead of failing on a zero-row data frame.
+if (nrow(sw_results) == 0) {
+  cat("\n  No animal has a connected lightON graph; small-world indices are undefined.\n")
+  cat("  (sigma and omega both require a single connected component.)\n")
+} else {
+  cat(sprintf("\n  Mean σ: %.3f ± %.3f\n",
+              mean(sw_results$sigma), sd(sw_results$sigma)))
+  cat(sprintf("  Mean ω: %.3f ± %.3f\n",
+              mean(sw_results$omega), sd(sw_results$omega)))
+  cat(sprintf("  Small-world (σ>1): %d/%d animals\n",
+              sum(sw_results$sigma > 1), nrow(sw_results)))
+  cat(sprintf("  Small-world (ω≈0): %d/%d animals (|ω|<0.5)\n",
+              sum(abs(sw_results$omega) < 0.5), nrow(sw_results)))
+}
 
 # --- Small-world figure ---
+# Nothing to plot when no animal had a connected graph; the panels below all read
+# sigma/omega columns that an empty sw_results does not carry.
+if (nrow(sw_results) == 0) {
+  cat("  Skipping figT2_small_world.png: no connected graphs to plot.\n")
+} else {
 # Panel A: σ and ω bar chart
 sw_long <- sw_results %>%
   pivot_longer(c(sigma, omega), names_to = "index", values_to = "value")
@@ -326,5 +340,6 @@ fig7 <- ggpubr$ggarrange(p2a, ggpubr$ggarrange(p2b, p2c, ncol = 2),
                           ncol = 1, heights = c(1, 1.1))
 ggsave(here("figures", "main", "figT2_small_world.png"),
        fig7, width = 12, height = 10, dpi = 150)
+}
 
 cat("\n=== Tier 2 complete ===\n")

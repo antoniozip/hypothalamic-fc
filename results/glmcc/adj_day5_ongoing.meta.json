@@ -1,0 +1,12 @@
+{
+  "encoding": "glmcc_weight_raw",
+  "units": "0-based milliseconds",
+  "window_ms": 50.0,
+  "bin_ms": 1.0,
+  "T_seconds": 16894.7,
+  "source_dir": "DATA180420_ongoing",
+  "n_units": 71,
+  "n_spikes": 1362752,
+  "binary": "vendor/glmcc-c/glmcc_fixed",
+  "written_at": "2026-09-19T14:35:29.027947+00:00"
+}
