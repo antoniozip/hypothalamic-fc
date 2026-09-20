@@ -544,6 +544,40 @@ concatenation is invisible to GLMCC, which is correct. No correction is needed a
 The 13.3% gap figure is still the source of the "~89% continuous" characterisation of `ongoing`
 used in the duty-cycle reasoning; only the coincidence concern is dismissed.
 
+### 5.9 Region-based test: the features fail an internal control
+
+Clustering within nucleus on harmonised features, using regional neurochemistry as the prior
+instead of a cortical threshold. `data/processed/ei_by_region.csv`.
+
+| region | n | % called narrow | expected inhibitory |
+|---|---|---|---|
+| **VM-thalamus** | **237** | **33.3%** | **~0–5%** (rodent relay nuclei: local interneurons near-absent) |
+| Mammillary Complex | 58 | 31.0% | low (glutamatergic projection) |
+| Ventromedial HT | 28 | 46.4% | low (predominantly SF1⁺ glutamatergic) |
+| DMH | 122 | 31.1% | substantially GABAergic |
+| PH | 95 | 30.5% | mixed |
+| PVH | 86 | 23.3% | mixed |
+| ARH / Anterior HT / ZI | 16 / 12 / 10 | — | too few to cluster |
+
+**VM-thalamus is the control and the method fails it.** Rodent ventromedial thalamus is
+essentially pure glutamatergic relay; local GABAergic interneurons are near-absent (unlike cat or
+primate LGN). 33.3% narrow-spiking there is an order of magnitude off the firmest prior available,
+in the largest sample.
+
+Worse, the fraction is flat across regions of very different composition: DMH (substantially
+GABAergic) 31.1% versus VM-thalamus (essentially none) 33.3%. If the features carried cell-class
+information those two should be the furthest apart in the dataset.
+
+That flat ~30% is what k-means with k = 4–5 returns when it splits a continuum and the extreme
+cluster is taken — roughly 1/k by construction.
+
+**Caveat on scope.** This tested a *binary* assignment, forcing every unit into E or I. Standard
+practice assigns only the confident tails and leaves an explicit unclassified middle. So this
+result establishes that the middle is a continuum; it does **not** establish that the confident
+tails are meaningless. A three-way assignment is planned and is the outstanding test —
+`plan/next-session-ei-three-way.md`, with the VM-thalamus control fixed as the pass criterion in
+advance.
+
 ## 7. Limitations and negative results
 
 1. **The headline condition effect does not exist once detection power is equalised** (§5.4).

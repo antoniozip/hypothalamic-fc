@@ -1,0 +1,665 @@
+animal,neuron_id,block,corner_hz,fw_ms,pp_ms,usable,region9,ei
+day1,1,early,775.0,0.1837488609897043,0.6,True,VM-thalamus,E
+day1,2,early,775.0,0.1986903220806791,0.55,True,VM-thalamus,E
+day1,3,early,775.0,0.2328562719902514,0.55,True,VM-thalamus,E
+day1,4,early,775.0,0.2159202665868974,0.5,True,VM-thalamus,E
+day1,5,early,775.0,0.2215398910125593,0.55,True,VM-thalamus,E
+day1,6,early,775.0,0.2335345956558683,0.35,True,VM-thalamus,I
+day1,7,early,775.0,0.2201491118167435,0.6,True,VM-thalamus,E
+day1,8,early,775.0,0.2182015602821188,0.55,True,VM-thalamus,E
+day1,9,early,775.0,0.1699766047521173,0.3,True,VM-thalamus,I
+day1,10,early,775.0,0.1781310456488942,0.6,True,VM-thalamus,E
+day1,11,early,775.0,0.2165914819647259,0.55,True,VM-thalamus,E
+day1,12,early,775.0,0.2083719948669234,0.55,True,VM-thalamus,E
+day1,13,early,775.0,0.2111621431097511,0.55,True,VM-thalamus,E
+day1,14,early,775.0,0.2268436006522371,0.5,True,VM-thalamus,E
+day1,15,early,775.0,0.2510714185466607,0.55,True,VM-thalamus,E
+day1,16,early,775.0,0.1671730826683738,0.35,True,VM-thalamus,I
+day1,17,early,775.0,0.1963966755477969,0.6,True,VM-thalamus,E
+day1,18,early,775.0,0.1778031134358695,0.5,True,VM-thalamus,E
+day1,19,early,775.0,0.1886314699648338,0.4,True,VM-thalamus,I
+day1,20,early,775.0,0.1644772332092159,0.75,True,VM-thalamus,E
+day1,21,early,775.0,0.2066343555322536,0.4,True,VM-thalamus,I
+day1,22,early,775.0,0.2206880692421865,0.5,True,VM-thalamus,E
+day1,23,early,775.0,0.2318047341694289,0.6,True,VM-thalamus,E
+day1,24,early,775.0,0.2147854013175063,0.55,True,VM-thalamus,E
+day1,25,early,775.0,0.1699370616516017,0.45,True,VM-thalamus,I
+day1,26,early,775.0,0.1882432296433698,0.65,True,VM-thalamus,E
+day1,27,early,775.0,0.2047681988549289,0.45,True,VM-thalamus,E
+day1,28,early,775.0,0.1551324533737123,0.3,True,VM-thalamus,I
+day1,29,early,775.0,0.1849680291271123,0.4,True,VM-thalamus,I
+day1,30,early,775.0,0.1877595535420663,0.55,True,VM-thalamus,E
+day1,31,early,775.0,0.1820082142517914,0.35,True,VM-thalamus,I
+day1,32,early,775.0,0.1830357608793591,0.6,True,VM-thalamus,E
+day1,33,early,775.0,0.1613135456849207,0.3,True,VM-thalamus,I
+day1,34,early,775.0,0.1841751387434548,0.4,True,VM-thalamus,I
+day1,35,early,775.0,0.1374449818075927,0.3,True,VM-thalamus,I
+day1,36,early,775.0,0.1761344845597452,0.6,True,VM-thalamus,E
+day1,37,early,775.0,0.1361892439198506,0.3,True,VM-thalamus,I
+day1,38,early,775.0,0.2067858610037053,0.35,True,VM-thalamus,I
+day1,39,early,775.0,0.2366631270643044,0.65,True,VM-thalamus,E
+day1,40,early,775.0,0.2366551808249213,0.6,True,VM-thalamus,E
+day1,41,early,775.0,0.1578430876739851,0.3,True,VM-thalamus,I
+day1,42,early,775.0,0.1708384957516774,0.35,True,VM-thalamus,I
+day1,43,early,775.0,0.2006834753059238,0.6,True,VM-thalamus,E
+day1,44,early,775.0,0.176665846568509,0.4,True,VM-thalamus,I
+day1,45,early,775.0,0.1891154786052968,0.35,True,VM-thalamus,I
+day1,46,early,775.0,0.221567080006589,0.55,True,VM-thalamus,E
+day1,47,early,775.0,0.1790646291916818,0.35,True,VM-thalamus,I
+day1,48,early,775.0,0.1794667276150182,0.45,True,VM-thalamus,I
+day1,49,early,775.0,0.1788732137653007,0.5,True,VM-thalamus,E
+day1,50,early,775.0,0.2161527194961603,0.55,True,VM-thalamus,E
+day1,51,early,775.0,0.1885160770597188,0.4,True,VM-thalamus,I
+day1,52,early,775.0,0.1470052324322623,0.35,True,VM-thalamus,I
+day1,53,early,775.0,0.2027207723083371,0.35,True,VM-thalamus,I
+day1,54,early,775.0,0.2298883087053393,0.55,True,VM-thalamus,E
+day1,55,early,775.0,0.290505309251036,0.6,True,VM-thalamus,E
+day1,56,early,775.0,0.1888612889785214,0.35,True,VM-thalamus,I
+day1,57,early,775.0,0.2393376443670913,0.7,True,VM-thalamus,E
+day1,58,early,775.0,0.1901780087041334,0.5,True,VM-thalamus,E
+day1,59,early,775.0,0.2039874288053443,0.55,True,VM-thalamus,E
+day1,60,early,775.0,0.1134753721161782,0.25,True,VM-thalamus,I
+day1,61,early,775.0,0.1896402988272527,0.35,True,VM-thalamus,I
+day1,62,early,775.0,0.1839552716513068,0.45,True,VM-thalamus,I
+day1,63,early,775.0,0.2364519580619991,1.1,True,VM-thalamus,E
+day1,64,early,775.0,0.1761873952374447,0.55,True,VM-thalamus,E
+day1,65,early,775.0,0.1853496971177676,0.55,True,VM-thalamus,E
+day1,66,early,775.0,0.1793646649602127,0.55,True,VM-thalamus,E
+day1,67,early,775.0,0.1935385661134404,0.35,True,VM-thalamus,I
+day1,68,early,775.0,0.1813273780222708,0.5,True,VM-thalamus,E
+day1,69,early,775.0,0.2015598124497827,0.5,True,VM-thalamus,E
+day1,70,early,775.0,0.2439653383540911,0.6,True,VM-thalamus,E
+day1,71,early,775.0,0.2402564292457096,0.6,True,VM-thalamus,E
+day1,72,early,775.0,0.1826292807310359,0.5,True,VM-thalamus,E
+day1,73,early,775.0,0.1904345317401336,0.5,True,VM-thalamus,E
+day1,74,early,775.0,0.1618835475583715,0.55,True,VM-thalamus,E
+day1,75,early,775.0,0.2090009320220918,0.55,True,VM-thalamus,E
+day1,76,early,775.0,0.2284152572778211,0.6,True,VM-thalamus,E
+day1,77,early,775.0,0.1760783222126526,0.35,True,VM-thalamus,I
+day1,78,early,775.0,0.1689447151938132,0.35,True,VM-thalamus,I
+day1,79,early,775.0,0.1672265447119628,0.3,True,VM-thalamus,I
+day1,80,early,775.0,0.1989505289498197,0.5,True,VM-thalamus,E
+day1,81,early,775.0,0.175204375261244,0.35,True,VM-thalamus,I
+day1,82,early,775.0,0.1404177925473931,0.35,True,VM-thalamus,I
+day1,83,early,775.0,0.2605325647552913,0.65,True,VM-thalamus,E
+day1,84,early,775.0,0.1711241069105138,0.4,True,VM-thalamus,I
+day1,85,early,775.0,0.2891301825030077,0.15,True,VM-thalamus,I
+day1,87,early,775.0,0.0584046749474069,0.3,True,VM-thalamus,I
+day1,88,early,775.0,0.1848195163089627,0.35,True,VM-thalamus,I
+day1,89,early,775.0,0.1812654366270429,0.5,True,VM-thalamus,E
+day1,90,early,775.0,0.1943594985843059,0.5,True,VM-thalamus,E
+day1,91,early,775.0,0.1902703704807521,0.6,True,VM-thalamus,E
+day1,92,early,775.0,0.2122000917222184,0.55,True,VM-thalamus,E
+day1,93,early,775.0,0.1890084965509245,0.55,True,VM-thalamus,E
+day1,94,early,775.0,0.1647774866174408,0.35,True,VM-thalamus,I
+day1,95,early,775.0,0.1799110687160514,0.35,True,VM-thalamus,I
+day1,96,early,775.0,0.2029769464268664,0.75,True,VM-thalamus,E
+day1,97,early,775.0,0.1670090153808939,0.45,True,VM-thalamus,I
+day1,98,early,775.0,0.173791653509355,0.5,True,VM-thalamus,E
+day1,99,early,775.0,0.1670977009504163,0.35,True,VM-thalamus,I
+day1,100,early,775.0,0.1418692594986431,0.3,True,VM-thalamus,I
+day1,101,early,775.0,0.1457513792107473,0.35,True,VM-thalamus,I
+day1,102,early,775.0,0.1837877215667433,0.35,True,VM-thalamus,I
+day1,103,early,775.0,0.1811183945591526,0.6,True,VM-thalamus,E
+day1,104,early,775.0,0.1726510182429656,0.55,True,VM-thalamus,E
+day1,105,early,775.0,0.1605511420589327,0.3,True,VM-thalamus,I
+day1,106,early,775.0,0.2140928824466229,0.65,True,VM-thalamus,E
+day1,107,early,775.0,0.1468693435472879,0.3,True,VM-thalamus,I
+day1,108,early,775.0,0.2162926905664537,0.5,True,VM-thalamus,E
+day1,109,early,775.0,0.1520978858475061,0.75,True,VM-thalamus,E
+day1,110,early,775.0,0.1796494053230596,0.6,True,VM-thalamus,E
+day1,111,early,775.0,0.2290390996910826,0.55,True,VM-thalamus,E
+day1,112,early,775.0,0.1865940058102509,0.35,True,VM-thalamus,I
+day1,113,early,775.0,0.1841363234260971,0.4,True,VM-thalamus,I
+day1,114,early,775.0,0.1869225451851242,0.55,True,VM-thalamus,E
+day1,115,early,775.0,0.1521979600808631,0.35,True,PVH,I
+day1,116,early,775.0,0.1438180030052176,0.6,True,PVH,I
+day1,117,early,775.0,0.2133197721001277,0.55,True,VM-thalamus,E
+day1,118,early,775.0,0.2069345237231037,0.5,True,VM-thalamus,E
+day1,119,early,775.0,0.1838466507661031,0.3,True,VM-thalamus,I
+day1,120,early,775.0,0.1805049378821674,0.55,True,VM-thalamus,E
+day1,121,early,775.0,0.1908950082843148,0.55,True,VM-thalamus,E
+day1,122,early,775.0,0.2037187627848972,0.55,True,VM-thalamus,E
+day1,123,early,775.0,0.2053166088085195,0.55,True,VM-thalamus,E
+day1,124,early,775.0,0.1894443997312713,0.7,True,VM-thalamus,E
+day1,125,early,775.0,0.1295378121425439,0.3,True,VM-thalamus,I
+day1,126,early,775.0,0.1991097398738926,0.55,True,VM-thalamus,E
+night1,1,early,600.0,0.2124346477871512,0.5,True,VM-thalamus,E
+night1,2,early,600.0,0.2855535458049161,0.7,True,VM-thalamus,E
+night1,3,early,600.0,0.2030291371802448,1.0,True,VM-thalamus,E
+night1,4,early,600.0,0.1515663463694846,0.45,True,PVH,I
+night1,5,early,600.0,0.1756253920288564,0.45,True,PVH,I
+night1,6,early,600.0,0.2257351609306866,0.6,True,PVH,E
+night1,7,early,600.0,0.1651987474053775,0.35,True,PVH,I
+night1,8,early,600.0,0.1533831492863104,0.35,True,Anterior HT,unclassified
+night1,9,early,600.0,0.1772161215709395,0.35,True,Anterior HT,unclassified
+night1,10,early,600.0,0.2907961080147622,0.7,True,Anterior HT,unclassified
+night1,11,early,600.0,0.1551134657899719,0.5,True,PVH,I
+night1,12,early,600.0,0.2549904677054808,0.65,True,VM-thalamus,E
+night1,13,early,600.0,0.2530215021308987,0.45,True,VM-thalamus,E
+night1,14,early,600.0,0.2522800058621574,0.45,True,PVH,E
+night1,15,early,600.0,0.2034227947835521,0.5,True,PVH,E
+night1,16,early,600.0,0.2120269369741279,0.55,True,PVH,E
+night1,17,early,600.0,0.232553232429905,0.6,True,Anterior HT,unclassified
+night1,18,early,600.0,0.2608877039535198,0.55,True,VM-thalamus,E
+night1,19,early,600.0,0.3280197637477872,0.75,True,DMH,E
+night1,20,early,600.0,0.3948776428999409,0.8,True,DMH,E
+night1,21,early,600.0,0.1787135466181382,0.5,True,DMH,I
+night1,22,early,600.0,0.1661934287251562,0.5,True,DMH,I
+night1,23,early,600.0,0.1837189708139028,0.45,True,VM-thalamus,I
+night1,24,early,600.0,0.191626382447518,0.5,True,VM-thalamus,E
+night1,25,early,600.0,0.1806888138871528,0.7,True,VM-thalamus,E
+night1,26,early,600.0,0.2734209076629654,0.6,True,VM-thalamus,E
+night1,27,early,600.0,0.2679115085733432,0.7,True,VM-thalamus,E
+night1,28,early,600.0,0.1593545769917572,0.45,True,VM-thalamus,I
+night1,29,early,600.0,0.2120078338581823,0.65,True,PVH,E
+night1,30,early,600.0,0.1661385707286498,0.35,True,PVH,I
+night1,31,early,600.0,0.2303643026398312,0.6,True,VM-thalamus,E
+night2,1,early,675.0,0.1492346086134009,0.3,True,VM-thalamus,I
+night2,2,early,675.0,0.2093257888866787,0.5,True,VM-thalamus,E
+night2,3,early,675.0,0.2141954442556535,0.5,True,VM-thalamus,E
+night2,4,early,675.0,0.1446215972326445,0.35,True,VM-thalamus,I
+night2,5,early,675.0,0.2497789908480204,0.5,True,VM-thalamus,E
+night2,6,early,675.0,0.1736755485339589,0.65,True,Ventromedial HT,E
+night2,7,early,675.0,0.1656065612477551,0.6,True,VM-thalamus,E
+night2,8,early,675.0,0.2228832242891719,0.45,True,Ventromedial HT,E
+night2,9,early,675.0,0.1993606310120412,0.55,True,Ventromedial HT,E
+night2,10,early,675.0,0.2966413475389604,0.65,True,PVH,E
+night2,11,early,675.0,0.267097757627608,0.5,True,Ventromedial HT,E
+night2,12,early,675.0,0.1607647885896703,0.35,True,PVH,I
+night2,13,early,675.0,0.2216020196425891,0.55,True,Ventromedial HT,E
+night2,14,early,675.0,0.3135678744058914,0.85,True,DMH,E
+night2,15,early,675.0,0.2118326310978449,0.8,True,DMH,E
+night2,16,early,675.0,0.2488479401580839,0.75,True,Ventromedial HT,E
+night2,17,early,675.0,0.2099155281087572,0.4,True,Ventromedial HT,E
+night2,18,early,675.0,0.1676517039636373,0.45,True,DMH,I
+night2,19,early,675.0,0.1940596589492447,0.5,True,DMH,E
+night2,20,early,675.0,0.2042577628118454,0.4,True,VM-thalamus,I
+night2,21,early,675.0,0.188725705618194,0.4,True,VM-thalamus,I
+night2,22,early,675.0,0.2940849282098671,0.5,True,VM-thalamus,E
+night2,23,early,675.0,0.2153393921082525,0.45,True,VM-thalamus,E
+night2,24,early,675.0,0.2182492356010993,0.4,True,VM-thalamus,I
+night2,25,early,675.0,0.1774890148547147,0.45,True,VM-thalamus,I
+night2,26,early,675.0,0.2195498984130111,0.4,True,Anterior HT,unclassified
+night2,27,early,675.0,0.2421510599923195,0.55,True,Anterior HT,unclassified
+night2,28,early,675.0,0.2408059224828207,0.45,True,VM-thalamus,E
+night2,29,early,675.0,0.2418126688958544,0.45,True,Anterior HT,unclassified
+night2,30,early,675.0,0.2923251513986454,0.8,True,Anterior HT,unclassified
+night2,31,early,675.0,0.2924396999926958,1.05,True,Anterior HT,unclassified
+night2,32,early,675.0,0.198959756991508,0.45,True,PVH,I
+night2,33,early,675.0,0.2468538169697094,0.5,True,Anterior HT,unclassified
+night2,34,early,675.0,0.2470926459452894,0.5,True,Anterior HT,unclassified
+night3,1,early,550.0,0.2840383017861289,0.5,True,PVH,E
+night3,2,early,550.0,0.2215724969629064,0.45,True,PVH,E
+night3,3,early,550.0,0.2295258571288396,0.55,True,PVH,E
+night3,4,early,550.0,0.3716957284410714,0.5,True,PVH,E
+night3,5,early,550.0,0.2373462902178918,0.95,True,PVH,E
+night3,6,early,550.0,0.2352991264219674,1.0,True,PVH,E
+night3,7,early,550.0,0.2764082640096074,1.05,True,PVH,E
+night3,8,early,550.0,0.280848213298902,0.5,True,PVH,E
+night3,9,early,550.0,0.2382940518534379,0.45,True,PVH,E
+night3,10,early,550.0,0.2346818458418884,0.5,True,PVH,E
+night3,11,early,550.0,0.229465031691808,0.55,True,VM-thalamus,E
+night3,12,early,550.0,0.2762823966593533,0.55,True,VM-thalamus,E
+night3,13,early,550.0,0.2487121659835747,0.65,True,VM-thalamus,E
+night3,14,early,550.0,0.2314487689016474,0.5,True,PVH,E
+night3,15,early,550.0,0.2363177406839188,0.5,True,PVH,E
+night3,16,early,550.0,0.2220375042363269,0.45,True,PVH,E
+night3,17,early,550.0,0.2554271171740037,0.5,True,PVH,E
+night3,18,early,550.0,0.2908341795440936,0.8,True,PVH,E
+night3,19,early,550.0,0.21448688892212,0.5,True,PVH,E
+night3,20,early,550.0,0.2686963201207319,0.55,True,VM-thalamus,E
+night3,21,early,550.0,0.2897000251751063,0.8,True,VM-thalamus,E
+night3,22,early,550.0,0.2318055016669436,0.45,True,VM-thalamus,E
+night3,23,early,550.0,0.2105299998865025,0.45,True,VM-thalamus,E
+night3,24,early,550.0,0.2652416860187113,0.5,True,VM-thalamus,E
+night3,25,early,550.0,0.2658272914562019,0.6,True,VM-thalamus,E
+night3,26,early,550.0,0.2372267090630444,0.5,True,VM-thalamus,E
+night3,27,early,550.0,0.2750541386418003,1.05,True,VM-thalamus,E
+night3,28,early,550.0,0.2552115197080742,0.55,True,PVH,E
+night3,29,early,550.0,0.2904418466220566,0.8,True,VM-thalamus,E
+night3,30,early,550.0,0.2083787938536939,0.9,True,VM-thalamus,E
+night3,31,early,550.0,0.2255772676525627,0.5,True,VM-thalamus,E
+night3,32,early,550.0,0.2110560527152618,0.45,True,VM-thalamus,E
+night3,33,early,550.0,0.2471503906106118,0.9,True,PVH,E
+night4,1,early,625.0,0.2375938732684275,0.5,True,VM-thalamus,E
+night4,2,early,625.0,0.2539629327663409,0.65,True,VM-thalamus,E
+night4,3,early,625.0,0.2498264937850322,0.45,True,PVH,E
+night4,4,early,625.0,0.272430324168722,0.6,True,PVH,E
+night4,5,early,625.0,0.2216866614368474,0.75,True,PVH,E
+night4,6,early,625.0,0.2532434082129935,0.8,True,PVH,E
+night4,7,early,625.0,0.2071527166010358,0.5,True,PVH,E
+night4,8,early,625.0,0.3054655784323032,0.65,True,Anterior HT,unclassified
+night4,9,early,625.0,0.2554016285168284,0.65,True,PVH,E
+night4,10,early,625.0,0.2652607735729521,0.65,True,PVH,E
+night4,11,early,625.0,0.2231200943091359,0.8,True,VM-thalamus,E
+night4,12,early,625.0,0.2172505804122821,0.4,True,DMH,E
+night4,13,early,625.0,0.2373808993070216,0.4,True,DMH,E
+night4,14,early,625.0,0.2444805943719036,0.8,True,DMH,E
+night4,15,early,625.0,0.3074241178404946,0.4,True,DMH,E
+night4,16,early,625.0,0.1531702444313699,0.6,True,DMH,I
+night4,17,early,625.0,0.1966864565853189,0.4,True,DMH,I
+night4,18,early,625.0,0.2079181537916405,0.45,True,VM-thalamus,E
+night4,19,early,625.0,0.2805211979304449,0.85,True,PVH,E
+night4,20,early,625.0,0.2915222134611951,0.55,True,VM-thalamus,E
+night4,21,early,625.0,0.2370382681718254,0.9,True,VM-thalamus,E
+night4,22,early,625.0,0.2400203091630708,0.4,True,PVH,E
+night4,23,early,625.0,0.2152959490569259,0.4,True,VM-thalamus,I
+night4,24,early,625.0,0.2587432647357559,0.85,True,PVH,E
+night4,25,early,625.0,0.2243414506703825,0.5,True,PVH,E
+night4,26,early,625.0,0.2358848816539279,0.5,True,PVH,E
+night4,27,early,625.0,0.2471086733896086,0.45,True,PVH,E
+night4,28,early,625.0,0.2381127604294928,0.45,True,PVH,E
+night4,29,early,625.0,0.2234055078861164,0.45,True,PVH,E
+night4,30,early,625.0,0.2207600386888312,0.45,True,PVH,E
+night4,31,early,625.0,0.1780598647030263,0.4,True,PVH,I
+night4,32,early,625.0,0.2572072302263201,0.65,True,PVH,E
+night4,33,early,625.0,0.2878669471343066,0.95,True,PVH,E
+night4,34,early,625.0,0.2790443103228551,0.55,True,PVH,E
+night4,35,early,625.0,0.2517516809329588,0.4,True,PVH,E
+night5,1,early,625.0,0.1702931689884703,0.4,True,VM-thalamus,I
+night5,2,early,625.0,0.1610713195619546,0.35,True,VM-thalamus,I
+night5,3,early,625.0,0.1925382069510085,0.6,True,VM-thalamus,E
+night5,4,early,625.0,0.2639062790996263,0.85,True,VM-thalamus,E
+night5,5,early,625.0,0.1668132438636768,0.65,True,VM-thalamus,E
+night5,6,early,625.0,0.200609716055758,0.55,True,VM-thalamus,E
+night5,7,early,625.0,0.2102450372099543,0.55,True,VM-thalamus,E
+night5,8,early,625.0,0.1786738464836925,0.55,True,VM-thalamus,E
+night5,9,early,625.0,0.2091503698972783,0.55,True,VM-thalamus,E
+night5,10,early,625.0,0.2306672372061953,0.5,True,VM-thalamus,E
+night5,11,early,625.0,0.1468928096803878,0.3,True,VM-thalamus,I
+night5,12,early,625.0,0.1718477792388693,0.4,True,VM-thalamus,I
+night5,13,early,625.0,0.1667957403096778,0.3,True,VM-thalamus,I
+night5,14,early,625.0,0.1808554560694496,0.4,True,PVH,I
+night5,15,early,625.0,0.1646467357180714,0.55,True,VM-thalamus,E
+night5,16,early,625.0,0.1810361870268177,0.4,True,VM-thalamus,I
+night5,17,early,625.0,0.188987346131962,0.6,True,VM-thalamus,E
+night5,18,early,625.0,0.2190898857789701,0.65,True,VM-thalamus,E
+night5,19,early,625.0,0.2003009777635721,0.45,True,Ventromedial HT,E
+night5,20,early,625.0,0.1922051218794223,0.45,True,Ventromedial HT,E
+night5,21,early,625.0,0.1623101637990839,0.4,True,Ventromedial HT,I
+night5,22,early,625.0,0.1786044611075439,0.45,True,VM-thalamus,I
+night5,23,early,625.0,0.1920298392852849,0.5,True,VM-thalamus,E
+night5,24,early,625.0,0.151263400195916,0.4,True,VM-thalamus,I
+day2,1,late,50.0,0.4771832301053756,0.75,True,VM-thalamus,E
+day2,2,late,50.0,0.5031449527283336,1.15,True,VM-thalamus,E
+day2,3,late,50.0,0.2965665511772059,1.0,True,PH,E
+day2,4,late,50.0,0.0501328989841546,1.5,True,VM-thalamus,E
+day2,5,late,50.0,0.1440982653168955,0.25,True,VM-thalamus,I
+day2,6,late,50.0,0.0499038501215848,0.6,True,VM-thalamus,I
+day2,7,late,50.0,0.3418048562780654,0.75,True,DMH,E
+day2,8,late,50.0,0.1521408020631544,0.3,True,DMH,I
+day2,9,late,50.0,0.2545609415219012,0.5,True,DMH,E
+day2,10,late,50.0,0.2710070239619451,0.5,True,DMH,E
+day2,11,late,50.0,0.334567938202743,0.65,True,DMH,E
+day2,12,late,50.0,0.1659151656519775,0.3,True,DMH,I
+day2,13,late,50.0,0.2998350620705168,0.75,True,PH,E
+day2,14,late,50.0,1.2009115983771277,1.7,True,VM-thalamus,E
+day2,15,late,50.0,0.5497372505933406,1.65,True,VM-thalamus,E
+day2,16,late,50.0,0.2711211784480188,0.75,True,VM-thalamus,E
+day2,17,late,50.0,0.2001074559801995,0.15,True,PVH,I
+day2,18,late,50.0,1.3083658931013349,1.65,True,PH,E
+day2,19,late,50.0,0.2406504719917485,0.4,True,PH,E
+day2,20,late,50.0,0.2000025347453764,0.25,True,PH,I
+day2,21,late,50.0,0.1999873494020477,0.2,True,PH,I
+day2,22,late,50.0,0.296252903635731,0.55,True,PH,E
+day2,23,late,50.0,0.2694034664349242,0.5,True,PH,E
+day2,24,late,50.0,0.2627948421912588,0.45,True,PH,E
+day2,25,late,50.0,0.1947118564413664,0.4,True,DMH,I
+day2,26,late,50.0,0.0503044510043739,0.1,True,VM-thalamus,I
+day2,27,late,50.0,0.1499042936850894,0.35,True,PH,I
+day2,28,late,50.0,0.1884207905425416,0.3,True,DMH,I
+day2,29,late,50.0,0.0499803691130615,0.95,True,PH,E
+day2,30,late,50.0,0.3377925264866704,0.35,True,DMH,E
+day2,31,late,50.0,0.2694025361090617,0.4,True,DMH,E
+night6,1,late,350.0,0.2217079004138885,0.55,True,VM-thalamus,E
+night6,2,late,350.0,0.2052708503658966,0.45,True,VM-thalamus,E
+night6,3,late,350.0,0.353135570712913,1.15,True,VM-thalamus,E
+night6,4,late,350.0,0.2512789195989753,0.6,True,VM-thalamus,E
+night6,5,late,350.0,0.3160882089722094,0.6,True,DMH,E
+night6,6,late,350.0,0.3265352753990839,1.9,True,DMH,E
+night6,7,late,350.0,0.2872371112963648,0.5,True,DMH,E
+night6,8,late,350.0,0.3037473526604479,0.5,True,DMH,E
+night6,9,late,350.0,0.2945687367137523,0.5,True,DMH,E
+night6,10,late,350.0,0.2681324368024256,0.4,True,DMH,E
+night6,11,late,350.0,0.3057443953513601,1.15,True,DMH,E
+night6,12,late,350.0,0.3952122106518725,1.0,True,VM-thalamus,E
+night6,13,late,350.0,0.3047067488059067,0.45,True,DMH,E
+night6,14,late,350.0,0.3568463102251232,0.5,True,DMH,E
+night6,15,late,350.0,0.2550808277156711,0.4,True,DMH,E
+night6,16,late,350.0,0.3100354590440233,1.2,True,DMH,E
+night6,17,late,350.0,0.2088786903406944,0.5,True,VM-thalamus,E
+night6,18,late,350.0,0.2219679506123213,0.35,True,VM-thalamus,I
+night6,19,late,350.0,0.1681347231417792,0.35,True,PVH,I
+night6,20,late,350.0,0.1892918477845615,0.55,True,PVH,E
+night6,21,late,350.0,0.6540149668851236,1.05,True,VM-thalamus,E
+night6,22,late,350.0,0.3148407971673738,0.75,True,VM-thalamus,E
+night6,23,late,350.0,0.3116891656408715,0.55,True,Ventromedial HT,E
+night6,24,late,350.0,0.3477736777237251,0.6,True,Ventromedial HT,E
+night6,25,late,350.0,0.2710783927234856,0.5,True,Ventromedial HT,E
+night6,26,late,350.0,0.1832500227226347,0.65,True,VM-thalamus,E
+night6,27,late,350.0,0.3229582051278484,0.5,True,DMH,E
+night6,28,late,350.0,0.2581153206864716,0.45,True,DMH,E
+night6,29,late,350.0,0.3491633899729002,0.6,True,DMH,E
+night6,30,late,350.0,0.2087446450927323,0.35,True,DMH,I
+night6,31,late,350.0,0.2022921389869154,0.6,True,VM-thalamus,E
+night6,32,late,350.0,0.1931157769631593,0.35,True,VM-thalamus,I
+night6,33,late,350.0,0.2157246724769859,0.45,True,VM-thalamus,E
+night6,34,late,350.0,0.2535168873077609,0.5,True,PVH,E
+night6,35,late,350.0,0.3017047115291504,0.65,True,VM-thalamus,E
+night6,36,late,350.0,0.6803746186114943,0.65,True,VM-thalamus,E
+night6,37,late,350.0,0.2049113908056721,0.5,True,DMH,E
+night6,38,late,350.0,0.1998344012328743,0.45,True,DMH,E
+night6,39,late,350.0,0.2729965927241813,0.95,True,VM-thalamus,E
+night6,40,late,350.0,0.521676469717594,0.8,True,VM-thalamus,E
+night6,41,late,350.0,0.25778729498107,0.85,True,VM-thalamus,E
+night6,42,late,350.0,0.1604988598413072,0.3,True,VM-thalamus,I
+night6,43,late,350.0,0.1308643825208591,0.3,True,VM-thalamus,I
+night6,44,late,350.0,0.1624093180790076,0.25,True,VM-thalamus,I
+night6,45,late,350.0,0.1829202780222534,0.65,True,VM-thalamus,E
+night6,46,late,350.0,0.1930915860188847,0.6,True,VM-thalamus,E
+night6,47,late,350.0,0.19693181407522,0.5,True,VM-thalamus,E
+night6,48,late,350.0,0.1725077499705435,0.7,True,VM-thalamus,E
+night6,49,late,350.0,0.2514981345005858,0.95,True,VM-thalamus,E
+night6,50,late,350.0,0.4202270386646827,0.75,True,VM-thalamus,E
+night6,51,late,350.0,0.2619542066773934,0.45,True,PVH,E
+night6,52,late,350.0,0.2956280039987415,0.5,True,PVH,E
+night6,53,late,350.0,0.1596293975355532,0.5,True,PVH,I
+night6,54,late,350.0,0.2933239363107372,0.5,True,PVH,E
+night7,2,late,50.0,0.1004189562474225,0.2,True,PH,I
+night7,3,late,50.0,0.2001915625941769,1.75,True,DMH,E
+night7,4,late,50.0,0.1999273283235997,0.65,True,VM-thalamus,E
+night7,5,late,50.0,0.1502174959162403,1.5,True,VM-thalamus,E
+night7,10,late,50.0,0.3707369745238033,0.75,True,DMH,E
+night7,11,late,50.0,0.0999791410259121,1.3,True,PH,E
+night7,14,late,50.0,0.149873407631005,0.3,True,PH,I
+night7,18,late,50.0,1.1607727212757162,1.75,True,PH,E
+night7,21,late,50.0,0.2967637027893371,0.55,True,PH,E
+night7,22,late,50.0,0.3205866319938802,0.85,True,PH,E
+night7,23,late,50.0,0.381263639371457,1.05,True,PH,E
+night7,24,late,50.0,0.3544449963568762,1.6,True,VM-thalamus,E
+night7,25,late,50.0,0.2555060269521021,0.55,True,VM-thalamus,E
+night7,26,late,50.0,0.2036269652975308,2.0,True,PH,E
+night7,27,late,50.0,0.1413064183907582,0.3,True,DMH,I
+night7,28,late,50.0,0.4240326906180666,1.55,True,DMH,E
+night7,29,late,50.0,0.1346987070138461,0.2,True,DMH,I
+night7,30,late,50.0,0.130084894741773,0.2,True,DMH,I
+night7,31,late,50.0,0.0832726008281468,0.15,True,DMH,I
+night7,32,late,50.0,0.1107700506555207,0.15,True,ARH,unclassified
+night7,33,late,50.0,0.1050226467643899,0.25,True,ARH,unclassified
+night7,34,late,50.0,0.0776489404557736,0.2,True,ARH,unclassified
+night7,35,late,50.0,0.1413919001913772,0.2,True,ARH,unclassified
+night7,36,late,50.0,0.0970886362562445,0.15,True,ARH,unclassified
+night7,37,late,50.0,0.1063606325227564,0.2,True,ARH,unclassified
+night7,38,late,50.0,0.131494452425515,0.25,True,ARH,unclassified
+night7,39,late,50.0,0.2720357978421525,0.5,True,ARH,unclassified
+night7,40,late,50.0,0.2544074357823533,0.7,True,PH,E
+night7,41,late,50.0,0.1256783762713652,0.25,True,ARH,unclassified
+night7,42,late,50.0,0.2564582861934774,0.45,True,PH,E
+night7,43,late,50.0,0.0750039889329688,0.15,True,ZI,unclassified
+night7,44,late,50.0,0.3604866500054616,0.65,True,ZI,unclassified
+night7,45,late,50.0,0.1973538634768193,0.35,True,ZI,unclassified
+night7,46,late,50.0,0.1428125778994438,0.2,True,Ventromedial HT,I
+night7,47,late,50.0,0.1576296949414189,0.25,True,Ventromedial HT,I
+night7,48,late,50.0,0.1298667816579481,0.2,True,Ventromedial HT,I
+night7,49,late,50.0,0.1281355999024551,0.25,True,Ventromedial HT,I
+night7,50,late,50.0,0.2562336783600731,0.5,True,Ventromedial HT,E
+night7,51,late,50.0,0.27520116910683,0.7,True,ZI,unclassified
+night7,52,late,50.0,0.2344842048844221,0.45,True,ZI,unclassified
+night7,53,late,50.0,0.2175100624116598,0.6,True,ZI,unclassified
+night7,54,late,50.0,0.4519321187230396,0.65,True,DMH,E
+night7,55,late,50.0,0.4245160935814209,0.9,True,ZI,unclassified
+night7,56,late,50.0,0.4682558031448163,0.65,True,DMH,E
+night7,57,late,50.0,0.3439406845941765,0.35,True,DMH,E
+night7,58,late,50.0,0.2146374488639963,0.5,True,DMH,E
+night7,59,late,50.0,0.1650816144016889,0.4,True,DMH,I
+night7,60,late,50.0,0.1273089251056369,0.2,True,DMH,I
+night7,61,late,50.0,0.1719089477709921,0.3,True,DMH,I
+night7,62,late,50.0,0.3310851906466837,1.45,True,PH,E
+night7,63,late,50.0,0.1247079782590216,0.2,True,PH,I
+night7,64,late,50.0,0.1684120158762453,0.3,True,PH,I
+night7,65,late,50.0,0.116680962660741,0.25,True,DMH,I
+night7,66,late,50.0,0.1788250171372308,0.75,True,DMH,E
+night7,67,late,50.0,0.1271178735018296,0.25,True,DMH,I
+night7,68,late,50.0,0.3199717512216334,0.75,True,DMH,E
+night7,69,late,50.0,0.6475660316928665,0.3,True,DMH,E
+night7,70,late,50.0,0.3500378039752903,1.2,True,ZI,unclassified
+night7,71,late,50.0,0.3267748288276756,0.6,True,ZI,unclassified
+night7,72,late,50.0,0.2444875346891173,0.4,True,ZI,unclassified
+night7,73,late,50.0,0.6473347694016249,0.45,True,DMH,E
+night7,74,late,50.0,0.2249896810387365,0.55,True,VM-thalamus,E
+night7,75,late,50.0,0.2551502938291889,0.45,True,DMH,E
+night7,76,late,50.0,0.2505548870261794,0.85,True,DMH,E
+night7,77,late,50.0,0.3589682570418969,0.85,True,DMH,E
+night7,78,late,50.0,0.3124998104321115,1.1,True,DMH,E
+night7,79,late,50.0,0.2334410702918184,1.05,True,DMH,E
+day3,1,late,0.0,0.2316666666666666,0.45,True,PH,E
+day3,2,late,0.0,0.323611111111111,0.7,True,Mammillary Complex,E
+day3,3,late,0.0,0.1007765151515151,0.2,True,Mammillary Complex,I
+day3,4,late,0.0,0.2814327485380115,0.85,True,Mammillary Complex,E
+day3,5,late,0.0,0.2875,0.9,True,Mammillary Complex,E
+day3,6,late,0.0,0.3925,0.8,True,Mammillary Complex,E
+day3,7,late,0.0,0.2797619047619047,0.7,True,PH,E
+day3,8,late,0.0,0.2049278846153846,0.3,True,PH,I
+day3,9,late,0.0,0.26875,0.4,True,Mammillary Complex,E
+day3,10,late,0.0,0.3170833333333334,0.8,True,Mammillary Complex,E
+day3,11,late,0.0,0.255,0.45,True,PH,E
+day3,12,late,0.0,0.35,0.65,True,PH,E
+day3,13,late,0.0,0.35,0.65,True,Mammillary Complex,E
+day3,14,late,0.0,0.214375,0.45,True,Mammillary Complex,E
+day3,15,late,0.0,0.2071428571428573,0.45,True,Mammillary Complex,E
+day3,16,late,0.0,0.221875,0.45,True,PH,E
+day3,17,late,0.0,0.1735645933014353,0.3,True,PH,I
+day3,18,late,0.0,0.2294642857142858,0.65,True,Mammillary Complex,E
+day3,19,late,0.0,0.1456575682382133,0.35,True,Mammillary Complex,I
+day3,20,late,0.0,0.1967236467236467,0.5,True,Mammillary Complex,E
+day3,21,late,0.0,0.4114583333333332,0.7,True,Mammillary Complex,E
+day3,22,late,0.0,0.3375,1.05,True,PVH,E
+day3,23,late,0.0,0.2800000000000001,0.6,True,PH,E
+day3,24,late,0.0,0.2600000000000001,0.8,True,PVH,E
+day3,25,late,0.0,0.2294871794871792,0.5,True,PVH,E
+day3,26,late,0.0,0.1951136363636362,0.45,True,ARH,unclassified
+day3,27,late,0.0,0.2290598290598289,0.45,True,ARH,unclassified
+day3,28,late,0.0,0.1949404761904762,0.45,True,ARH,unclassified
+day3,29,late,0.0,0.1798872180451127,0.3,True,PVH,I
+day3,30,late,0.0,0.2569444444444446,0.45,True,Mammillary Complex,E
+day3,31,late,0.0,0.1404040404040405,1.2,True,PH,E
+day3,32,late,0.0,0.2446428571428572,0.7,True,DMH,E
+day3,33,late,0.0,0.1462499999999998,0.2,True,DMH,I
+day3,34,late,0.0,0.1762499999999999,0.3,True,DMH,I
+day3,35,late,0.0,0.1180952380952383,0.25,True,DMH,I
+day3,36,late,0.0,0.1714285714285715,0.35,True,Mammillary Complex,I
+day3,37,late,0.0,0.2294507575757577,0.4,True,PH,I
+day3,38,late,0.0,0.1583333333333332,0.6,True,PH,E
+day3,39,late,0.0,0.2199999999999999,1.0,True,PH,E
+day3,40,late,0.0,0.1314529914529913,0.2,True,PH,I
+day3,41,late,0.0,0.1464646464646467,0.25,True,Mammillary Complex,I
+day3,42,late,0.0,0.2068080357142857,0.5,True,Mammillary Complex,E
+day3,43,late,0.0,0.2916666666666668,0.9,True,ARH,unclassified
+day3,44,late,0.0,0.4267857142857142,0.85,True,ARH,unclassified
+day3,45,late,0.0,0.309375,0.95,True,ARH,unclassified
+day3,46,late,0.0,0.327596153846154,0.75,True,ARH,unclassified
+day3,47,late,0.0,0.275,0.45,True,PH,E
+day4,1,late,0.0,0.1462499999999998,0.45,True,Ventromedial HT,I
+day4,2,late,0.0,0.1720073812580231,0.6,True,Ventromedial HT,E
+day4,3,late,0.0,0.1012609238451933,0.2,True,DMH,I
+day4,4,late,0.0,0.1678977272727273,0.25,True,VM-thalamus,I
+day4,5,late,0.0,0.2052083333333332,0.4,True,VM-thalamus,I
+day4,6,late,0.0,0.1260416666666668,0.25,True,VM-thalamus,I
+day4,7,late,0.0,0.1178006329113923,0.2,True,VM-thalamus,I
+day4,8,late,0.0,0.2115056818181816,0.45,True,VM-thalamus,E
+day4,9,late,0.0,0.1333333333333332,0.2,True,Ventromedial HT,I
+day4,10,late,0.0,0.165625,0.3,True,Ventromedial HT,I
+day4,11,late,0.0,0.1848297213622292,0.25,True,Ventromedial HT,I
+day4,12,late,0.0,0.2055555555555553,0.4,True,Ventromedial HT,E
+day4,15,late,0.0,0.1146820761014687,0.35,True,DMH,I
+day4,16,late,0.0,0.2024767801857585,0.3,True,DMH,I
+day4,17,late,0.0,0.0876096491228072,0.35,True,DMH,I
+day4,18,late,0.0,0.4619791666666668,1.15,True,DMH,E
+day4,19,late,0.0,0.2402777777777774,0.35,True,DMH,E
+day4,20,late,0.0,0.1512152777777778,0.45,True,DMH,I
+day4,21,late,0.0,0.25625,0.6,True,DMH,E
+day4,22,late,0.0,0.1416666666666667,0.25,True,DMH,I
+day4,23,late,0.0,0.5125000000000001,0.85,True,DMH,E
+day4,24,late,0.0,0.3125,0.6,True,DMH,E
+day4,26,late,0.0,0.55,0.8,True,DMH,E
+day4,27,late,0.0,0.2166666666666667,0.85,True,DMH,E
+day4,28,late,0.0,0.35,0.45,True,DMH,E
+day4,29,late,0.0,0.4,0.85,True,DMH,E
+day4,30,late,0.0,0.2307692307692306,1.1,True,DMH,E
+day4,31,late,0.0,0.1770833333333332,0.6,True,DMH,E
+day4,32,late,0.0,0.1533333333333331,0.95,True,DMH,E
+day4,33,late,0.0,0.1918181818181818,0.55,True,DMH,E
+day4,34,late,0.0,0.2462962962962962,0.5,True,DMH,E
+day4,35,late,0.0,0.2643939393939394,0.55,True,DMH,E
+day4,36,late,0.0,0.4532967032967033,0.75,True,PH,E
+day4,37,late,0.0,0.1683035714285715,0.6,True,PH,E
+day4,38,late,0.0,0.3255639097744364,0.55,True,PH,E
+day4,39,late,0.0,0.3092116013071894,0.6,True,PH,E
+day4,40,late,0.0,0.2522685185185185,0.45,True,DMH,E
+day4,41,late,0.0,0.2450967741935482,0.45,True,DMH,E
+day4,42,late,0.0,0.2364583333333332,0.4,True,DMH,E
+day4,43,late,0.0,0.2858422939068102,0.4,True,DMH,E
+day4,44,late,0.0,0.9333333333333332,0.5,True,DMH,E
+day4,45,late,0.0,0.252840909090909,0.8,True,DMH,E
+day4,46,late,0.0,0.4100000000000001,1.0,True,DMH,E
+day4,47,late,0.0,0.1714285714285715,0.45,True,DMH,I
+day4,48,late,0.0,0.1589976780185757,0.35,True,DMH,I
+day4,49,late,0.0,0.2491600790513835,0.75,True,DMH,E
+day4,50,late,0.0,0.2388392857142857,0.7,True,DMH,E
+day4,51,late,0.0,0.3199999999999999,1.45,True,PH,E
+day4,52,late,0.0,0.4870879120879121,0.95,True,PH,E
+day4,53,late,0.0,0.2604166666666668,0.7,True,PH,E
+day4,54,late,0.0,0.3284722222222221,0.95,True,PH,E
+day4,55,late,0.0,0.2345238095238095,0.5,True,PH,E
+day4,56,late,0.0,0.2568181818181816,0.6,True,PH,E
+day4,57,late,0.0,0.3645721925133688,0.4,True,PH,E
+day4,58,late,0.0,0.2060224089635856,0.5,True,PH,E
+day4,59,late,0.0,0.123809523809524,0.25,True,PH,I
+day4,60,late,0.0,0.55,0.85,True,PH,E
+day4,61,late,0.0,0.3604166666666668,0.55,True,PH,E
+day5,1,late,450.0,0.3363307259308524,0.6,True,DMH,E
+day5,2,late,450.0,0.2930297321005611,0.55,True,PH,E
+day5,3,late,450.0,0.304699453579715,0.6,True,PH,E
+day5,4,late,450.0,0.3202160099704016,0.55,True,PH,E
+day5,5,late,450.0,0.1984369411105948,0.4,True,PH,I
+day5,6,late,450.0,0.1249400815051721,0.35,True,PH,I
+day5,7,late,450.0,0.2085680941998808,0.3,True,PH,I
+day5,8,late,450.0,0.3636917989221338,0.6,True,PH,E
+day5,9,late,450.0,0.2313217257904867,0.45,True,PH,E
+day5,10,late,450.0,0.3592225824469264,0.65,True,PH,E
+day5,11,late,450.0,0.2853542367221806,0.55,True,PH,E
+day5,12,late,450.0,0.2838141950326558,0.5,True,PH,E
+day5,13,late,450.0,0.1487646729005764,0.25,True,PH,I
+day5,14,late,450.0,0.3162462342717131,0.65,True,PH,E
+day5,15,late,450.0,0.1744575184248567,0.5,True,PH,I
+day5,16,late,450.0,0.2623135114503181,0.55,True,PH,E
+day5,17,late,450.0,0.1786960608295249,0.3,True,PH,I
+day5,18,late,450.0,0.2265681642290197,0.5,True,PH,E
+day5,19,late,450.0,0.2649044334173137,0.5,True,Mammillary Complex,E
+day5,20,late,450.0,0.2540339699559464,0.45,True,Mammillary Complex,E
+day5,21,late,450.0,0.3108592812951908,0.7,True,Mammillary Complex,E
+day5,22,late,450.0,0.1876314111173961,0.35,True,Mammillary Complex,I
+day5,23,late,450.0,0.250428163866323,0.6,True,Mammillary Complex,E
+day5,24,late,450.0,0.2838200128563479,0.45,True,Mammillary Complex,E
+day5,25,late,450.0,0.2771960201700018,0.55,True,Mammillary Complex,E
+day5,26,late,450.0,0.1019392430294818,0.9,True,Mammillary Complex,I
+day5,27,late,450.0,0.2188524409196898,0.6,True,Mammillary Complex,E
+day5,28,late,450.0,0.1269276304044833,0.25,True,Mammillary Complex,I
+day5,29,late,450.0,0.3537237472959148,0.2,True,Mammillary Complex,E
+day5,30,late,450.0,0.1167040379620338,0.35,True,Mammillary Complex,I
+day5,31,late,450.0,0.1202625725609312,0.35,True,Mammillary Complex,I
+day5,32,late,450.0,0.3341945002449542,0.75,True,PVH,E
+day5,33,late,450.0,0.1824782087113849,0.7,True,PVH,E
+day5,34,late,450.0,0.4338307106967786,0.7,True,PVH,E
+day5,35,late,450.0,0.2635808770165749,0.8,True,PVH,E
+day5,36,late,450.0,0.2656720398741012,0.65,True,PVH,E
+day5,37,late,450.0,0.2249385008214321,0.6,True,PVH,E
+day5,38,late,450.0,0.2363453734189089,0.95,True,PVH,E
+day5,39,late,450.0,0.1566751748834253,0.35,True,PVH,I
+day5,40,late,450.0,0.2451367952866103,0.7,True,PVH,E
+day5,41,late,450.0,0.1588025815112047,0.35,True,PVH,I
+day5,42,late,450.0,0.1476614687824788,0.3,True,PVH,I
+day5,43,late,450.0,0.15720950636805,0.55,True,PVH,I
+day5,44,late,450.0,0.2874936662110681,0.8,True,PVH,E
+day5,45,late,450.0,0.2506829668940717,0.55,True,PVH,E
+day5,46,late,450.0,0.2434606650468453,0.5,True,PVH,E
+day5,47,late,450.0,0.0441881083546011,0.3,True,PVH,I
+day5,48,late,450.0,0.3853735283745674,0.4,True,PVH,E
+day5,49,late,450.0,0.27692434358929,0.4,True,PVH,E
+day5,50,late,450.0,0.2732963125170566,0.6,True,PVH,E
+day5,51,late,450.0,0.1546001438741186,0.4,True,Mammillary Complex,I
+day5,52,late,450.0,0.1504760392444129,0.35,True,Mammillary Complex,I
+day5,53,late,450.0,0.2110458190696338,0.5,True,Mammillary Complex,E
+day5,54,late,450.0,0.3685507128765486,0.8,True,Mammillary Complex,E
+day5,55,late,450.0,0.2816081511454335,0.85,True,Mammillary Complex,E
+day5,56,late,450.0,0.2679824742687557,0.85,True,Mammillary Complex,E
+day5,57,late,450.0,0.2085162270364527,0.95,True,Mammillary Complex,E
+day5,58,late,450.0,0.3152734742621306,0.75,True,Mammillary Complex,E
+day5,59,late,450.0,0.1598876068805189,0.45,True,Mammillary Complex,I
+day5,60,late,450.0,0.3624192595521027,0.8,True,Mammillary Complex,E
+day5,61,late,450.0,0.2627158797687258,0.55,True,Mammillary Complex,E
+day5,62,late,450.0,0.13667128319629,0.3,True,Mammillary Complex,I
+day5,63,late,450.0,0.4017063696917216,0.5,True,Mammillary Complex,E
+day5,64,late,450.0,0.1888653515828224,0.35,True,PH,I
+day5,65,late,450.0,0.1892000727529779,0.35,True,PH,I
+day5,66,late,450.0,0.4014638340958469,0.85,True,PH,E
+day5,67,late,450.0,0.2224337828720045,0.5,True,PH,E
+day5,68,late,450.0,0.1797675013937841,0.4,True,PH,I
+day5,69,late,450.0,0.1297425362320144,0.25,True,PH,I
+day5,70,late,450.0,0.2984091477801279,0.6,True,PH,E
+day5,71,late,450.0,0.0779369885617995,0.3,True,PH,I
+day6,1,late,75.0,0.1623085000266023,0.35,True,Ventromedial HT,I
+day6,2,late,75.0,0.134769189600399,0.25,True,Ventromedial HT,I
+day6,3,late,75.0,0.169829076604385,0.35,True,Ventromedial HT,I
+day6,4,late,75.0,0.065354892759051,0.2,True,Ventromedial HT,I
+day6,5,late,75.0,0.3149603921572044,0.95,True,Mammillary Complex,E
+day6,6,late,75.0,0.2776052747882186,0.45,True,DMH,E
+day6,7,late,75.0,0.363331017858577,0.85,True,DMH,E
+day6,8,late,75.0,0.1364552097753005,0.25,True,DMH,I
+day6,9,late,75.0,0.2789585627900728,0.8,True,DMH,E
+day6,10,late,75.0,0.1826374775787513,0.45,True,DMH,I
+day6,11,late,75.0,0.3020934559469406,0.6,True,PH,E
+day6,12,late,75.0,0.1387828953727044,0.3,True,PH,I
+day6,13,late,75.0,0.1996793074531616,1.55,True,PH,E
+day6,14,late,75.0,0.1652440120956932,0.3,True,PH,I
+day6,15,late,75.0,0.531779934962871,0.85,True,PH,E
+day6,16,late,75.0,0.1746520190900209,0.4,True,PH,I
+day6,17,late,75.0,0.5043166850357159,1.15,True,PH,E
+day6,18,late,75.0,0.3212638146355637,1.75,True,DMH,E
+day6,19,late,75.0,0.0885021875527254,0.15,True,DMH,I
+day6,20,late,75.0,0.2004424708528493,0.5,True,DMH,E
+day6,21,late,75.0,0.4758071397439561,1.35,True,PH,E
+day6,22,late,75.0,0.4305586777518037,1.35,True,PH,E
+day6,23,late,75.0,0.2272094791465008,0.6,True,PH,E
+day6,24,late,75.0,0.1727440032467338,0.8,True,PH,E
+day6,25,late,75.0,0.3283363446515306,0.6,True,PH,E
+day6,26,late,75.0,0.1719360997956148,0.3,True,DMH,I
+day6,27,late,75.0,0.0784546935327785,0.3,True,DMH,I
+day6,28,late,75.0,0.3770883745483601,0.55,True,DMH,E
+day6,29,late,75.0,0.2475416382849463,0.45,True,DMH,E
+day6,30,late,75.0,0.2128585126358771,0.35,True,DMH,I
+day6,31,late,75.0,0.1029010468167648,0.2,True,DMH,I
+day6,32,late,75.0,0.2134565743122895,0.5,True,DMH,E
+day6,33,late,75.0,0.2686964123423411,0.9,True,DMH,E
+day6,34,late,75.0,0.4447324481813059,0.8,True,DMH,E
+day6,35,late,75.0,0.1818028198080838,0.35,True,DMH,I
+day6,36,late,75.0,0.2046167121030848,0.55,True,DMH,E
+day6,37,late,75.0,0.1769068924995792,0.7,True,Mammillary Complex,E
+day6,38,late,75.0,0.1921003290257395,0.4,True,Mammillary Complex,I
+day6,40,late,75.0,0.3995999769050616,1.75,True,Mammillary Complex,E
+day6,41,late,75.0,0.222358738316063,0.35,True,Mammillary Complex,E
+day6,42,late,75.0,0.1304673210146681,0.25,True,Mammillary Complex,I
+day6,43,late,75.0,0.3985811348902025,1.6,True,Mammillary Complex,E
+day6,44,late,75.0,0.2989814454134329,0.85,True,Mammillary Complex,E
+day6,45,late,75.0,0.2769642185667933,0.8,True,Mammillary Complex,E
+day6,46,late,75.0,0.1514388443897701,0.3,True,Mammillary Complex,I
+day6,47,late,75.0,0.247987110726222,0.8,True,Mammillary Complex,E
+day6,48,late,75.0,0.209073728940622,0.4,True,Mammillary Complex,E
+day6,49,late,75.0,0.1332351629396804,0.3,True,Mammillary Complex,I
+day6,50,late,75.0,0.1662803709626775,0.45,True,Mammillary Complex,I
+day6,51,late,75.0,0.2013150039637125,0.55,True,PH,E
+day6,52,late,75.0,0.176402660684305,0.3,True,PH,I
+day6,53,late,75.0,0.1314007881597881,0.2,True,PH,I
+day6,55,late,75.0,0.2418091152128536,0.55,True,PH,E
+day6,56,late,75.0,0.1336125649645364,0.3,True,PH,I
