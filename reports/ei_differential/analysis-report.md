@@ -35,8 +35,15 @@ connectivity is not circular. That independence is what makes this analysis wort
 | night7 | 41.8% | | night5 | 0.0% |
 | day2 | 38.7% | | | |
 
-The gap runs 3.2% → 38.7% with nothing between. That is not a biological range; it is the
-difference between the classification having been run and not. Analysable set: **399 units in 7
+The gap runs 3.2% → 38.7% with nothing between.
+
+> **Correction (2026-09-20).** This report originally read that gap as the classification having
+> been run on seven animals and not the other six. **That was wrong.** It ran on all 13. The six
+> low animals were recorded before an acquisition change (2018-01-11 → 2018-01-31) that shortens
+> peak-to-peak duration; the fixed 0.65 ms threshold sits *above* their whole distribution, so it
+> returned almost nothing. See `waveform-diagnostic.md`. The practical consequence below is
+> unchanged — these labels are not usable — but the cause is a correctable acquisition
+> difference, not missing work. Analysable set: **399 units in 7
 animals, 178 inhibitory (44.6%) and 221 excitatory.**
 
 > **`src/py/ei_classification.py` is wrong and should not be used.** It assigns `"E"` to every

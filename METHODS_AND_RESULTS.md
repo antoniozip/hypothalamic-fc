@@ -483,6 +483,17 @@ classes. Agreement with the shipped labels is 70.2%, κ = +0.385.
 `findpeaks`, which returns *positive* peaks, so it measures the last positive bump rather than
 the spike trough — the likely source of the 44.6% inhibitory fraction.
 
+**Diagnosed (§5.7): an acquisition change mid-study.** Ordering by date, median PP splits
+cleanly at 2018-01-11 → 2018-01-31 (early n=6: 0.775 ms; late n=7: 0.500 ms; Mann-Whitney
+p = 0.0031, Spearman with date order −0.715, p = 0.0060), together with a drop in trough depth
+and a rise in positive overshoot — the signature of a stronger high-pass filter. Windowing,
+alignment and sampling are identical across all 13 (81 samples, trough at sample 40, no
+truncation), and no filter settings are stored in the files.
+
+That also **corrects the §5.5 claim that six animals were never classified**: they were, but the
+fixed 0.65 ms threshold sits above the early block's entire distribution. Applying it to
+recomputed PP reproduces the 0–3.2% / 41–51% split (Spearman +0.722, p = 0.005).
+
 **Consequence: the §5.5 E/I nulls are untestable rather than negative.** Neither the original
 labels nor a literature-standard re-derivation yields a classification worth testing. Resolve
 the between-recording waveform variation first, or drop the E/I dichotomy for this dataset.
