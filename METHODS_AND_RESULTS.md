@@ -523,6 +523,27 @@ the between-recording waveform variation first, or drop the E/I dichotomy for th
 | *(mid-round)* The edge set carries no timing information and is not synaptic | **Withdrawn.** That rested on control runs at 1 s resolution. Corrected, edges break between 5 and 25 ms |
 | The condition effect is the finding | **Tested: the condition effect is the confound.** Matching geometry and spike count collapses F by 100–1000× and nothing survives correction (§5.4) |
 
+### 5.8 File concatenation does not affect the correlograms (checked, negative)
+
+Each recording is a concatenation of 34–35 files with real gaps between them — 2,361 s across a
+17,783 s span in day1, **13.3% of the timeline**. That raised the question of whether spike pairs
+straddling a file join produce false coincidences, since GLMCC reads one continuous time axis.
+
+**They cannot.** Checked across all 13 recordings:
+
+| check | result |
+|---|---|
+| spikes falling inside an inter-file gap | **0** in 12 of 13; **1** in night6 (of ~1.5 M) |
+| smallest gap, any recording | **128 ms** (day4), vs the ±50 ms correlogram window |
+
+The spike timeline is **absolute**, not re-based: the gaps are genuine periods with no recording
+and no spike sits inside one. Every gap exceeds the correlogram window by at least 2.6× (up to
+17.6×), so no pair of spikes can straddle a boundary and still fall within ±50 ms. The
+concatenation is invisible to GLMCC, which is correct. No correction is needed and none was made.
+
+The 13.3% gap figure is still the source of the "~89% continuous" characterisation of `ongoing`
+used in the duty-cycle reasoning; only the coincidence concern is dismissed.
+
 ## 7. Limitations and negative results
 
 1. **The headline condition effect does not exist once detection power is equalised** (§5.4).
