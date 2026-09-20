@@ -494,6 +494,19 @@ That also **corrects the §5.5 claim that six animals were never classified**: t
 fixed 0.65 ms threshold sits above the early block's entire distribution. Applying it to
 recomputed PP reproduces the 0–3.2% / 41–51% split (Spearman +0.722, p = 0.005).
 
+**Cause confirmed (§5.7).** The nominal acquisition filter was 600–6000 Hz throughout. Sweeping a
+compensating high-pass over 50–1525 Hz to equalise median PP, the six early recordings
+independently require **550–775 Hz (clustered on ~600)** while the late seven require **0–450 Hz,
+mostly ~0**. The 600–6000 Hz filter reached the late block and effectively did not reach the early
+block. Compensation cuts the between-recording spread from 2.62× to 1.11× and **removes the block
+effect** from the classification (early 21.7% vs late 31.0% inhibitory, p = 0.366, was p = 0.0031).
+
+It does not rescue the classification: still 28.8% inhibitory against a 5.25% reference, still
+0–42.6% per animal, full width still unimodal. Compensating a mean, already-filtered waveform is
+not equivalent to filtering the raw trace, and **no pre-spike-sorting data survives**, so that
+ceiling cannot be lifted. A further untestable consequence: spike amplitude halves across the
+boundary, which can affect sorting yield and unit isolation in ways that cannot now be checked.
+
 **Consequence: the §5.5 E/I nulls are untestable rather than negative.** Neither the original
 labels nor a literature-standard re-derivation yields a classification worth testing. Resolve
 the between-recording waveform variation first, or drop the E/I dichotomy for this dataset.
@@ -585,6 +598,7 @@ the purge commit message); superseded reports are in `reports/superseded/`.
 | Matched figure | `python3 scripts/plot_rate_matched.py` | ~10 s |
 | E/I differential | `python3 scripts/ei_differential.py && python3 scripts/plot_ei_differential.py` | ~20 s |
 | Waveform re-classification | `python3 scripts/ei_classify_waveforms.py` (needs scikit-learn, diptest) | ~40 s |
+| Filter harmonisation | `python3 scripts/waveform_harmonise.py` | ~3 min |
 | Jitter sensitivity sweep | `python3 scripts/jitter_sensitivity.py` | ~45 min |
 | Sweep figure | `python3 scripts/plot_jitter_sensitivity.py` | ~30 s |
 | Edge validation | `python3 scripts/revalidate_all.py` | ~35 min |

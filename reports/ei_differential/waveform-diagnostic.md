@@ -78,6 +78,51 @@ two different waveform distributions**. The 44.6% inhibitory fraction in the lat
 The practical consequence is unchanged — the shipped labels are not usable — but the reason is
 different and more tractable: it is a correctable acquisition difference, not missing work.
 
+## Confirmed: the early block is missing the 600 Hz high-pass
+
+**Information from the experimenter (2026-09-20):** the acquisition filter was nominally
+**600–6000 Hz** for every session, and no pre-spike-sorting data survives.
+
+That is decisive for the interpretation, because 600 Hz is already an aggressive high-pass — a
+spike filtered there should show PP near 0.3–0.5 ms. The late block's 0.500 ms matches. The early
+block's 0.775–1.05 ms does not; it is what a substantially lower corner produces.
+
+Tested directly (`scripts/waveform_harmonise.py`): for each recording, sweep a compensating
+zero-phase 2nd-order Butterworth high-pass over 50–1525 Hz and find the corner that brings its
+median PP to the late-block value of 0.500 ms.
+
+| block | compensating corner required (Hz) |
+|---|---|
+| **early** | 550, 600, 625, 625, 675, **775** |
+| **late** | 0, 0, 50, 50, 75, 350, 450 |
+
+The six early recordings independently converge on **~600 Hz — the nominal setting** — while the
+late seven need essentially none. The grid was 50–1525 Hz and nothing constrained the answer
+toward 600; that the early block lands there is strong corroboration.
+
+**Conclusion: the 600–6000 Hz filter reached the late seven recordings and effectively did not
+reach the early six.** Applying the compensation collapses the between-recording spread in median
+PP from **2.62× to 1.11×** (0.400–1.050 ms → 0.450–0.500 ms).
+
+### Harmonising helps, but does not rescue the classification
+
+Re-running the spikeMAP clustering on harmonised waveforms:
+
+- **The block effect is gone.** Inhibitory fraction early 21.7% vs late 31.0%, Mann–Whitney
+  **p = 0.366** (it was p = 0.0031 on the raw features). The systematic artifact is removed.
+- **The classification is still not usable.** 28.8% inhibitory overall against a 5.25% reference,
+  per-animal still 0–42.6%, full width still unimodal (dip p = 0.99) with only peak-to-peak
+  bimodal, and Calinski–Harabasz now selects k = 6 with clusters as small as n = 3.
+
+So the confirmed artifact was real and is correctable, but correcting it is not sufficient. The
+likely ceiling is the correction itself: compensating a *mean, already-filtered* waveform is not
+equivalent to filtering the raw trace. The original filter's phase response is baked in, spike
+averaging has smoothed it, and the two recordings needing the largest compensation (night3 at
+1.050 ms, night4 at 0.900 ms) are also the two that still return 0% and 5.7%.
+
+**Because the pre-sorting data is gone, that ceiling cannot be lifted.** The correction available
+is the best one obtainable from what survives.
+
 ## What this makes possible
 
 The variation has a named, bounded cause, which is better than the previous position.
@@ -88,23 +133,26 @@ The variation has a named, bounded cause, which is better than the previous posi
    duration-like quantity, 326–471, uncorrelated with median PP (Spearman −0.127, p = 0.68).
    **No filter settings are stored.** The change has to be identified from lab notes or the
    original acquisition software configuration for that 20-day window.
-2. **If raw or wideband traces survive, re-filter both blocks to a common passband** and recompute
-   waveforms. That would remove the offset at source and make one classification valid across all
-   13 recordings.
-3. **If only these waveforms survive,** classify within block, never with a threshold shared
-   across the boundary. Per-recording clustering (already implemented in
-   `scripts/ei_classify_waveforms.py`) is the fallback, but its clusters remain incomparable
-   between recordings, so cross-animal E/I comparisons stay off-limits.
+2. ~~Re-filter both blocks from raw traces.~~ **Not possible** — no pre-spike-sorting data
+   survives. The waveform-level compensation above is the best available substitute and it is
+   not sufficient.
+3. **Use the harmonised labels only with the block caveat attached.**
+   `data/processed/ei_harmonised_labels.csv` removes the block artifact but still yields an
+   implausible 28.8% inhibitory fraction. It is better than the shipped labels and still not good
+   enough to support an E/I claim.
 4. **Re-check other waveform-derived quantities** for the same block structure before trusting
    them across the boundary.
 
 ## Does it affect the connectivity results?
 
-Not directly. GLMCC uses spike **times**, not waveforms, and a filter change affects waveform
-shape rather than detection of a spike. But it is worth noting that trough depth — i.e. spike
-amplitude — halves across the boundary, which can change spike-sorting yield and unit isolation.
-Whether the early and late blocks differ in sorting quality was not tested here and is a
-reasonable thing to check before pooling them in any analysis.
+Not directly. GLMCC uses spike **times**, not waveforms, and a filter difference changes waveform
+shape rather than whether a spike is detected.
+
+But spike amplitude roughly halves across the boundary, and a missing 600 Hz high-pass in the
+early block would also leave more low-frequency energy in the traces that were sorted. Both can
+change sorting yield and unit isolation. **This cannot be tested: no pre-spike-sorting data
+survives.** It therefore stands as an untestable limitation on pooling the two blocks — worth
+stating explicitly in any write-up rather than leaving implicit.
 
 The rate-matched condition result (`reports/rate_matched/`) is between conditions *within* each
 animal, so it is unaffected by a between-block difference.
