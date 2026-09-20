@@ -455,6 +455,38 @@ population that does not fire faster than the broad-spiking one, and that is 44.
 is not behaving like a fast-spiking interneuron population — the criterion may not be separating
 cell types here at all, which caps what any of these nulls can mean.
 
+### 5.6 Waveform re-classification — the data will not support an E/I split
+
+`reports/ei_differential/waveform-reclassification.md`. Re-derived from `Units(i).wf` (81
+samples, 20 kHz) using the spikeMAP method (Mahallati et al., *eLife* 2026): k-means on full
+width at half-maximum and peak-to-peak duration, k by Calinski-Harabasz, no fixed thresholds.
+That paper reports 5.25% inhibitory in mouse PFC.
+
+| variant | inhibitory |
+|---|---|
+| pooled k-means | 39.0% |
+| pooled, recordings centred | 81.4% |
+| per recording, as published | 27.1% (range 3.2–59.6%) |
+
+**None is credible.** The cause is that median peak-to-peak duration varies **0.400–1.050 ms
+between recordings**, a 2.6× range exceeding the cell-type separation it should detect. Under
+pooled clustering a recording's inhibitory fraction is almost entirely predicted by where it
+sits: Spearman **−0.978, p = 8e-09**. Clustering per recording removes that, but then the
+"inhibitory" centroid itself ranges 0.222–0.891 ms — 4× — so the classes are not comparable
+across animals.
+
+There is some real structure: peak-to-peak is bimodal pooled and after centring (dip p < 1e-4),
+and in 6 of 13 recordings individually; full width is unimodal (p = 0.87). Not enough to assign
+classes. Agreement with the shipped labels is 70.2%, κ = +0.385.
+
+**A genuine bug in the original code was found:** `tim_stuff.m:702` takes its half-width from
+`findpeaks`, which returns *positive* peaks, so it measures the last positive bump rather than
+the spike trough — the likely source of the 44.6% inhibitory fraction.
+
+**Consequence: the §5.5 E/I nulls are untestable rather than negative.** Neither the original
+labels nor a literature-standard re-derivation yields a classification worth testing. Resolve
+the between-recording waveform variation first, or drop the E/I dichotomy for this dataset.
+
 ## 6. What changed our belief
 
 | before this round | after |
@@ -541,6 +573,7 @@ the purge commit message); superseded reports are in `reports/superseded/`.
 | Matched metrics + LME | `ESTIMATOR=glmcc_rm bash scripts/rebuild_downstream.sh` | ~3 min |
 | Matched figure | `python3 scripts/plot_rate_matched.py` | ~10 s |
 | E/I differential | `python3 scripts/ei_differential.py && python3 scripts/plot_ei_differential.py` | ~20 s |
+| Waveform re-classification | `python3 scripts/ei_classify_waveforms.py` (needs scikit-learn, diptest) | ~40 s |
 | Jitter sensitivity sweep | `python3 scripts/jitter_sensitivity.py` | ~45 min |
 | Sweep figure | `python3 scripts/plot_jitter_sensitivity.py` | ~30 s |
 | Edge validation | `python3 scripts/revalidate_all.py` | ~35 min |
